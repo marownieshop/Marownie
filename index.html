@@ -4,16 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Marownie homemade brownies, Oreshki, and tiramisu made with natural ingredients.">
-  <title>Marownie | Homemade Treats</title>
+  <meta name="description" content="Discover Marownie homemade brownies, Oreshki, and tiramisu. Freshly prepared treats made with care and delicious ingredients.">
+  <meta name="theme-color" content="#F8F2E8">
+  <title>Marownie | Homemade Chocolate Treats</title>
 
   <style>
     :root {
-      --cream: #fbf7f1;
-      --brown: #50372d;
-      --muted: #79665c;
-      --accent: #a76f50;
-      --white: #ffffff;
+      --cream: #F8F2E8;
+      --chocolate: #4A281F;
+      --caramel: #A56D48;
+      --muted: #78665A;
+      --white: #FFFFFF;
+      --border: #E6D9CA;
+      --soft: #F0E5D7;
     }
 
     * {
@@ -27,8 +30,8 @@
     body {
       margin: 0;
       background: var(--cream);
-      color: var(--brown);
-      font-family: Arial, Helvetica, sans-serif;
+      color: var(--chocolate);
+      font-family: Georgia, "Times New Roman", serif;
       line-height: 1.7;
     }
 
@@ -37,154 +40,175 @@
     }
 
     header {
-      padding: 24px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      padding: 28px 20px 22px;
+      text-align: center;
       background: var(--cream);
+    }
+
+    .logo {
+      display: inline-block;
+      text-decoration: none;
     }
 
     .logo img {
       display: block;
-      max-width: 180px;
-      max-height: 80px;
       width: auto;
       height: auto;
+      max-width: min(340px, 88vw);
+      max-height: 190px;
+      margin: 0 auto;
       object-fit: contain;
     }
 
     nav {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 22px;
+      gap: 30px;
+      margin-top: 24px;
     }
 
     nav a {
-      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
       text-decoration: none;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--caramel);
     }
 
     .hero {
-      padding: 100px 20px 110px;
+      padding: 92px 22px 100px;
       text-align: center;
-      background: #f1e5d9;
+      background: var(--soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      color: var(--accent);
+      color: var(--caramel);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
       font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
       font-weight: normal;
       line-height: 1.25;
     }
 
     h1 {
-      max-width: 800px;
-      margin: 18px auto;
-      font-size: clamp(38px, 6vw, 64px);
+      max-width: 850px;
+      margin: 20px auto;
+      font-size: clamp(39px, 6vw, 68px);
     }
 
     .hero p {
-      max-width: 650px;
-      margin: 20px auto 30px;
+      max-width: 620px;
+      margin: 0 auto 30px;
       color: var(--muted);
       font-size: 17px;
     }
 
     .button {
       display: inline-block;
-      padding: 13px 23px;
-      border-radius: 4px;
-      background: var(--brown);
+      padding: 14px 25px;
+      border: 1px solid var(--chocolate);
+      background: var(--chocolate);
       color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-align: center;
       text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-      transition: opacity 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
 
     .button:hover {
-      opacity: 0.85;
+      background: transparent;
+      color: var(--chocolate);
     }
 
-    .button-light {
-      background: var(--white);
-      color: var(--brown);
-      border: 1px solid #ded0c4;
+    .button-outline {
+      background: transparent;
+      color: var(--chocolate);
+    }
+
+    .button-outline:hover {
+      background: var(--chocolate);
+      color: var(--white);
     }
 
     section {
-      padding: 75px 7%;
+      padding: 78px 7%;
     }
 
     .section-heading {
+      margin: 12px auto 18px;
       text-align: center;
-      margin: 0 auto 14px;
-      font-size: 38px;
+      font-size: clamp(33px, 4vw, 45px);
     }
 
     .section-intro {
-      max-width: 650px;
-      margin: 0 auto 38px;
-      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
       color: var(--muted);
+      text-align: center;
+      font-size: 16px;
     }
 
     .products {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
-      max-width: 1100px;
-      margin: 40px auto 0;
+      max-width: 1120px;
+      margin: 44px auto 0;
     }
 
     .product {
-      padding: 30px 24px;
+      padding: 35px 24px;
+      border: 1px solid var(--border);
       background: var(--white);
-      border: 1px solid #eee3d9;
-      border-radius: 8px;
       text-align: center;
     }
 
-    .product-symbol {
-      font-size: 34px;
-      margin-bottom: 10px;
-      color: var(--accent);
+    .product-line {
+      width: 38px;
+      height: 2px;
+      margin: 0 auto 20px;
+      background: var(--caramel);
     }
 
     .product h3 {
-      margin: 10px 0;
-      font-size: 27px;
+      margin: 0 0 15px;
+      font-size: 30px;
     }
 
     .product p {
+      margin: 0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
+      line-height: 1.85;
     }
 
     .about {
-      background: #f1e5d9;
+      background: var(--soft);
       text-align: center;
     }
 
     .about-content {
-      max-width: 750px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
     .about-content p {
       color: var(--muted);
+      font-size: 16px;
     }
 
     .contact {
@@ -196,76 +220,98 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .contact-note {
-      margin-top: 22px;
-      font-size: 13px;
+      max-width: 600px;
+      margin: 25px auto 0;
       color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
     }
 
     footer {
-      padding: 28px 20px;
+      padding: 30px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--chocolate);
+      color: var(--cream);
       text-align: center;
-      background: var(--brown);
-      color: var(--white);
-      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
     }
 
     footer p {
       margin: 5px;
     }
 
+    footer .footer-brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
     @media (max-width: 700px) {
       header {
-        flex-direction: column;
-        padding: 20px;
+        padding-top: 24px;
+      }
+
+      .logo img {
+        max-width: min(290px, 88vw);
+        max-height: 155px;
       }
 
       nav {
-        justify-content: center;
-        gap: 15px;
+        gap: 14px 22px;
+      }
+
+      nav a {
+        font-size: 11px;
       }
 
       .hero {
-        padding: 75px 20px;
+        padding: 68px 22px 75px;
       }
 
       section {
-        padding: 55px 20px;
+        padding: 58px 20px;
       }
 
       .products {
         grid-template-columns: 1fr;
-        max-width: 420px;
+        max-width: 440px;
+        gap: 16px;
       }
 
-      .section-heading {
-        font-size: 32px;
+      .product {
+        padding: 30px 22px;
       }
 
       .contact-buttons {
         flex-direction: column;
-        align-items: stretch;
         max-width: 320px;
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
+      }
+
+      .contact-buttons .button {
+        width: 100%;
       }
     }
   </style>
 </head>
 
 <body>
+
   <header>
-    <a class="logo" href="#home">
+    <a class="logo" href="#home" aria-label="Marownie home">
       <img src="IMG_2490%20(3).jpeg" alt="Marownie logo">
     </a>
 
     <nav aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#treats">Our Treats</a>
-      <a href="#about">About Us</a>
+      <a href="#about">Our Story</a>
       <a href="#contact">Order</a>
     </nav>
   </header>
@@ -273,49 +319,59 @@
   <main>
     <section class="hero" id="home">
       <div class="eyebrow">Homemade with Care</div>
-      <h1>Homemade Treats, Made with Love</h1>
+
+      <h1>A Little Sweetness, Made at Home</h1>
+
       <p>
-        We believe in the power of natural ingredients to create
-        treats that delight every taste.
+        We believe in the power of natural ingredients
+        to create treats that delight every taste.
+        Every order is prepared fresh with care.
       </p>
-      <a class="button" href="#treats">Discover Our Treats</a>
+
+      <a class="button" href="#treats">Explore Our Treats</a>
     </section>
 
     <section id="treats">
       <div class="eyebrow" style="text-align:center;">
         Made for Your Sweet Moments
       </div>
+
       <h2 class="section-heading">Our Treats</h2>
+
       <p class="section-intro">
-        Discover homemade favorites crafted with care and delicious fillings.
+        Homemade favorites, thoughtful ingredients,
+        and delicious flavors made to share.
       </p>
 
       <div class="products">
         <article class="product">
-          <div class="product-symbol" aria-hidden="true">♡</div>
+          <div class="product-line"></div>
           <h3>Brownies</h3>
           <p>
-            Rich chocolate brownies made for chocolate lovers,
-            including caramel and peanut and cranberry flavors.
+            Rich, chocolatey brownies with indulgent
+            caramel and peanut or tart cranberry.
+            A delicious treat for chocolate lovers.
           </p>
         </article>
 
         <article class="product">
-          <div class="product-symbol" aria-hidden="true">♡</div>
+          <div class="product-line"></div>
           <h3>Oreshki</h3>
           <p>
-            Delicate, golden cookie shells filled with delicious creams.
-            Explore caramel, pistachio, peanut butter, chocolate, coffee,
-            and lemon flavors.
+            Golden, delicate cookie shells filled
+            with your favorite flavors: caramel,
+            pistachio, peanut butter, chocolate,
+            coffee, and lemon.
           </p>
         </article>
 
         <article class="product">
-          <div class="product-symbol" aria-hidden="true">♡</div>
+          <div class="product-line"></div>
           <h3>Tiramisu</h3>
           <p>
-            A creamy, delicate Italian-inspired dessert
-            made for special moments and everyday treats.
+            A creamy, delicate Italian-inspired
+            dessert made for sharing, celebrations,
+            and everyday sweet moments.
           </p>
         </article>
       </div>
@@ -323,54 +379,61 @@
 
     <section class="about" id="about">
       <div class="about-content">
-        <div class="eyebrow">A Little Something Special</div>
-        <h2 class="section-heading">Made Fresh for You</h2>
+        <div class="eyebrow">The Marownie Way</div>
+
+        <h2 class="section-heading">Homemade with Heart</h2>
+
         <p>
-          At Marownie, we believe the best treats begin with thoughtful
-          ingredients and a little love. Each order is prepared fresh
-          for you rather than made far in advance.
+          At Marownie, we believe that memorable
+          treats begin with thoughtful ingredients,
+          attention to detail, and a little love.
         </p>
+
         <p>
-          Whether you're sharing with family, celebrating a special
-          occasion, or simply treating yourself, we're happy to make
-          your sweet moments a little more special.
+          We prepare our treats fresh for your order,
+          bringing the warmth of homemade baking
+          to life's everyday moments and special occasions.
         </p>
       </div>
     </section>
 
     <section class="contact" id="contact">
-      <div class="eyebrow">We'd Love to Hear from You</div>
-      <h2 class="section-heading">Order Your Treats</h2>
+      <div class="eyebrow">Let's Make It Sweet</div>
+
+      <h2 class="section-heading">Place Your Order</h2>
+
       <p class="section-intro">
-        Ready to order? Contact us using your preferred method.
-        Tell us which treats, flavors, and quantities you'd like.
+        Tell us which treats, flavors, and quantities
+        you would like. We look forward to preparing
+        something special for you.
       </p>
 
       <div class="contact-buttons">
         <a
           class="button"
-          href="https://wa.me/19179099977?text=Hello%20Marownie!%20I'd%20like%20to%20place%20an%20order."
+          href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20place%20an%20order."
           target="_blank"
           rel="noopener noreferrer"
         >Order via WhatsApp</a>
 
         <a
-          class="button button-light"
+          class="button button-outline"
           href="mailto:marownieshop@gmail.com?subject=Marownie%20Order&body=Hello%20Marownie!%0A%0AI%20would%20like%20to%20place%20an%20order.%0A%0ATreats%20and%20flavors%3A%0AQuantity%3A%0APreferred%20pickup%20date%3A"
         >Order via Email</a>
       </div>
 
       <p class="contact-note">
-        Please contact us before ordering to confirm availability,
+        Please contact us to confirm availability,
         pricing, and pickup or delivery details.
       </p>
     </section>
   </main>
 
   <footer>
-    <p><strong>MAROWNIE</strong></p>
+    <p class="footer-brand">MAROWNIE</p>
     <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
     <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
