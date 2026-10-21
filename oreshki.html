@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Marownie homemade Oreshki cookies with delicious fillings.">
+  <meta name="theme-color" content="#F8F2E8">
+  <title>Oreshki | Marownie</title>
+
+  <style>
+    :root {
+      --cream: #F8F2E8;
+      --chocolate: #4A281F;
+      --caramel: #A56D48;
+      --muted: #78665A;
+      --white: #FFFFFF;
+      --border: #E6D9CA;
+      --soft: #F0E5D7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--chocolate);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 25px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: min(290px, 85vw);
+      max-height: 145px;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--caramel);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 65px 20px;
+      text-align: center;
+      background: var(--soft);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--caramel);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-weight: normal;
+      line-height: 1.3;
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: clamp(40px, 7vw, 62px);
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 55px 22px 75px;
+    }
+
+    .product-card {
+      padding: 35px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .photo-placeholder {
+      display: flex;
+      min-height: 260px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      background: var(--soft);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .product-card h2 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+
+    .price {
+      margin: 10px 0 20px;
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    .description {
+      max-width: 580px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .flavors {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .flavor {
+      padding: 20px 12px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+
+    .flavor h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .flavor p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      background: var(--chocolate);
+      border: 1px solid var(--chocolate);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--chocolate);
+    }
+
+    .note {
+      margin-top: 25px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    footer {
+      padding: 28px 20px;
+      background: var(--chocolate);
+      color: var(--cream);
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    footer .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        padding: 22px 16px;
+      }
+
+      .photo-placeholder {
+        min-height: 200px;
+      }
+
+      .flavors {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="index.html" aria-label="Marownie home">
+      <img src="marownie-logo-pink.png" alt="Marownie logo">
+    </a>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Made for Your Sweet Moments</div>
+    <h1>Oreshki</h1>
+    <p>
+      Delicate, nut-shaped cookies with delicious fillings,
+      freshly prepared for your order.
+    </p>
+  </section>
+
+  <main>
+    <div class="product-card">
+      <div class="photo-placeholder">
+        ORESHKI PHOTO COMING SOON
+      </div>
+
+      <h2>Homemade Oreshki</h2>
+      <div class="price">$5 per box of 4</div>
+
+      <p class="description">
+        Golden, delicate cookies filled with your favorite
+        creamy center. Choose a classic caramel filling,
+        chocolate, or peanut butter.
+      </p>
+
+      <div class="flavors">
+        <div class="flavor">
+          <h3>Dulce de Leche</h3>
+          <p>Sweet, rich caramel filling.</p>
+        </div>
+
+        <div class="flavor">
+          <h3>Chocolate</h3>
+          <p>A delicious chocolate filling.</p>
+        </div>
+
+        <div class="flavor">
+          <h3>Peanut Butter</h3>
+          <p>Creamy and full of peanut flavor.</p>
+        </div>
+      </div>
+
+      <a
+        class="button"
+        href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Oreshki.%20Please%20let%20me%20know%20the%20available%20fillings."
+        target="_blank"
+        rel="noopener noreferrer"
+      >ORDER ORESHKI VIA WHATSAPP</a>
+
+      <p class="note">
+        Freshly prepared for your order.
+        Please message us to confirm availability and pickup details.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p class="brand">MAROWNIE</p>
+    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
+    <p>&copy; 2026 Marownie. All rights reserved.</p>
+  </footer>
+</body>
+</html>
