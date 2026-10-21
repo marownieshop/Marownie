@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover Marownie homemade brownies, freshly prepared with delicious ingredients.">
+  <meta name="description" content="Discover six delicious homemade Marownie brownies, freshly prepared to order.">
   <meta name="theme-color" content="#F8F2E8">
   <title>Brownies | Marownie</title>
 
@@ -22,6 +23,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--cream);
@@ -30,27 +35,27 @@
       line-height: 1.7;
     }
 
-    a {
-      color: inherit;
-    }
-
     header {
-      padding: 22px 20px;
+      padding: 25px 20px;
       text-align: center;
       border-bottom: 1px solid var(--border);
     }
 
     .logo img {
+      display: block;
       width: auto;
-      max-width: min(280px, 85vw);
-      max-height: 140px;
+      height: auto;
+      max-width: min(290px, 85vw);
+      max-height: 145px;
+      margin: 0 auto;
       object-fit: contain;
     }
 
-    .back {
-      display: block;
-      margin-top: 12px;
-      font-family: Arial, sans-serif;
+    .back-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--caramel);
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
       text-decoration: none;
     }
@@ -59,88 +64,137 @@
       padding: 65px 20px;
       text-align: center;
       background: var(--soft);
+      border-bottom: 1px solid var(--border);
     }
 
     .eyebrow {
       color: var(--caramel);
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
       font-weight: bold;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 12px 0;
-      font-size: clamp(42px, 6vw, 64px);
+    h1, h2, h3 {
       font-weight: normal;
+      line-height: 1.3;
     }
 
-    .intro {
-      max-width: 600px;
+    h1 {
+      margin: 15px 0;
+      font-size: clamp(40px, 7vw, 62px);
+    }
+
+    .hero p {
+      max-width: 620px;
       margin: 0 auto;
       color: var(--muted);
+      font-size: 17px;
     }
 
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+    main {
       max-width: 1150px;
-      margin: auto;
-      padding: 55px 24px 75px;
+      margin: 0 auto;
+      padding: 55px 22px 75px;
     }
 
-    .item {
+    .section-intro {
+      max-width: 650px;
+      margin: 0 auto 38px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .brownie-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .brownie-card {
       overflow: hidden;
       background: var(--white);
       border: 1px solid var(--border);
+      text-align: center;
     }
 
-    .photo {
+    .photo-placeholder {
       display: flex;
-      min-height: 220px;
+      min-height: 245px;
       align-items: center;
       justify-content: center;
       padding: 20px;
       background: var(--soft);
       color: var(--muted);
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
-    .details {
-      padding: 22px;
+    .card-content {
+      padding: 26px 25px 30px;
     }
 
-    h2 {
-      margin: 0 0 10px;
-      font-size: 25px;
-      font-weight: normal;
-      line-height: 1.3;
+    .brownie-card h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
     }
 
     .description {
-      min-height: 75px;
+      min-height: 76px;
+      margin: 0 0 12px;
       color: var(--muted);
       font-size: 15px;
     }
 
     .price {
-      margin: 15px 0;
-      font-size: 20px;
+      margin: 10px 0 20px;
+      font-size: 23px;
       font-weight: bold;
     }
 
-    .order {
+    .button {
       display: inline-block;
-      padding: 11px 16px;
+      padding: 13px 20px;
       background: var(--chocolate);
-      color: white;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
+      border: 1px solid var(--chocolate);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
       text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--chocolate);
+    }
+
+    .fresh-note {
+      margin: 38px auto 0;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .order-section {
+      padding: 50px 20px;
+      background: var(--soft);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .order-section h2 {
+      margin: 10px 0;
+      font-size: 34px;
+    }
+
+    .order-section p {
+      color: var(--muted);
     }
 
     footer {
@@ -148,46 +202,44 @@
       background: var(--chocolate);
       color: var(--cream);
       text-align: center;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
     }
 
-    @media (max-width: 800px) {
-      .menu {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 15px;
-        padding: 30px 16px 50px;
-      }
-
-      .photo {
-        min-height: 170px;
-      }
-
-      .details {
-        padding: 16px;
-      }
-
-      h2 {
-        font-size: 21px;
-      }
-
-      .description {
-        min-height: 100px;
-      }
+    footer p {
+      margin: 5px;
     }
 
-    @media (max-width: 520px) {
-      .menu {
-        grid-template-columns: 1fr;
-        max-width: 420px;
+    footer .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 50px 20px;
       }
 
-      .photo {
-        min-height: 230px;
+      main {
+        padding: 38px 16px 55px;
+      }
+
+      .brownie-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .photo-placeholder {
+        min-height: 220px;
       }
 
       .description {
-        min-height: 0;
+        min-height: auto;
+      }
+
+      .card-content {
+        padding: 24px 20px 28px;
       }
     }
   </style>
@@ -198,54 +250,151 @@
     <a class="logo" href="index.html" aria-label="Marownie home">
       <img src="marownie-logo-pink.png" alt="Marownie logo">
     </a>
-    <a class="back" href="index.html">← Back to Home</a>
+    <a class="back-link" href="index.html">← Back to Home</a>
   </header>
 
+  <section class="hero">
+    <div class="eyebrow">Made for Your Sweet Moments</div>
+    <h1>Our Brownies</h1>
+    <p>
+      Rich chocolate, delicious flavors, and a soft,
+      fudgy texture. Freshly prepared for your order.
+    </p>
+  </section>
+
   <main>
-    <section class="hero">
-      <div class="eyebrow">Made with Love</div>
-      <h1>Our Brownies</h1>
-      <p class="intro">
-        Rich, delicious homemade brownies, freshly prepared
-        with care for your sweet moments.
-      </p>
-    </section>
+    <p class="section-intro">
+      Discover your favorite brownie. Choose a flavor
+      and click its order button to message us on WhatsApp.
+    </p>
 
-    <section class="menu" aria-label="Brownie menu">
+    <div class="brownie-grid">
 
-      <article class="item">
-        <div class="photo">Your Classic Brownie Photo</div>
-        <div class="details">
+      <article class="brownie-card">
+        <div class="photo-placeholder">CLASSIC BROWNIE PHOTO</div>
+        <div class="card-content">
           <h2>Classic Brownie</h2>
           <p class="description">
-            A rich chocolate brownie with a soft,
-            fudgy texture and deep cocoa flavor.
+            A rich chocolate brownie with a soft, fudgy
+            texture and deep cocoa flavor.
           </p>
-          <p class="price">$6</p>
-          <a class="order" href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Classic%20Brownies.">Order This Brownie</a>
+          <div class="price">$6</div>
+          <a class="button"
+             href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Classic%20Brownie."
+             target="_blank" rel="noopener noreferrer">
+            ORDER THIS BROWNIE
+          </a>
         </div>
       </article>
 
-      <article class="item">
-        <div class="photo">Your Cranberry Brownie Photo</div>
-        <div class="details">
+      <article class="brownie-card">
+        <div class="photo-placeholder">CRANBERRY BROWNIE PHOTO</div>
+        <div class="card-content">
           <h2>Cranberry Brownie</h2>
           <p class="description">
             Rich chocolate brownie with cranberries
             for a delicious sweet-and-tart contrast.
           </p>
-          <p class="price">$6</p>
-          <a class="order" href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Cranberry%20Brownies.">Order This Brownie</a>
+          <div class="price">$6</div>
+          <a class="button"
+             href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Cranberry%20Brownie."
+             target="_blank" rel="noopener noreferrer">
+            ORDER THIS BROWNIE
+          </a>
         </div>
       </article>
 
-      <article class="item">
-        <div class="photo">Your Cream Cheese Brownie Photo</div>
-        <div class="details">
+      <article class="brownie-card">
+        <div class="photo-placeholder">CREAM CHEESE BROWNIE PHOTO</div>
+        <div class="card-content">
           <h2>Cream Cheese Brownie</h2>
           <p class="description">
             Chocolate brownie paired with a smooth,
             creamy cheese layer.
           </p>
-          <p class="price">$6</p>
-          <a class="order" href="https
+          <div class="price">$6</div>
+          <a class="button"
+             href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Cream%20Cheese%20Brownie."
+             target="_blank" rel="noopener noreferrer">
+            ORDER THIS BROWNIE
+          </a>
+        </div>
+      </article>
+
+      <article class="brownie-card">
+        <div class="photo-placeholder">PECAN CHOCOLATE BROWNIE PHOTO</div>
+        <div class="card-content">
+          <h2>Pecan Chocolate Brownie</h2>
+          <p class="description">
+            A rich chocolate brownie topped with
+            crunchy pecans for a delicious nutty finish.
+          </p>
+          <div class="price">$6</div>
+          <a class="button"
+             href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Pecan%20Chocolate%20Brownie."
+             target="_blank" rel="noopener noreferrer">
+            ORDER THIS BROWNIE
+          </a>
+        </div>
+      </article>
+
+      <article class="brownie-card">
+        <div class="photo-placeholder">CARAMEL &amp; PEANUT BROWNIE PHOTO</div>
+        <div class="card-content">
+          <h2>Caramel &amp; Peanut Brownie</h2>
+          <p class="description">
+            A fudgy chocolate brownie with buttery
+            caramel and crunchy peanuts.
+          </p>
+          <div class="price">$7</div>
+          <a class="button"
+             href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Caramel%20and%20Peanut%20Brownie."
+             target="_blank" rel="noopener noreferrer">
+            ORDER THIS BROWNIE
+          </a>
+        </div>
+      </article>
+
+      <article class="brownie-card">
+        <div class="photo-placeholder">COCONUT BROWNIE PHOTO</div>
+        <div class="card-content">
+          <h2>Coconut Brownie</h2>
+          <p class="description">
+            A rich chocolate brownie finished with
+            delicious coconut for a tropical twist.
+          </p>
+          <div class="price">$8</div>
+          <a class="button"
+             href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Coconut%20Brownie."
+             target="_blank" rel="noopener noreferrer">
+            ORDER THIS BROWNIE
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="fresh-note">
+      All brownies are freshly prepared for your order.
+      Please message us to confirm availability and pickup details.
+    </p>
+  </main>
+
+  <section class="order-section">
+    <div class="eyebrow">Let's Make It Sweet</div>
+    <h2>Ready to Order?</h2>
+    <p>Contact Marownie with any questions about our brownies.</p>
+    <a class="button"
+       href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20your%20brownies."
+       target="_blank" rel="noopener noreferrer">
+      CONTACT US ON WHATSAPP
+    </a>
+  </section>
+
+  <footer>
+    <p class="brand">MAROWNIE</p>
+    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
+    <p>&copy; 2026 Marownie. All rights reserved.</p>
+  </footer>
+</body>
+</html>
