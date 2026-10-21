@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover Marownie homemade Oreshki cookies with delicious fillings.">
+  <meta name="description" content="Discover Marownie homemade Oreshki cookies with caramel, milk chocolate, and peanut butter fillings.">
   <meta name="theme-color" content="#F8F2E8">
   <title>Oreshki | Marownie</title>
 
@@ -19,9 +18,7 @@
       --soft: #F0E5D7;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -90,13 +87,28 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 55px 22px 75px;
     }
 
+    .intro {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
     .product-card {
-      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
       background: var(--white);
       border: 1px solid var(--border);
       text-align: center;
@@ -104,67 +116,45 @@
 
     .photo-placeholder {
       display: flex;
-      min-height: 260px;
+      min-height: 210px;
       align-items: center;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 22px;
+      padding: 15px;
       background: var(--soft);
       color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 1px;
     }
 
     .product-card h2 {
-      margin: 0 0 10px;
-      font-size: 32px;
+      margin: 0 0 8px;
+      font-size: 26px;
     }
 
     .price {
-      margin: 10px 0 20px;
-      font-size: 23px;
+      margin: 8px 0 12px;
+      font-size: 21px;
       font-weight: bold;
     }
 
     .description {
-      max-width: 580px;
-      margin: 0 auto 25px;
+      flex-grow: 1;
+      margin: 0 0 22px;
       color: var(--muted);
-    }
-
-    .flavors {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 15px;
-      margin: 30px 0;
-    }
-
-    .flavor {
-      padding: 20px 12px;
-      background: var(--cream);
-      border: 1px solid var(--border);
-    }
-
-    .flavor h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
-    }
-
-    .flavor p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .button {
       display: inline-block;
-      padding: 14px 25px;
+      padding: 13px 12px;
       background: var(--chocolate);
       border: 1px solid var(--chocolate);
       color: var(--white);
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      letter-spacing: 1px;
+      font-size: 11px;
+      letter-spacing: 0.6px;
       text-decoration: none;
       transition: background 0.2s, color 0.2s;
     }
@@ -175,10 +165,27 @@
     }
 
     .note {
-      margin-top: 25px;
+      margin-top: 35px;
       color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
+      text-align: center;
+    }
+
+    .contact {
+      margin-top: 45px;
+      padding: 35px 20px;
+      background: var(--soft);
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-top: 0;
+      font-size: 30px;
+    }
+
+    .contact p {
+      color: var(--muted);
     }
 
     footer {
@@ -190,9 +197,7 @@
       font-size: 12px;
     }
 
-    footer p {
-      margin: 5px;
-    }
+    footer p { margin: 5px; }
 
     footer .brand {
       font-family: Georgia, "Times New Roman", serif;
@@ -200,18 +205,20 @@
       letter-spacing: 2px;
     }
 
-    @media (max-width: 600px) {
-      .product-card {
-        padding: 22px 16px;
-      }
-
-      .photo-placeholder {
-        min-height: 200px;
-      }
-
-      .flavors {
+    @media (max-width: 800px) {
+      .products {
         grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
       }
+
+      .photo-placeholder { min-height: 230px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 18px; }
+      main { padding: 35px 16px 55px; }
+      .product-card { padding: 18px; }
     }
   </style>
 </head>
@@ -227,62 +234,36 @@
   <section class="hero">
     <div class="eyebrow">Made for Your Sweet Moments</div>
     <h1>Oreshki</h1>
-    <p>
-      Delicate, nut-shaped cookies with delicious fillings,
-      freshly prepared for your order.
-    </p>
+    <p>Delicate, nut-shaped cookies with delicious fillings, freshly prepared for your order.</p>
   </section>
 
   <main>
-    <div class="product-card">
-      <div class="photo-placeholder">
-        ORESHKI PHOTO COMING SOON
-      </div>
+    <p class="intro">
+      Discover our Oreshki flavors and choose your favorite.
+      Each box includes four freshly prepared cookies.
+    </p>
 
-      <h2>Homemade Oreshki</h2>
-      <div class="price">$5 per box of 4</div>
+    <div class="products">
+      <article class="product-card">
+        <div class="photo-placeholder">CARAMEL ORESHKI PHOTO</div>
+        <h2>Caramel-Filled Oreshki</h2>
+        <div class="price">$5 per box of 4</div>
+        <p class="description">
+          Golden, delicate cookies filled with rich and creamy dulce de leche caramel.
+        </p>
+        <a class="button"
+           href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Caramel-Filled%20Oreshki%20-%20one%20box%20of%204."
+           target="_blank" rel="noopener noreferrer">
+          ORDER CARAMEL ORESHKI
+        </a>
+      </article>
 
-      <p class="description">
-        Golden, delicate cookies filled with your favorite
-        creamy center. Choose a classic caramel filling,
-        chocolate, or peanut butter.
-      </p>
-
-      <div class="flavors">
-        <div class="flavor">
-          <h3>Dulce de Leche</h3>
-          <p>Sweet, rich caramel filling.</p>
-        </div>
-
-        <div class="flavor">
-          <h3>Chocolate</h3>
-          <p>A delicious chocolate filling.</p>
-        </div>
-
-        <div class="flavor">
-          <h3>Peanut Butter</h3>
-          <p>Creamy and full of peanut flavor.</p>
-        </div>
-      </div>
-
-      <a
-        class="button"
-        href="https://wa.me/19179099977?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Oreshki.%20Please%20let%20me%20know%20the%20available%20fillings."
-        target="_blank"
-        rel="noopener noreferrer"
-      >ORDER ORESHKI VIA WHATSAPP</a>
-
-      <p class="note">
-        Freshly prepared for your order.
-        Please message us to confirm availability and pickup details.
-      </p>
-    </div>
-  </main>
-
-  <footer>
-    <p class="brand">MAROWNIE</p>
-    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
-    <p>&copy; 2026 Marownie. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+      <article class="product-card">
+        <div class="photo-placeholder">MILK CHOCOLATE ORESHKI PHOTO</div>
+        <h2>Milk Chocolate Oreshki</h2>
+        <div class="price">$5 per box of 4</div>
+        <p class="description">
+          Crisp, golden cookies with a smooth and creamy milk chocolate filling.
+        </p>
+        <a class="button"
+           href="https
