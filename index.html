@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Marownie — homemade brownies, oreshki and desserts made in small batches.">
+
   <title>Marownie | Handmade Sweets</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +24,13 @@
       --line: #e9e0d9;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -34,7 +40,10 @@
       line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .top {
       padding: 32px 20px 22px;
@@ -62,7 +71,9 @@
       letter-spacing: .04em;
     }
 
-    nav a:hover { color: var(--burgundy); }
+    nav a:hover {
+      color: var(--burgundy);
+    }
 
     .hero {
       max-width: 900px;
@@ -78,7 +89,9 @@
       text-transform: uppercase;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: "Playfair Display", Georgia, serif;
       font-weight: 400;
       line-height: 1.2;
@@ -213,12 +226,30 @@
     }
 
     @media (max-width: 650px) {
-      .top { padding-top: 24px; }
-      nav { gap: 16px; font-size: 12px; }
-      .hero { padding: 65px 22px; }
-      section { padding: 55px 20px; }
-      .treat-grid { grid-template-columns: 1fr; }
-      .treat p { min-height: auto; }
+      .top {
+        padding-top: 24px;
+      }
+
+      nav {
+        gap: 16px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 65px 22px;
+      }
+
+      section {
+        padding: 55px 20px;
+      }
+
+      .treat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .treat p {
+        min-height: auto;
+      }
 
       .order-buttons {
         flex-direction: column;
@@ -248,19 +279,25 @@
   </header>
 
   <main>
+
     <section class="hero" id="home">
       <div class="eyebrow">Homemade in small batches</div>
+
       <h1>A little sweetness, made at home.</h1>
+
       <p>
         Welcome to Marownie. We make homemade brownies,
         traditional treats and desserts with care, using
         ingredients we love.
       </p>
+
       <a class="button" href="#treats">Explore our treats</a>
     </section>
 
     <section class="treats" id="treats">
+
       <div class="section-inner">
+
         <div class="section-heading">
           <div class="eyebrow">From our kitchen</div>
           <h2>Our Treats</h2>
@@ -302,7 +339,7 @@
               A beloved Russian dessert: delicate,
               airy soufflé covered in smooth chocolate.
             </p>
-            <a href="#order">Ask about availability →</a>
+            <a href="ptichye-moloko.html">Explore Ptichye Moloko →</a>
           </article>
 
         </div>
@@ -310,22 +347,31 @@
     </section>
 
     <section class="story" id="story">
+
       <div class="section-inner">
+
         <div class="eyebrow">A little about us</div>
+
         <h2>Made with care, at home.</h2>
+
         <p>
           Marownie is a small homemade sweets business.
           We enjoy making familiar desserts, preparing
           each order with attention and sharing something
           sweet with our customers.
         </p>
+
       </div>
     </section>
 
     <section class="order" id="order">
+
       <div class="section-inner">
+
         <div class="eyebrow">We'd love to hear from you</div>
+
         <h2>Place an Order</h2>
+
         <p>
           Choose your favorite treats and send us an order.
           Your order is not confirmed until we contact you.
@@ -333,27 +379,32 @@
 
         <div class="order-buttons">
 
-          <a class="button"
-             href="https://forms.gle/wLXREGUxqsH26gpY8"
-             target="_blank"
-             rel="noopener">
+          <a
+            class="button"
+            href="https://forms.gle/wLXREGUxqsH26gpY8"
+            target="_blank"
+            rel="noopener"
+          >
             Order with Marownie
           </a>
 
-          <a class="button"
-             href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20place%20an%20order."
-             target="_blank"
-             rel="noopener">
+          <a
+            class="button"
+            href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20place%20an%20order."
+            target="_blank"
+            rel="noopener"
+          >
             Order via WhatsApp
           </a>
 
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
-    Marownie · Homemade Brownies, Oreshki & Desserts
+    Marownie · Homemade Brownies, Oreshki &amp; Desserts
   </footer>
 
 </body>
