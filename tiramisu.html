@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Homemade Marownie Tiramisu — Classic Tiramisu and Brownie Tiramisu, freshly prepared to order.">
+  <meta name="description" content="Homemade Marownie Tiramisu, including Classic Tiramisu and Brownie Tiramisu.">
   <meta name="theme-color" content="#F8F2E8">
 
   <title>Tiramisu | Marownie</title>
@@ -66,7 +66,7 @@
     }
 
     .hero {
-      padding: 55px 20px;
+      padding: 60px 20px;
       text-align: center;
       background: var(--soft);
       border-bottom: 1px solid var(--border);
@@ -76,7 +76,7 @@
       color: var(--caramel);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
-      font-weight: normal;
+      font-weight: bold;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
@@ -84,8 +84,7 @@
     h1,
     h2,
     h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 300 !important;
+      font-weight: 400 !important;
       line-height: 1.3;
     }
 
@@ -102,7 +101,7 @@
     }
 
     main {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 45px 22px 70px;
     }
@@ -117,7 +116,7 @@
     .products {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
+      gap: 22px;
       align-items: stretch;
     }
 
@@ -134,31 +133,28 @@
     .product-image {
       display: block;
       width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+      height: 245px;
       margin-bottom: 22px;
+      object-fit: cover;
     }
 
     .product-card h2 {
-      margin: 0 0 12px;
-      color: var(--chocolate);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 27px;
-      font-weight: 300 !important;
+      margin: 0 0 8px;
+      font-size: 25px;
+      font-weight: 400 !important;
+    }
+
+    .price {
+      margin: 8px 0 12px;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     .description {
       flex-grow: 1;
-      margin: 0 0 15px;
+      margin: 0 0 22px;
       color: var(--muted);
       font-size: 15px;
-    }
-
-    .price {
-      margin: 8px 0 20px;
-      color: var(--chocolate);
-      font-size: 20px;
-      font-weight: normal;
     }
 
     .button {
@@ -181,6 +177,14 @@
       color: var(--chocolate);
     }
 
+    .note {
+      margin-top: 35px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      text-align: center;
+    }
+
     .contact {
       margin-top: 45px;
       padding: 35px 20px;
@@ -191,7 +195,7 @@
     .contact h2 {
       margin: 10px 0;
       font-size: 30px;
-      font-weight: 300 !important;
+      font-weight: 400 !important;
     }
 
     .contact p {
@@ -224,15 +228,21 @@
       letter-spacing: 2px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
       .products {
         grid-template-columns: 1fr;
         max-width: 480px;
         margin: 0 auto;
       }
 
+      .product-image {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 600px) {
       .hero {
-        padding: 42px 18px;
+        padding: 45px 18px;
       }
 
       main {
@@ -240,7 +250,7 @@
       }
 
       .product-card {
-        padding: 16px;
+        padding: 18px;
       }
     }
   </style>
@@ -265,7 +275,7 @@
   <main>
 
     <p class="intro">
-      Discover our tiramisu flavors and choose your favorite.
+      Discover our Tiramisu flavors and choose your favorite.
       Each dessert is freshly prepared for your order.
     </p>
 
@@ -277,16 +287,15 @@
           class="product-image"
           src="classic-tiramisu.jpg"
           alt="Classic Tiramisu"
-          loading="lazy"
         >
 
         <h2>Classic Tiramisu</h2>
 
+        <div class="price">$8</div>
+
         <p class="description">
           Classic tiramisu made with mascarpone, coffee and cocoa.
         </p>
-
-        <div class="price">$8</div>
 
         <a
           class="button"
@@ -305,16 +314,15 @@
           class="product-image"
           src="brownie-tiramisu.jpg"
           alt="Brownie Tiramisu"
-          loading="lazy"
         >
 
         <h2>Brownie Tiramisu</h2>
 
+        <div class="price">$8</div>
+
         <p class="description">
           Creamy tiramisu with a brownie layer.
         </p>
-
-        <div class="price">$8</div>
 
         <a
           class="button"
@@ -329,7 +337,13 @@
 
     </div>
 
+    <p class="note">
+      All Tiramisu desserts are freshly prepared for your order.
+      Please message us to confirm availability and pickup details.
+    </p>
+
     <section class="contact">
+
       <div class="eyebrow">Let's Make It Sweet</div>
 
       <h2>Ready to Order?</h2>
@@ -344,6 +358,7 @@
       >
         CONTACT US ON WHATSAPP
       </a>
+
     </section>
 
   </main>
