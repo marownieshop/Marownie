@@ -197,6 +197,13 @@
       color: #71645f;
     }
 
+    .order-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
     footer {
       padding: 28px 20px;
       background: var(--paper);
@@ -212,6 +219,17 @@
       section { padding: 55px 20px; }
       .treat-grid { grid-template-columns: 1fr; }
       .treat p { min-height: auto; }
+
+      .order-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .order-buttons .button {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -312,12 +330,24 @@
           Choose your favorite treats and send us an order.
           Your order is not confirmed until we contact you.
         </p>
-        <a class="button"
-           href="https://forms.gle/wLXREGUxqsH26gpY8"
-           target="_blank"
-           rel="noopener">
-          Order with Marownie
-        </a>
+
+        <div class="order-buttons">
+
+          <a class="button"
+             href="https://forms.gle/wLXREGUxqsH26gpY8"
+             target="_blank"
+             rel="noopener">
+            Order with Marownie
+          </a>
+
+          <a class="button"
+             href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20place%20an%20order."
+             target="_blank"
+             rel="noopener">
+            Order via WhatsApp
+          </a>
+
+        </div>
       </div>
     </section>
   </main>
