@@ -4,34 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Homemade Ptichye Moloko, a delicate Bird's Milk Soufflé, freshly prepared by Marownie.">
+  <meta name="theme-color" content="#F8F2E8">
 
   <title>Ptichye Moloko | Marownie</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
   <style>
+    :root {
+      --cream: #F8F2E8;
+      --chocolate: #4A281F;
+      --caramel: #A56D48;
+      --muted: #78665A;
+      --white: #FFFFFF;
+      --border: #E6D9CA;
+      --soft: #F0E5D7;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: #f8f3ed;
-      color: #3b2928;
-      font-family: "Inter", sans-serif;
+      background: var(--cream);
+      color: var(--chocolate);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
     }
 
     header {
       text-align: center;
-      padding: 30px 20px 20px;
+      padding: 25px 20px;
+      border-bottom: 1px solid var(--border);
     }
 
     header img {
-      width: 180px;
-      max-width: 70%;
+      display: block;
+      width: auto;
       height: auto;
+      max-width: min(290px, 85vw);
+      max-height: 145px;
+      margin: 0 auto;
+      object-fit: contain;
     }
 
     nav {
@@ -39,113 +57,183 @@
       justify-content: center;
       gap: 28px;
       flex-wrap: wrap;
-      padding: 10px 20px 30px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
     }
 
     nav a {
-      color: #6b2635;
+      color: var(--caramel);
       text-decoration: none;
-      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
+    .hero {
+      padding: 55px 20px;
+      text-align: center;
+      background: var(--soft);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--caramel);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     h1,
-    h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 600;
-      color: #6b2635;
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 300 !important;
+      line-height: 1.3;
     }
 
     h1 {
-      text-align: center;
-      font-size: 52px;
-      margin: 20px 0 45px;
+      margin: 15px 0 10px;
+      font-size: clamp(40px, 7vw, 62px);
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .page {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 45px 22px 70px;
     }
 
     .dessert {
-      margin-bottom: 55px;
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid var(--border);
       text-align: center;
     }
 
     .photo-placeholder {
+      display: flex;
       width: 100%;
       max-width: 650px;
       min-height: 350px;
-      margin: 0 auto 25px;
-      border-radius: 12px;
-      background: #eee4d8;
-      display: flex;
+      margin: 0 auto 28px;
       align-items: center;
       justify-content: center;
-      color: #8b7468;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
+      padding: 15px;
+      background: var(--soft);
+      color: var(--muted);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
     }
 
     .dessert h2 {
-      font-size: 34px;
-      margin: 0 0 10px;
+      margin: 0 0 12px;
+      color: var(--chocolate);
+      font-size: 32px;
+      font-weight: 300 !important;
     }
 
     .dessert p {
       max-width: 600px;
-      margin: 0 auto 15px;
-      line-height: 1.7;
+      margin: 0 auto 18px;
+      color: var(--muted);
       font-size: 16px;
+      line-height: 1.7;
     }
 
     .price {
-      font-weight: 500;
-      font-size: 18px;
-      margin-bottom: 20px !important;
+      margin: 15px 0 22px !important;
+      color: var(--chocolate) !important;
+      font-size: 20px !important;
+      font-weight: normal;
     }
 
     .order-button {
       display: inline-block;
-      background: #6b2635;
-      color: white;
-      text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 6px;
-      font-size: 13px;
+      padding: 14px 24px;
+      background: var(--chocolate);
+      border: 1px solid var(--chocolate);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
       letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
     }
 
     .order-button:hover {
-      background: #54202b;
+      background: transparent;
+      color: var(--chocolate);
+    }
+
+    .contact {
+      margin-top: 40px;
+      padding: 35px 20px;
+      background: var(--soft);
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin: 10px 0;
+      font-size: 30px;
+      font-weight: 300 !important;
+    }
+
+    .contact p {
+      color: var(--muted);
     }
 
     footer {
+      padding: 28px 20px;
+      background: var(--chocolate);
+      color: var(--cream);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
       text-align: center;
-      padding: 35px 20px;
-      color: #766866;
-      font-size: 13px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    footer .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      letter-spacing: 2px;
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 42px;
-      }
-
-      .dessert h2 {
-        font-size: 30px;
-      }
-
       nav {
         gap: 18px;
       }
 
+      .hero {
+        padding: 42px 18px;
+      }
+
+      .page {
+        padding: 30px 16px 50px;
+      }
+
+      .dessert {
+        padding: 16px;
+      }
+
       .photo-placeholder {
         min-height: 250px;
+      }
+
+      .dessert h2 {
+        font-size: 29px;
       }
     }
   </style>
@@ -166,9 +254,13 @@
     <a href="index.html#order">Order</a>
   </nav>
 
-  <main class="page">
-
+  <section class="hero">
+    <div class="eyebrow">Made for Your Sweet Moments</div>
     <h1>Ptichye Moloko</h1>
+    <p>Discover a delicate Eastern European dessert with an airy, melt-in-your-mouth soufflé.</p>
+  </section>
+
+  <main class="page">
 
     <section class="dessert">
 
@@ -188,16 +280,35 @@
       <a
         class="order-button"
         href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Ptichye%20Moloko."
+        target="_blank"
+        rel="noopener noreferrer"
       >
         ORDER THIS DESSERT
       </a>
 
     </section>
 
+    <section class="contact">
+      <div class="eyebrow">Let's Make It Sweet</div>
+      <h2>Ready to Order?</h2>
+      <p>Contact Marownie with any questions about Ptichye Moloko.</p>
+
+      <a
+        class="order-button"
+        href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20Ptichye%20Moloko."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CONTACT US ON WHATSAPP
+      </a>
+    </section>
+
   </main>
 
   <footer>
-    © 2026 Marownie
+    <p class="brand">MAROWNIE</p>
+    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
+    <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
 
 </body>
