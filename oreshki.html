@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Homemade Marownie Oreshki cookies filled with caramel, milk chocolate, and peanut butter.">
   <meta name="theme-color" content="#F8F2E8">
+
   <title>Oreshki | Marownie</title>
 
   <style>
@@ -18,7 +20,13 @@
       --soft: #F0E5D7;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -53,6 +61,10 @@
       text-decoration: none;
     }
 
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
     .hero {
       padding: 60px 20px;
       text-align: center;
@@ -69,8 +81,10 @@
       text-transform: uppercase;
     }
 
-    h1, h2 {
-      font-weight: normal;
+    h1,
+    h2,
+    h3 {
+      font-weight: 400 !important;
       line-height: 1.3;
     }
 
@@ -133,6 +147,7 @@
     .product-card h2 {
       margin: 0 0 8px;
       font-size: 25px;
+      font-weight: 400 !important;
     }
 
     .price {
@@ -186,6 +201,7 @@
     .contact h2 {
       margin: 10px 0;
       font-size: 30px;
+      font-weight: 400 !important;
     }
 
     .contact p {
@@ -208,7 +224,9 @@
       font-size: 12px;
     }
 
-    footer p { margin: 5px; }
+    footer p {
+      margin: 5px;
+    }
 
     footer .brand {
       font-family: Georgia, "Times New Roman", serif;
@@ -223,22 +241,34 @@
         margin: 0 auto;
       }
 
-      .photo-placeholder { min-height: 230px; }
+      .photo-placeholder {
+        min-height: 230px;
+      }
     }
 
     @media (max-width: 600px) {
-      .hero { padding: 45px 18px; }
-      main { padding: 35px 16px 55px; }
-      .product-card { padding: 18px; }
+      .hero {
+        padding: 45px 18px;
+      }
+
+      main {
+        padding: 35px 16px 55px;
+      }
+
+      .product-card {
+        padding: 18px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <a class="logo" href="index.html" aria-label="Marownie home">
       <img src="marownie-logo-pink.png" alt="Marownie logo">
     </a>
+
     <a class="back-link" href="index.html">← Back to Home</a>
   </header>
 
@@ -249,6 +279,7 @@
   </section>
 
   <main>
+
     <p class="intro">
       Discover our Oreshki flavors and choose your favorite.
       Each box includes four freshly prepared cookies.
@@ -258,11 +289,15 @@
 
       <article class="product-card">
         <div class="photo-placeholder">CARAMEL ORESHKI PHOTO</div>
+
         <h2>Caramel-Filled Oreshki</h2>
+
         <div class="price">$5 per box of 4</div>
+
         <p class="description">
           Golden, delicate cookies filled with rich and creamy dulce de leche caramel.
         </p>
+
         <a class="button"
            href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20order%20Caramel-Filled%20Oreshki%20-%20one%20box%20of%204."
            target="_blank" rel="noopener noreferrer">
@@ -272,11 +307,15 @@
 
       <article class="product-card">
         <div class="photo-placeholder">MILK CHOCOLATE ORESHKI PHOTO</div>
+
         <h2>Milk Chocolate Oreshki</h2>
+
         <div class="price">$5 per box of 4</div>
+
         <p class="description">
           Crisp, golden cookies with a smooth and creamy milk chocolate filling.
         </p>
+
         <a class="button"
            href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20order%20Milk%20Chocolate%20Oreshki%20-%20one%20box%20of%204."
            target="_blank" rel="noopener noreferrer">
@@ -286,11 +325,15 @@
 
       <article class="product-card">
         <div class="photo-placeholder">PEANUT BUTTER ORESHKI PHOTO</div>
+
         <h2>Peanut Butter Oreshki</h2>
+
         <div class="price">$5 per box of 4</div>
+
         <p class="description">
           Golden cookies filled with smooth, creamy peanut butter for a rich, nutty flavor.
         </p>
+
         <a class="button"
            href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20order%20Peanut%20Butter%20Oreshki%20-%20one%20box%20of%204."
            target="_blank" rel="noopener noreferrer">
@@ -307,14 +350,18 @@
 
     <section class="contact">
       <div class="eyebrow">Let's Make It Sweet</div>
+
       <h2>Ready to Order?</h2>
+
       <p>Contact Marownie with any questions about our Oreshki.</p>
+
       <a class="button"
          href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20ask%20about%20your%20Oreshki."
          target="_blank" rel="noopener noreferrer">
         CONTACT US ON WHATSAPP
       </a>
     </section>
+
   </main>
 
   <footer>
@@ -322,5 +369,6 @@
     <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
     <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
