@@ -4,20 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Homemade Ptichye Moloko, a delicate Eastern European Bird's Milk Soufflé by Marownie.">
-  <meta name="theme-color" content="#F8F2E8">
-
+  <meta name="description" content="Homemade Ptichye Moloko, a delicate Bird's Milk Soufflé by Marownie.">
   <title>Ptichye Moloko | Marownie</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #F8F2E8;
-      --chocolate: #4A281F;
-      --caramel: #A56D48;
-      --muted: #78665A;
-      --white: #FFFFFF;
-      --border: #E6D9CA;
-      --soft: #F0E5D7;
+      --cream: #f8f5ef;
+      --paper: #fffdf9;
+      --burgundy: #713c49;
+      --pink: #c58c99;
+      --ink: #39312f;
+      --muted: #817773;
+      --line: #e9e0d9;
     }
 
     * {
@@ -31,34 +33,35 @@
     body {
       margin: 0;
       background: var(--cream);
-      color: var(--chocolate);
-      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.7;
     }
 
-    header {
-      padding: 25px 20px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .logo img {
+    .top {
+      padding: 32px 20px 22px;
+      text-align: center;
+      background: var(--paper);
+    }
+
+    .logo {
       display: block;
-      width: auto;
-      height: auto;
-      max-width: min(290px, 85vw);
-      max-height: 145px;
-      margin: 0 auto;
+      width: min(340px, 85%);
+      max-height: 190px;
       object-fit: contain;
+      margin: 0 auto 22px;
     }
 
     .back-link {
       display: inline-block;
-      margin-top: 15px;
-      color: var(--caramel);
-      font-family: Arial, Helvetica, sans-serif;
+      color: var(--burgundy);
       font-size: 13px;
-      text-decoration: none;
+      letter-spacing: .04em;
     }
 
     .back-link:hover {
@@ -66,158 +69,162 @@
     }
 
     .hero {
-      padding: 60px 20px;
+      padding: 65px 24px 70px;
       text-align: center;
-      background: var(--soft);
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--line);
     }
 
     .eyebrow {
-      color: var(--caramel);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 3px;
+      color: var(--burgundy);
+      font-size: 12px;
+      letter-spacing: .18em;
       text-transform: uppercase;
     }
 
     h1, h2, h3 {
-      font-weight: 400 !important;
-      line-height: 1.3;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      line-height: 1.2;
     }
 
     h1 {
-      margin: 15px 0;
-      font-size: clamp(40px, 7vw, 62px);
+      margin: 18px 0;
+      font-size: clamp(38px, 6vw, 64px);
     }
 
     .hero p {
-      max-width: 620px;
+      max-width: 560px;
       margin: 0 auto;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 16px;
     }
 
     main {
-      max-width: 1100px;
+      padding: 55px 24px 70px;
+      background: var(--paper);
+    }
+
+    .section-inner {
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 45px 22px 70px;
     }
 
     .intro {
       max-width: 650px;
-      margin: 0 auto 35px;
+      margin: 0 auto 38px;
       color: var(--muted);
       text-align: center;
+      font-size: 14px;
     }
 
     .products {
       display: grid;
-      grid-template-columns: minmax(0, 480px);
+      grid-template-columns: minmax(0, 520px);
       justify-content: center;
-      gap: 22px;
+      gap: 28px;
     }
 
     .product-card {
       display: flex;
       flex-direction: column;
       min-width: 0;
-      padding: 20px;
-      background: var(--white);
-      border: 1px solid var(--border);
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: var(--cream);
       text-align: center;
     }
 
     .photo-placeholder {
       display: flex;
-      min-height: 210px;
+      min-height: 260px;
       align-items: center;
       justify-content: center;
       margin-bottom: 22px;
       padding: 15px;
-      background: var(--soft);
+      background: #eee5df;
       color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      letter-spacing: 1px;
+      letter-spacing: .08em;
     }
 
     .product-card h2 {
-      margin: 0 0 8px;
-      font-size: 25px;
-      font-weight: 400 !important;
+      margin: 0 0 10px;
+      color: var(--burgundy);
+      font-size: 29px;
+    }
+
+    .subtitle {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 18px;
     }
 
     .price {
       margin: 8px 0 12px;
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 19px;
+      color: var(--ink);
     }
 
     .description {
+      flex-grow: 1;
       margin: 0 0 22px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .button {
-      display: block;
-      width: 100%;
+      display: inline-block;
       margin-top: auto;
-      padding: 14px 10px;
-      background: var(--chocolate);
-      border: 1px solid var(--chocolate);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
+      padding: 13px 18px;
+      background: var(--burgundy);
+      border: 1px solid var(--burgundy);
+      color: white;
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-align: center;
+      transition: background .2s ease;
     }
 
     .button:hover {
-      background: transparent;
-      color: var(--chocolate);
+      background: #552d37;
     }
 
     .note {
-      margin-top: 35px;
+      margin: 35px auto 0;
       color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
       text-align: center;
+      font-size: 13px;
     }
 
     .contact {
-      margin-top: 45px;
-      padding: 35px 20px;
-      background: var(--soft);
+      margin-top: 55px;
+      padding: 50px 20px;
+      background: #eee5df;
       text-align: center;
     }
 
     .contact h2 {
-      margin: 10px 0;
-      font-size: 30px;
-      font-weight: 400 !important;
+      margin: 8px 0 15px;
+      font-size: 38px;
     }
 
     .contact p {
-      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 25px;
+      color: #71645f;
+      font-size: 14px;
     }
 
     .contact .button {
-      display: inline-block;
-      width: auto;
-      margin-top: 10px;
-      padding: 14px 22px;
+      margin-top: 0;
     }
 
     footer {
       padding: 28px 20px;
-      background: var(--chocolate);
-      color: var(--cream);
+      background: var(--paper);
+      color: var(--muted);
       text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
     }
 
@@ -226,26 +233,35 @@
     }
 
     footer .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      letter-spacing: 2px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 20px;
+      letter-spacing: .08em;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+      .top {
+        padding-top: 24px;
+      }
+
       .hero {
-        padding: 45px 18px;
+        padding: 50px 22px;
       }
 
       main {
-        padding: 35px 16px 55px;
+        padding: 40px 20px 55px;
       }
 
       .product-card {
-        padding: 18px;
+        padding: 20px;
       }
 
       .photo-placeholder {
         min-height: 220px;
+      }
+
+      .contact {
+        padding: 42px 20px;
       }
     }
   </style>
@@ -253,79 +269,85 @@
 
 <body>
 
-  <header>
-    <a class="logo" href="index.html" aria-label="Marownie home">
-      <img src="marownie-logo-pink.png" alt="Marownie logo">
+  <header class="top">
+    <a href="index.html" aria-label="Marownie home">
+      <img class="logo" src="marownie-logo-pink.png" alt="Marownie Handmade Sweets">
     </a>
-
     <a class="back-link" href="index.html">← Back to Home</a>
   </header>
 
   <section class="hero">
-    <div class="eyebrow">Made for Your Sweet Moments</div>
+    <div class="eyebrow">Homemade in Small Batches</div>
     <h1>Ptichye Moloko</h1>
     <p>
-      A delicate Eastern European dessert with an airy,
-      melt-in-your-mouth soufflé.
+      Discover a delicate Eastern European dessert
+      with an airy, melt-in-your-mouth soufflé.
     </p>
   </section>
 
   <main>
+    <div class="section-inner">
 
-    <p class="intro">
-      Discover our homemade Bird’s Milk Soufflé,
-      prepared with care for your sweet moments.
-    </p>
+      <p class="intro">
+        Enjoy our homemade Bird’s Milk Soufflé,
+        inspired by the classic Eastern European dessert.
+      </p>
 
-    <div class="products">
+      <div class="products">
 
-      <article class="product-card">
+        <article class="product-card">
 
-        <div class="photo-placeholder">
-          PHOTO COMING SOON
-        </div>
+          <div class="photo-placeholder">
+            PTICHYE MOLOKO PHOTO
+          </div>
 
-        <h2>Bird’s Milk Soufflé</h2>
+          <h2>Ptichye Moloko</h2>
+          <p class="subtitle">Bird’s Milk Soufflé</p>
 
-        <p class="description">
-          A delicate, airy soufflé with a soft,
-          melt-in-your-mouth texture. A homemade treat
-          inspired by the classic Eastern European dessert.
+          <div class="price">$7 per box</div>
+
+          <p class="description">
+            A delicate, airy soufflé with a soft, melt-in-your-mouth texture.
+            A homemade treat inspired by the classic Eastern European dessert.
+          </p>
+
+          <a
+            class="button"
+            href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Ptichye%20Moloko."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ORDER THIS DESSERT
+          </a>
+
+        </article>
+
+      </div>
+
+      <p class="note">
+        Freshly prepared for your order.
+        Please contact us to confirm availability and pickup details.
+      </p>
+
+      <section class="contact">
+        <div class="eyebrow">Let's Make It Sweet</div>
+        <h2>Ready to Order?</h2>
+        <p>
+          Have a question about Ptichye Moloko?
+          We'd love to hear from you.
         </p>
 
-        <div class="price">$7 per box</div>
-
-        <a class="button"
-           href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Ptichye%20Moloko."
-           target="_blank"
-           rel="noopener noreferrer">
-          ORDER THIS DESSERT
+        <a
+          class="button"
+          href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20Ptichye%20Moloko."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CONTACT US ON WHATSAPP
         </a>
-
-      </article>
+      </section>
 
     </div>
-
-    <p class="note">
-      Freshly prepared for your order.
-      Please message us to confirm availability and pickup details.
-    </p>
-
-    <section class="contact">
-      <div class="eyebrow">Let's Make It Sweet</div>
-
-      <h2>Ready to Order?</h2>
-
-      <p>Contact Marownie with any questions about Ptichye Moloko.</p>
-
-      <a class="button"
-         href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20Ptichye%20Moloko."
-         target="_blank"
-         rel="noopener noreferrer">
-        CONTACT US ON WHATSAPP
-      </a>
-    </section>
-
   </main>
 
   <footer>
