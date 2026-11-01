@@ -4,253 +4,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Homemade Marownie Tiramisu, including Classic Tiramisu and Brownie Tiramisu.">
-  <meta name="theme-color" content="#F8F2E8">
-
+  <meta name="description" content="Homemade tiramisu by Marownie. Classic Tiramisu and Brownie Tiramisu.">
   <title>Tiramisu | Marownie</title>
 
   <style>
-    :root {
-      --cream: #F8F2E8;
-      --chocolate: #4A281F;
-      --caramel: #A56D48;
-      --muted: #78665A;
-      --white: #FFFFFF;
-      --border: #E6D9CA;
-      --soft: #F0E5D7;
-    }
-
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      background: var(--cream);
-      color: var(--chocolate);
+      background: #F8F2E8;
+      color: #4A281F;
       font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.7;
     }
 
     header {
-      padding: 25px 20px;
       text-align: center;
-      border-bottom: 1px solid var(--border);
+      padding: 28px 20px 18px;
     }
 
-    .logo img {
+    .logo {
       display: block;
-      width: auto;
+      width: 165px;
+      max-width: 70%;
       height: auto;
-      max-width: min(290px, 85vw);
-      max-height: 145px;
-      margin: 0 auto;
-      object-fit: contain;
+      margin: 0 auto 18px;
     }
 
-    .back-link {
-      display: inline-block;
-      margin-top: 15px;
-      color: var(--caramel);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 12px 15px 22px;
+      font-size: 15px;
+    }
+
+    nav a {
+      color: #4A281F;
       text-decoration: none;
     }
 
-    .back-link:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: #A56D48;
     }
 
-    .hero {
-      padding: 60px 20px;
+    .page-title {
       text-align: center;
-      background: var(--soft);
-      border-bottom: 1px solid var(--border);
+      font-size: 38px;
+      font-weight: 300;
+      margin: 22px 0 12px;
     }
 
-    .eyebrow {
-      color: var(--caramel);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-weight: 400 !important;
-      line-height: 1.3;
-    }
-
-    h1 {
-      margin: 15px 0;
-      font-size: clamp(40px, 7vw, 62px);
-    }
-
-    .hero p {
-      max-width: 620px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 45px 22px 70px;
-    }
-
-    .intro {
-      max-width: 650px;
-      margin: 0 auto 35px;
-      color: var(--muted);
+    .page-description {
       text-align: center;
+      color: #78665A;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 auto 38px;
+      padding: 0 20px;
+      max-width: 600px;
     }
 
     .products {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      align-items: stretch;
+      gap: 30px;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 24px 65px;
     }
 
     .product-card {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      padding: 20px;
-      background: var(--white);
-      border: 1px solid var(--border);
+      background: #FFFFFF;
+      border: 1px solid #E6D9CA;
+      padding: 18px;
       text-align: center;
     }
 
     .product-image {
       display: block;
       width: 100%;
-      height: 245px;
-      margin-bottom: 22px;
+      height: 290px;
       object-fit: cover;
+      margin: 0 0 22px;
     }
 
     .product-card h2 {
-      margin: 0 0 8px;
+      color: #4A281F;
       font-size: 25px;
-      font-weight: 400 !important;
+      font-weight: 300 !important;
+      margin: 0 0 12px;
     }
 
     .price {
-      margin: 8px 0 12px;
+      color: #A56D48;
       font-size: 20px;
-      font-weight: bold;
+      margin: 0 0 14px;
     }
 
     .description {
-      flex-grow: 1;
-      margin: 0 0 22px;
-      color: var(--muted);
+      color: #78665A;
       font-size: 15px;
+      line-height: 1.7;
+      min-height: 52px;
+      margin: 0 0 22px;
     }
 
-    .button {
-      display: block;
-      width: 100%;
-      margin-top: auto;
-      padding: 14px 10px;
-      background: var(--chocolate);
-      border: 1px solid var(--chocolate);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .button:hover {
-      background: transparent;
-      color: var(--chocolate);
-    }
-
-    .note {
-      margin-top: 35px;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      text-align: center;
-    }
-
-    .contact {
-      margin-top: 45px;
-      padding: 35px 20px;
-      background: var(--soft);
-      text-align: center;
-    }
-
-    .contact h2 {
-      margin: 10px 0;
-      font-size: 30px;
-      font-weight: 400 !important;
-    }
-
-    .contact p {
-      color: var(--muted);
-    }
-
-    .contact .button {
+    .order-button {
       display: inline-block;
-      width: auto;
-      margin-top: 10px;
-      padding: 14px 22px;
+      background: #4A281F;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 13px 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: background 0.2s ease;
+    }
+
+    .order-button:hover {
+      background: #A56D48;
     }
 
     footer {
-      padding: 28px 20px;
-      background: var(--chocolate);
-      color: var(--cream);
       text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
+      padding: 25px 20px;
+      color: #78665A;
+      border-top: 1px solid #E6D9CA;
+      font-size: 13px;
     }
 
-    footer p {
-      margin: 5px;
-    }
-
-    footer .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      letter-spacing: 2px;
-    }
-
-    @media (max-width: 800px) {
+    @media (max-width: 700px) {
       .products {
         grid-template-columns: 1fr;
-        max-width: 480px;
-        margin: 0 auto;
+        max-width: 460px;
+        gap: 24px;
       }
 
       .product-image {
-        height: 250px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero {
-        padding: 45px 18px;
+        height: 260px;
       }
 
-      main {
-        padding: 35px 16px 55px;
+      .page-title {
+        font-size: 32px;
       }
 
-      .product-card {
-        padding: 18px;
+      nav {
+        gap: 16px;
       }
     }
   </style>
@@ -259,30 +161,28 @@
 <body>
 
   <header>
-    <a class="logo" href="index.html" aria-label="Marownie home">
-      <img src="marownie-logo-pink.png" alt="Marownie logo">
+    <a href="index.html">
+      <img class="logo" src="marownie-logo-pink.png" alt="Marownie">
     </a>
 
-    <a class="back-link" href="index.html">← Back to Home</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#treats">Our Treats</a>
+      <a href="index.html#story">Our Story</a>
+      <a href="index.html#order">Order</a>
+    </nav>
   </header>
 
-  <section class="hero">
-    <div class="eyebrow">Made for Your Sweet Moments</div>
-    <h1>Tiramisu</h1>
-    <p>Delicate, creamy layers made for a sweet moment.</p>
-  </section>
-
   <main>
+    <h1 class="page-title">Tiramisu</h1>
 
-    <p class="intro">
-      Discover our Tiramisu flavors and choose your favorite.
-      Each dessert is freshly prepared for your order.
+    <p class="page-description">
+      Homemade tiramisu, prepared with care and delicious ingredients.
     </p>
 
-    <div class="products">
+    <section class="products">
 
       <article class="product-card">
-
         <img
           class="product-image"
           src="classic-tiramisu.jpg"
@@ -291,25 +191,23 @@
 
         <h2>Classic Tiramisu</h2>
 
-        <div class="price">$8</div>
+        <p class="price">$8</p>
 
         <p class="description">
           Classic tiramisu made with mascarpone, coffee and cocoa.
         </p>
 
         <a
-          class="button"
+          class="order-button"
           href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Classic%20Tiramisu."
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
           ORDER THIS TIRAMISU
         </a>
-
       </article>
 
       <article class="product-card">
-
         <img
           class="product-image"
           src="brownie-tiramisu.jpg"
@@ -318,55 +216,27 @@
 
         <h2>Brownie Tiramisu</h2>
 
-        <div class="price">$8</div>
+        <p class="price">$8</p>
 
         <p class="description">
           Creamy tiramisu with a brownie layer.
         </p>
 
         <a
-          class="button"
+          class="order-button"
           href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Brownie%20Tiramisu."
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
           ORDER THIS TIRAMISU
         </a>
-
       </article>
 
-    </div>
-
-    <p class="note">
-      All Tiramisu desserts are freshly prepared for your order.
-      Please message us to confirm availability and pickup details.
-    </p>
-
-    <section class="contact">
-
-      <div class="eyebrow">Let's Make It Sweet</div>
-
-      <h2>Ready to Order?</h2>
-
-      <p>Contact Marownie with any questions about our Tiramisu.</p>
-
-      <a
-        class="button"
-        href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20your%20Tiramisu."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        CONTACT US ON WHATSAPP
-      </a>
-
     </section>
-
   </main>
 
   <footer>
-    <p class="brand">MAROWNIE</p>
-    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
-    <p>&copy; 2026 Marownie. All rights reserved.</p>
+    Marownie · Homemade Desserts
   </footer>
 
 </body>
