@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Homemade Ptichye Moloko, a delicate Bird's Milk Soufflé, freshly prepared by Marownie.">
+  <meta name="description" content="Homemade Ptichye Moloko, a delicate Eastern European Bird's Milk Soufflé by Marownie.">
   <meta name="theme-color" content="#F8F2E8">
 
   <title>Ptichye Moloko | Marownie</title>
@@ -37,12 +37,12 @@
     }
 
     header {
-      text-align: center;
       padding: 25px 20px;
+      text-align: center;
       border-bottom: 1px solid var(--border);
     }
 
-    header img {
+    .logo img {
       display: block;
       width: auto;
       height: auto;
@@ -52,28 +52,21 @@
       object-fit: contain;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav a {
+    .back-link {
+      display: inline-block;
+      margin-top: 15px;
       color: var(--caramel);
-      text-decoration: none;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
+      text-decoration: none;
     }
 
-    nav a:hover {
+    .back-link:hover {
       text-decoration: underline;
     }
 
     .hero {
-      padding: 55px 20px;
+      padding: 60px 20px;
       text-align: center;
       background: var(--soft);
       border-bottom: 1px solid var(--border);
@@ -83,20 +76,18 @@
       color: var(--caramel);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
+      font-weight: bold;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    h1,
-    h2,
-    h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 300 !important;
+    h1, h2, h3 {
+      font-weight: 400 !important;
       line-height: 1.3;
     }
 
     h1 {
-      margin: 15px 0 10px;
+      margin: 15px 0;
       font-size: clamp(40px, 7vw, 62px);
     }
 
@@ -107,14 +98,31 @@
       font-size: 17px;
     }
 
-    .page {
-      max-width: 850px;
+    main {
+      max-width: 1100px;
       margin: 0 auto;
       padding: 45px 22px 70px;
     }
 
-    .dessert {
-      padding: 22px;
+    .intro {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: minmax(0, 480px);
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 20px;
       background: var(--white);
       border: 1px solid var(--border);
       text-align: center;
@@ -122,44 +130,41 @@
 
     .photo-placeholder {
       display: flex;
-      width: 100%;
-      max-width: 650px;
-      min-height: 350px;
-      margin: 0 auto 28px;
+      min-height: 210px;
       align-items: center;
       justify-content: center;
+      margin-bottom: 22px;
       padding: 15px;
       background: var(--soft);
       color: var(--muted);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 23px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
-    .dessert h2 {
-      margin: 0 0 12px;
-      color: var(--chocolate);
-      font-size: 32px;
-      font-weight: 300 !important;
-    }
-
-    .dessert p {
-      max-width: 600px;
-      margin: 0 auto 18px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.7;
+    .product-card h2 {
+      margin: 0 0 8px;
+      font-size: 25px;
+      font-weight: 400 !important;
     }
 
     .price {
-      margin: 15px 0 22px !important;
-      color: var(--chocolate) !important;
-      font-size: 20px !important;
-      font-weight: normal;
+      margin: 8px 0 12px;
+      font-size: 20px;
+      font-weight: bold;
     }
 
-    .order-button {
-      display: inline-block;
-      padding: 14px 24px;
+    .description {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      margin-top: auto;
+      padding: 14px 10px;
       background: var(--chocolate);
       border: 1px solid var(--chocolate);
       color: var(--white);
@@ -170,13 +175,21 @@
       transition: background 0.2s, color 0.2s;
     }
 
-    .order-button:hover {
+    .button:hover {
       background: transparent;
       color: var(--chocolate);
     }
 
+    .note {
+      margin-top: 35px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      text-align: center;
+    }
+
     .contact {
-      margin-top: 40px;
+      margin-top: 45px;
       padding: 35px 20px;
       background: var(--soft);
       text-align: center;
@@ -185,20 +198,27 @@
     .contact h2 {
       margin: 10px 0;
       font-size: 30px;
-      font-weight: 300 !important;
+      font-weight: 400 !important;
     }
 
     .contact p {
       color: var(--muted);
     }
 
+    .contact .button {
+      display: inline-block;
+      width: auto;
+      margin-top: 10px;
+      padding: 14px 22px;
+    }
+
     footer {
       padding: 28px 20px;
       background: var(--chocolate);
       color: var(--cream);
+      text-align: center;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      text-align: center;
     }
 
     footer p {
@@ -212,28 +232,20 @@
     }
 
     @media (max-width: 600px) {
-      nav {
-        gap: 18px;
-      }
-
       .hero {
-        padding: 42px 18px;
+        padding: 45px 18px;
       }
 
-      .page {
-        padding: 30px 16px 50px;
+      main {
+        padding: 35px 16px 55px;
       }
 
-      .dessert {
-        padding: 16px;
+      .product-card {
+        padding: 18px;
       }
 
       .photo-placeholder {
-        min-height: 250px;
-      }
-
-      .dessert h2 {
-        font-size: 29px;
+        min-height: 220px;
       }
     }
   </style>
@@ -242,63 +254,74 @@
 <body>
 
   <header>
-    <a href="index.html">
-      <img src="marownie-logo-pink.png" alt="Marownie">
+    <a class="logo" href="index.html" aria-label="Marownie home">
+      <img src="marownie-logo-pink.png" alt="Marownie logo">
     </a>
-  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="index.html#treats">Our Treats</a>
-    <a href="index.html#story">Our Story</a>
-    <a href="index.html#order">Order</a>
-  </nav>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </header>
 
   <section class="hero">
     <div class="eyebrow">Made for Your Sweet Moments</div>
     <h1>Ptichye Moloko</h1>
-    <p>Discover a delicate Eastern European dessert with an airy, melt-in-your-mouth soufflé.</p>
+    <p>
+      A delicate Eastern European dessert with an airy,
+      melt-in-your-mouth soufflé.
+    </p>
   </section>
 
-  <main class="page">
+  <main>
 
-    <section class="dessert">
+    <p class="intro">
+      Discover our homemade Bird’s Milk Soufflé,
+      prepared with care for your sweet moments.
+    </p>
 
-      <div class="photo-placeholder">
-        Ptichye Moloko
-      </div>
+    <div class="products">
 
-      <h2>Bird’s Milk Soufflé</h2>
+      <article class="product-card">
 
-      <p>
-        A delicate, airy soufflé with a soft, melt-in-your-mouth texture.
-        A homemade treat inspired by the classic Eastern European dessert.
-      </p>
+        <div class="photo-placeholder">
+          PHOTO COMING SOON
+        </div>
 
-      <p class="price">$7 per box</p>
+        <h2>Bird’s Milk Soufflé</h2>
 
-      <a
-        class="order-button"
-        href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Ptichye%20Moloko."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ORDER THIS DESSERT
-      </a>
+        <p class="description">
+          A delicate, airy soufflé with a soft,
+          melt-in-your-mouth texture. A homemade treat
+          inspired by the classic Eastern European dessert.
+        </p>
 
-    </section>
+        <div class="price">$7 per box</div>
+
+        <a class="button"
+           href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Ptichye%20Moloko."
+           target="_blank"
+           rel="noopener noreferrer">
+          ORDER THIS DESSERT
+        </a>
+
+      </article>
+
+    </div>
+
+    <p class="note">
+      Freshly prepared for your order.
+      Please message us to confirm availability and pickup details.
+    </p>
 
     <section class="contact">
       <div class="eyebrow">Let's Make It Sweet</div>
+
       <h2>Ready to Order?</h2>
+
       <p>Contact Marownie with any questions about Ptichye Moloko.</p>
 
-      <a
-        class="order-button"
-        href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20Ptichye%20Moloko."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a class="button"
+         href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20Ptichye%20Moloko."
+         target="_blank"
+         rel="noopener noreferrer">
         CONTACT US ON WHATSAPP
       </a>
     </section>
