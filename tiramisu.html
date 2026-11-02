@@ -135,24 +135,16 @@
       text-align: center;
     }
 
-    /* Two Classic Tiramisu photos */
     .classic-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
       margin-bottom: 22px;
     }
 
     .product-photo {
       display: block;
       width: 100%;
-      height: 230px;
+      height: 260px;
       object-fit: contain;
       background: #ffffff;
-    }
-
-    .brownie-photo {
-      margin-bottom: 22px;
     }
 
     .product-card h2 {
@@ -247,7 +239,7 @@
       }
 
       .product-photo {
-        height: 230px;
+        height: 250px;
       }
     }
 
@@ -270,12 +262,6 @@
 
       .contact {
         padding: 42px 20px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .classic-gallery {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -317,12 +303,6 @@
               src="classic-tiramisu-1.jpg"
               alt="Classic homemade tiramisu"
             >
-
-            <img
-              class="product-photo"
-              src="classic-tiramisu-2.jpg"
-              alt="Classic homemade tiramisu, another view"
-            >
           </div>
 
           <h2>Classic Tiramisu</h2>
@@ -340,15 +320,10 @@
           >
             ORDER CLASSIC TIRAMISU
           </a>
+
         </article>
 
         <article class="product-card">
-
-          <img
-            class="product-photo brownie-photo"
-            src="brownie-tiramisu.jpg"
-            alt="Homemade brownie tiramisu"
-          >
 
           <h2>Brownie Tiramisu</h2>
           <div class="price">$8</div>
@@ -365,6 +340,7 @@
           >
             ORDER BROWNIE TIRAMISU
           </a>
+
         </article>
 
       </div>
