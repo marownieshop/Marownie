@@ -1,23 +1,409 @@
-/* Marownie — unified heading and menu colors */
 
-:root {
-  --burgundy: #713c49;
-  --cream: #f8f5ef;
-  --paper: #fffdf9;
-  --muted: #817773;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-  background-color: var(--cream);
-}
+  <title>Marownie | Homemade Desserts</title>
+  <meta name="description" content="Discover homemade brownies, oreshki, tiramisu and more from Marownie. Freshly prepared with care.">
 
-nav a,
-.hero h1,
-.section-heading h2,
-.story h2,
-.order h2,
-.treat h3,
-.footer-brand,
-.explore {
-  color: #713c49;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f8f5ef;
+      --paper: #fffdf9;
+      --burgundy: #713c49;
+      --pink: #c58c99;
+      --ink: #39312f;
+      --muted: #817773;
+      --line: #e9e0d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 28px 20px 18px;
+      text-align: center;
+      background: var(--paper);
+    }
+
+    .logo img {
+      display: block;
+      width: min(320px, 82%);
+      max-height: 170px;
+      object-fit: contain;
+      margin: 0 auto 18px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 12px 15px 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    nav a {
+      color: var(--burgundy);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    .hero {
+      padding: 85px 24px 90px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--burgundy);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .hero h1 {
+      margin: 18px auto;
+      font-size: clamp(38px, 6vw, 66px);
+    }
+
+    .hero p {
+      max-width: 570px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 13px 27px;
+      border: 1px solid var(--burgundy);
+      background: var(--burgundy);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-align: center;
+      transition: .2s ease;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--burgundy);
+    }
+
+    .treats {
+      padding: 75px 24px 85px;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      margin-bottom: 12px;
+      text-align: center;
+      font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .section-intro {
+      max-width: 590px;
+      margin: 0 auto 42px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .treat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .treat-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      text-align: center;
+    }
+
+    .treat-art {
+      display: flex;
+      min-height: 190px;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      background: var(--cream);
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 30px;
+    }
+
+    .treat-content {
+      padding: 25px 22px 30px;
+    }
+
+    .treat-content h3 {
+      margin: 0 0 10px;
+      font-size: 27px;
+    }
+
+    .treat-content p {
+      min-height: 48px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .small-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--burgundy);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .small-link:hover {
+      color: var(--pink);
+    }
+
+    .story {
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .story-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .story h2 {
+      margin: 14px 0;
+      font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .story p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .order-section {
+      padding: 65px 24px 75px;
+      background: #eee5df;
+      text-align: center;
+    }
+
+    .order-section h2 {
+      margin: 12px 0;
+      font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .order-section p {
+      max-width: 520px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 30px 20px;
+      background: var(--paper);
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer .brand {
+      margin: 0 0 8px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      letter-spacing: .08em;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        gap: 15px 22px;
+      }
+
+      .hero {
+        padding: 60px 20px 65px;
+      }
+
+      .treats {
+        padding: 55px 18px 60px;
+      }
+
+      .treat-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .treat-art {
+        min-height: 150px;
+      }
+
+      .story {
+        padding: 60px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="index.html" aria-label="Marownie home">
+      <img src="marownie-logo-pink.png" alt="Marownie">
+    </a>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#treats">Our Treats</a>
+    <a href="#story">Our Story</a>
+    <a href="#order">Order</a>
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Homemade with Care</div>
+    <h1>A Little Sweetness,<br>Made at Home.</h1>
+    <p>
+      Thoughtfully prepared homemade desserts,
+      made in small batches with care and quality ingredients.
+    </p>
+    <a class="button" href="#treats">EXPLORE OUR TREATS</a>
+  </section>
+
+  <section class="treats" id="treats">
+    <div class="section-inner">
+
+      <h2 class="section-heading">Our Treats</h2>
+      <p class="section-intro">
+        Discover something delicious for every sweet moment.
+        Choose your favorite and explore our menu.
+      </p>
+
+      <div class="treat-grid">
+
+        <article class="treat-card">
+          <div class="treat-art">Brownies</div>
+          <div class="treat-content">
+            <h3>Brownies</h3>
+            <p>Rich chocolate brownies with delicious flavors and a fudgy texture.</p>
+            <a class="small-link" href="brownies.html">EXPLORE BROWNIES →</a>
+          </div>
+        </article>
+
+        <article class="treat-card">
+          <div class="treat-art">Oreshki</div>
+          <div class="treat-content">
+            <h3>Oreshki</h3>
+            <p>Delicate filled cookies with creamy, delicious centers.</p>
+            <a class="small-link" href="oreshki.html">EXPLORE ORESHKI →</a>
+          </div>
+        </article>
+
+        <article class="treat-card">
+          <div class="treat-art">Tiramisu</div>
+          <div class="treat-content">
+            <h3>Tiramisu</h3>
+            <p>Creamy homemade tiramisu prepared for your sweet moments.</p>
+            <a class="small-link" href="tiramisu.html">EXPLORE TIRAMISU →</a>
+          </div>
+        </article>
+
+        <article class="treat-card">
+          <div class="treat-art">Bird's Milk</div>
+          <div class="treat-content">
+            <h3>Bird's Milk</h3>
+            <p>A delicate dessert with a soft, airy texture.</p>
+            <a class="small-link" href="ptichye-moloko.html">EXPLORE BIRD'S MILK →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="story-inner">
+      <div class="eyebrow">A Little About Us</div>
+      <h2>Made with Care, Shared with Love.</h2>
+      <p>
+        At Marownie, we believe that the sweetest moments
+        are often the simplest ones. Each dessert is prepared
+        with care, attention to detail, and a love for homemade treats.
+      </p>
+    </div>
+  </section>
+
+  <section class="order-section" id="order">
+    <div class="eyebrow">Let's Make It Sweet</div>
+    <h2>Ready to Order?</h2>
+    <p>
+      Choose your favorite desserts and send us your order.
+      We will contact you to confirm the details.
+    </p>
+    <a class="button"
+       href="https://forms.gle/wLXREGUxqsH26gpY8"
+       target="_blank" rel="noopener noreferrer">
+      PLACE YOUR ORDER
+    </a>
+  </section>
+
+  <footer>
+    <p class="brand">MAROWNIE</p>
+    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
+    <p>&copy; 2026 Marownie. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
