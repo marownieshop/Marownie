@@ -186,39 +186,36 @@
       font-size: 13px;
     }
 
-    .allergen-section {
-      max-width: 850px;
-      margin: 55px auto 0;
-      padding: 30px;
-      background: var(--cream);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-    }
+    /* Allergen Information - same style as Brownies */
 
-    .allergen-section h2 {
-      margin: 0 0 20px;
-      color: var(--burgundy);
-      font-size: 29px;
+    .allergen-preview {
+      max-width: 850px;
+      margin: 38px auto 0;
+      padding: 25px 28px;
+      border: 1px solid var(--line);
+      background: var(--cream);
       text-align: center;
     }
 
-    .allergen-section h3 {
-      margin: 20px 0 6px;
+    .allergen-preview h2 {
+      margin: 0 0 14px;
       color: var(--burgundy);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 20px;
-      font-weight: 400;
+      font-size: 25px;
     }
 
-    .allergen-section p {
-      margin: 0 0 12px;
+    .allergen-preview p {
+      margin: 9px 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .allergen-section strong {
-      color: var(--ink);
+    .allergen-preview a {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--burgundy);
+      font-size: 13px;
       font-weight: 600;
+      text-decoration: underline;
     }
 
     .contact {
@@ -269,8 +266,8 @@
         height: 300px;
       }
 
-      .allergen-section {
-        padding: 24px 20px;
+      .allergen-preview {
+        padding: 22px 18px;
       }
     }
   </style>
@@ -373,34 +370,32 @@
         Please contact us to confirm your order and pickup details.
       </p>
 
-      <section class="allergen-section">
+      <!-- Allergen Information Preview -->
+
+      <div class="allergen-preview">
 
         <h2>Allergen Information</h2>
 
-        <h3>Classic Tiramisu</h3>
-
         <p>
-          Contains Eggs, Milk and Wheat.
-        </p>
-
-        <h3>Brownie Tiramisu</h3>
-
-        <p>
-          Contains Eggs, Milk and Wheat. Soy may also be present
-          if the chocolate used in the brownie contains soy lecithin.
+          <strong>Classic Tiramisu:</strong>
+          Eggs, Milk and Wheat.
         </p>
 
         <p>
-          <strong>Cross-contact:</strong> Wheat, Soy and Eggs.
+          <strong>Brownie Tiramisu:</strong>
+          Eggs, Milk, Wheat and Soy.
         </p>
 
         <p>
-          Allergen information may vary depending on the ingredients
-          and product brands used. Please contact Marownie before
-          ordering if you have any food allergies or dietary restrictions.
+          Please inform us of any food allergies
+          before placing your order.
         </p>
 
-      </section>
+        <a href="food-safety.html">
+          VIEW FOOD SAFETY &amp; ALLERGEN INFORMATION
+        </a>
+
+      </div>
 
     </div>
 
