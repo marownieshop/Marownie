@@ -139,7 +139,6 @@
       object-fit: contain;
     }
 
-    /* Standard Marownie product title color */
     .product-title {
       margin: 0 0 8px;
       color: #713c49;
@@ -148,7 +147,6 @@
       font-weight: 400;
     }
 
-    /* Standard Marownie price color */
     .price {
       margin-bottom: 12px;
       color: #39312f;
@@ -185,6 +183,41 @@
       color: var(--muted);
       text-align: center;
       font-size: 13px;
+    }
+
+    .allergen-section {
+      max-width: 850px;
+      margin: 55px auto 0;
+      padding: 30px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .allergen-section h2 {
+      margin: 0 0 20px;
+      color: var(--burgundy);
+      font-size: 29px;
+      text-align: center;
+    }
+
+    .allergen-section h3 {
+      margin: 20px 0 6px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .allergen-section p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .allergen-section strong {
+      color: var(--ink);
+      font-weight: 600;
     }
 
     .contact {
@@ -233,6 +266,10 @@
 
       .product-gallery {
         height: 300px;
+      }
+
+      .allergen-section {
+        padding: 24px 20px;
       }
     }
   </style>
@@ -334,6 +371,35 @@
       <p class="note">
         Please contact us to confirm your order and pickup details.
       </p>
+
+      <section class="allergen-section">
+
+        <h2>Allergen Information</h2>
+
+        <h3>Classic Tiramisu</h3>
+
+        <p>
+          Contains Eggs, Milk and Wheat.
+        </p>
+
+        <h3>Brownie Tiramisu</h3>
+
+        <p>
+          Contains Eggs, Milk and Wheat. Soy may also be present
+          if the chocolate used in the brownie contains soy lecithin.
+        </p>
+
+        <p>
+          <strong>Cross-contact:</strong> Wheat, Soy and Eggs.
+        </p>
+
+        <p>
+          Allergen information may vary depending on the ingredients
+          and product brands used. Please contact Marownie before
+          ordering if you have any food allergies or dietary restrictions.
+        </p>
+
+      </section>
 
     </div>
 
