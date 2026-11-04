@@ -3,114 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Marownie food safety, ingredient transparency and allergen information.">
-  <title>Food Safety & Allergen Information | Marownie</title>
+
+  <title>Food Safety &amp; Allergen Information | Marownie</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --cream: #f8f5ef;
+      --paper: #fffdf9;
+      --burgundy: #713c49;
+      --pink: #c58c99;
+      --ink: #39312f;
+      --muted: #817773;
+      --line: #e9e0d9;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      background: #f8f5ef;
-      color: #39312f;
-      font-family: Georgia, serif;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.7;
     }
 
-    header {
-      text-align: center;
-      padding: 35px 20px 15px;
-    }
-
-    header a {
-      color: #713c49;
+    a {
+      color: inherit;
       text-decoration: none;
-      font-size: 30px;
-      font-weight: bold;
-      letter-spacing: 2px;
     }
 
-    .container {
-      max-width: 850px;
-      margin: 30px auto 60px;
-      padding: 35px 30px;
-      background: #fffdf9;
-      border-radius: 8px;
+    header {
+      padding: 28px 20px 22px;
+      text-align: center;
+      background: var(--paper);
+    }
+
+    .logo img {
+      display: block;
+      width: min(320px, 82%);
+      max-height: 170px;
+      object-fit: contain;
+      margin: 0 auto 18px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--burgundy);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    .back-link:hover {
+      color: var(--pink);
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 65px 24px 60px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--burgundy);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
     }
 
     h1, h2, h3 {
-      color: #713c49;
-      font-weight: normal;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      line-height: 1.3;
     }
 
     h1 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 15px;
+      margin: 18px auto;
+      font-size: clamp(32px, 5vw, 52px);
     }
 
-    h2 {
-      font-size: 23px;
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    main {
+      padding: 55px 24px 70px;
+      background: var(--paper);
+    }
+
+    .content-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      margin: 0 auto 35px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .info-section {
+      margin-bottom: 32px;
+    }
+
+    .info-section h2 {
       margin-top: 35px;
-      border-bottom: 1px solid #e8dfd8;
-      padding-bottom: 8px;
+      margin-bottom: 15px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--line);
+      font-size: 27px;
     }
 
-    h3 {
-      font-size: 19px;
-      margin-top: 22px;
+    .info-section h3 {
+      margin-top: 24px;
+      margin-bottom: 10px;
+      font-size: 20px;
     }
 
-    p, li {
-      font-size: 16px;
+    .info-section p,
+    .info-section li {
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    ul {
-      padding-left: 25px;
+    .info-section ul {
+      padding-left: 24px;
+    }
+
+    .info-section li {
+      margin-bottom: 7px;
+    }
+
+    .info-section strong {
+      color: var(--ink);
+      font-weight: 600;
     }
 
     .notice {
-      background: #f8f5ef;
-      border-left: 3px solid #c58c99;
-      padding: 18px;
-      margin: 20px 0;
+      margin: 22px 0;
+      padding: 18px 20px;
+      background: var(--cream);
+      border-left: 3px solid var(--pink);
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .important {
-      border: 1px solid #c58c99;
-      padding: 20px;
-      margin-top: 25px;
+      margin-top: 35px;
+      padding: 22px;
+      border: 1px solid var(--pink);
+      color: var(--burgundy);
       text-align: center;
-      font-weight: bold;
-      color: #713c49;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+
+    .questions {
+      margin-top: 45px;
+      text-align: center;
+    }
+
+    .questions h2 {
+      font-size: 29px;
+    }
+
+    .questions p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 13px 25px;
+      background: var(--burgundy);
+      border: 1px solid var(--burgundy);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      transition: .2s ease;
+    }
+
+    .contact-button:hover {
+      background: transparent;
+      color: var(--burgundy);
     }
 
     .back {
       display: block;
+      margin-top: 38px;
+      color: var(--burgundy);
       text-align: center;
-      margin-top: 35px;
-      color: #713c49;
-      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
     }
 
     footer {
+      padding: 30px 20px;
+      background: var(--paper);
+      color: var(--muted);
       text-align: center;
-      padding: 25px;
-      color: #806e68;
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        margin: 15px;
-        padding: 25px 20px;
+    footer .brand {
+      margin: 0 0 8px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      letter-spacing: .08em;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        padding: 24px 20px;
       }
 
-      h1 {
-        font-size: 26px;
+      .hero {
+        padding: 48px 20px;
+      }
+
+      main {
+        padding: 40px 20px 55px;
+      }
+
+      .info-section h2 {
+        font-size: 24px;
+      }
+
+      .important {
+        padding: 18px 15px;
+        font-size: 12px;
       }
     }
   </style>
@@ -118,141 +268,222 @@
 
 <body>
 
-<header>
-  <a href="index.html">Marownie</a>
-</header>
+  <header>
+    <a class="logo" href="index.html" aria-label="Marownie home">
+      <img src="marownie-logo-pink.png" alt="Marownie">
+    </a>
 
-<main class="container">
+    <a class="back-link" href="index.html">
+      ← Back to Home
+    </a>
+  </header>
 
-  <h1>Food Safety &amp; Allergen Information</h1>
+  <section class="hero">
+    <div class="eyebrow">Our Commitment to Quality</div>
 
-  <p>
-    At Marownie, we prepare our desserts in a home kitchen
-    using carefully selected ingredients.
-    Your safety and satisfaction are important to us.
-  </p>
+    <h1>Food Safety &amp; Allergen Information</h1>
 
-  <h2>Allergen Information</h2>
+    <p>
+      At Marownie, we prepare our desserts in a home kitchen
+      using carefully selected ingredients.
+      Your safety and satisfaction are important to us.
+    </p>
+  </section>
 
-  <p>
-    Allergen information varies by product, flavor,
-    recipe and purchased ingredients.
-  </p>
+  <main>
+    <div class="content-inner">
 
-  <h3>Brownies – Main Allergens</h3>
+      <p class="intro">
+        We believe in ingredient transparency.
+        Please review the following information
+        before placing your order.
+      </p>
 
-  <p>
-    Based on the ingredients currently identified
-    for our brownie recipes, the following allergens
-    are present:
-  </p>
+      <section class="info-section">
 
-  <ul>
-    <li>Eggs</li>
-    <li>Milk</li>
-    <li>Wheat</li>
-    <li>Soy (soy lecithin in chocolate)</li>
-  </ul>
+        <h2>Allergen Information</h2>
 
-  <h3>Additional Allergens by Brownie Flavor</h3>
+        <p>
+          Allergen information varies by product, flavor,
+          recipe and purchased ingredients.
+        </p>
 
-  <ul>
-    <li>
-      <strong>Caramel &amp; Peanut Brownie:</strong>
-      Peanuts.
-    </li>
+        <h3>Brownies – Main Allergens</h3>
 
-    <li>
-      <strong>Cranberry &amp; Peanut Brownie:</strong>
-      Peanuts.
-    </li>
+        <p>
+          Based on the ingredients currently identified
+          for our brownie recipes, the following allergens
+          are present:
+        </p>
 
-    <li>
-      <strong>Pecan Chocolate Brownie:</strong>
-      Pecans (Tree Nuts).
-    </li>
-  </ul>
+        <ul>
+          <li>Eggs</li>
+          <li>Milk</li>
+          <li>Wheat</li>
+          <li>Soy (soy lecithin in chocolate)</li>
+        </ul>
 
-  <div class="notice">
-    Allergen information for Oreshki and Tiramisu
-    depends on the specific filling, recipe and ingredients.
-    Please contact us for product-specific allergen details.
+        <h3>Additional Allergens by Brownie Flavor</h3>
 
-    If you have a food allergy, please contact us
-    before placing an order.
-  </div>
+        <ul>
+          <li>
+            <strong>Caramel &amp; Peanut Brownie:</strong>
+            Peanuts.
+          </li>
 
-  <h2>Storage Instructions</h2>
+          <li>
+            <strong>Cranberry &amp; Peanut Brownie:</strong>
+            Peanuts.
+          </li>
 
-  <h3>Brownies</h3>
+          <li>
+            <strong>Pecan Chocolate Brownie:</strong>
+            Pecans (Tree Nuts).
+          </li>
+        </ul>
 
-  <p>
-    Store according to the product-specific storage
-    instructions provided with your order.
-    Storage requirements may vary by flavor.
-  </p>
+        <h3>Oreshki</h3>
 
-  <h3>Oreshki</h3>
+        <p>
+          Our Oreshki recipes contain Wheat, Eggs and Milk.
+          Peanut Butter Oreshki also contain Peanuts.
+          Additional allergens may depend on the specific
+          filling and purchased ingredients.
+        </p>
 
-  <p>
-    Store in an airtight container according to the
-    filling's storage requirements and the instructions
-    provided with your order.
-  </p>
+        <h3>Tiramisu</h3>
 
-  <h3>Tiramisu</h3>
+        <p>
+          Our Tiramisu contains Eggs, Milk and Wheat.
+          Additional allergens may depend on the specific
+          recipe and ingredients used.
+        </p>
 
-  <p>
-    Keep refrigerated at 41°F (5°C) or below.
-    Keep refrigerated until ready to serve.
-  </p>
+        <h3>Bird's Milk (Ptichye Moloko)</h3>
 
-  <h2>Safe Handling</h2>
+        <p>
+          Allergen information for Bird's Milk depends
+          on the specific recipe, chocolate coating
+          and ingredients used.
+          Please contact us for product-specific
+          allergen details before ordering.
+        </p>
 
-  <p>
-    Always follow the storage instructions provided
-    on the product label. Do not consume products
-    that have been stored improperly.
-  </p>
+        <div class="notice">
+          If you have a food allergy or dietary restriction,
+          please contact Marownie before placing your order.
+          We will be happy to provide available ingredient
+          and allergen information.
+        </div>
 
-  <h2>Allergen Cross-Contact</h2>
+      </section>
 
-  <p>
-    Our desserts are prepared in a home kitchen where
-    different ingredients and food allergens may be handled.
-  </p>
+      <section class="info-section">
 
-  <p>
-    Although we take care when preparing our products,
-    we cannot guarantee an allergen-free environment.
-  </p>
+        <h2>Storage Instructions</h2>
 
-  <div class="notice">
-    Customers with severe food allergies should contact
-    Marownie before ordering to discuss their specific
-    allergy concerns.
-  </div>
+        <h3>Brownies</h3>
 
-  <div class="important">
-    THIS PRODUCT WAS PRODUCED IN A PRIVATE RESIDENCE
-    THAT IS NOT SUBJECT TO GOVERNMENTAL LICENSING OR INSPECTION.
-  </div>
+        <p>
+          Store according to the product-specific storage
+          instructions provided with your order.
+          Storage requirements may vary by flavor.
+        </p>
 
-  <h2>Questions About Allergens?</h2>
+        <h3>Oreshki</h3>
 
-  <p>
-    Please contact Marownie before placing your order
-    if you have questions about ingredients, allergens,
-    or storage instructions.
-  </p>
+        <p>
+          Store in an airtight container according to the
+          filling's storage requirements and the instructions
+          provided with your order.
+        </p>
 
-  <a class="back" href="index.html">← Back to Marownie</a>
+        <h3>Tiramisu</h3>
 
-</main>
+        <p>
+          Keep refrigerated at 41°F (5°C) or below.
+          Keep refrigerated until ready to serve.
+        </p>
 
-<footer>
-  © 2026 Marownie. All rights reserved.
-</footer>
+        <h3>Bird's Milk</h3>
+
+        <p>
+          Follow the product-specific storage instructions
+          provided with your order.
+        </p>
+
+      </section>
+
+      <section class="info-section">
+
+        <h2>Safe Handling</h2>
+
+        <p>
+          Always follow the storage instructions provided
+          on the product label. Do not consume products
+          that have been stored improperly.
+        </p>
+
+      </section>
+
+      <section class="info-section">
+
+        <h2>Allergen Cross-Contact</h2>
+
+        <p>
+          Our desserts are prepared in a home kitchen where
+          different ingredients and food allergens may be handled.
+        </p>
+
+        <p>
+          Although we take care when preparing our products,
+          we cannot guarantee an allergen-free environment.
+        </p>
+
+        <div class="notice">
+          Customers with severe food allergies should contact
+          Marownie before ordering to discuss their specific
+          allergy concerns.
+        </div>
+
+      </section>
+
+      <div class="important">
+        THIS PRODUCT WAS PRODUCED IN A PRIVATE RESIDENCE
+        THAT IS NOT SUBJECT TO GOVERNMENTAL LICENSING OR INSPECTION.
+      </div>
+
+      <section class="questions">
+
+        <h2>Questions About Allergens?</h2>
+
+        <p>
+          Please contact Marownie before placing your order
+          if you have questions about ingredients, allergens,
+          or storage instructions.
+        </p>
+
+        <a class="contact-button"
+           href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%20have%20a%20question%20about%20ingredients%20and%20allergens."
+           target="_blank"
+           rel="noopener noreferrer">
+          CONTACT US ON WHATSAPP
+        </a>
+
+      </section>
+
+      <a class="back" href="index.html">
+        ← Back to Marownie
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <p class="brand">MAROWNIE</p>
+    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
+    <p>&copy; 2026 Marownie. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
