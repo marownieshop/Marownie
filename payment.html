@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marownie payment information. Pay by Zelle or cash at pickup.">
+  <title>Payment | Marownie</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f8f5ef;
+      --paper: #fffdf9;
+      --burgundy: #713c49;
+      --pink: #c58c99;
+      --ink: #39312f;
+      --muted: #817773;
+      --line: #e9e0d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    header {
+      padding: 25px 20px 15px;
+      text-align: center;
+    }
+
+    .logo {
+      display: block;
+      width: 190px;
+      max-width: 70%;
+      height: auto;
+      margin: 0 auto 18px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 14px 15px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav a {
+      color: var(--burgundy);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    main {
+      max-width: 760px;
+      margin: 65px auto;
+      padding: 0 22px;
+    }
+
+    h1 {
+      margin: 0 0 15px;
+      color: var(--burgundy);
+      text-align: center;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 42px;
+      font-weight: 400;
+    }
+
+    .intro {
+      max-width: 590px;
+      margin: 0 auto 40px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .payment-card {
+      margin-bottom: 20px;
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .payment-card h2 {
+      margin: 0 0 12px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .payment-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .note {
+      margin-top: 30px;
+      padding: 20px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      color: var(--burgundy);
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 25px 15px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 45px auto;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      .payment-card {
+        padding: 23px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="marownie-logo-pink.png" alt="Marownie" class="logo">
+    </a>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="brownies.html">Brownies</a>
+    <a href="oreshki.html">Oreshki</a>
+    <a href="tiramisu.html">Tiramisu</a>
+    <a href="ptichye-moloko.html">Ptichye Moloko</a>
+    <a href="food-safety.html">Food Safety</a>
+    <a href="payment.html">Payment</a>
+  </nav>
+
+  <main>
+    <h1>Payment Information</h1>
+
+    <p class="intro">
+      Thank you for choosing Marownie!
+      We currently offer the following payment options for your convenience.
+    </p>
+
+    <section class="payment-card">
+      <h2>Zelle</h2>
+      <p>
+        Pay by Zelle after your order has been confirmed by Marownie.
+        Payment details will be provided directly after confirmation.
+      </p>
+    </section>
+
+    <section class="payment-card">
+      <h2>Cash</h2>
+      <p>
+        Cash payment is available at pickup.
+      </p>
+    </section>
+
+    <div class="note">
+      Please note: Your order is not confirmed until you receive a confirmation from Marownie.
+    </div>
+  </main>
+
+  <footer>
+    Homemade Desserts by Marownie
+  </footer>
+
+</body>
+</html>
