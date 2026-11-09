@@ -145,6 +145,27 @@
       letter-spacing: .08em;
     }
 
+    /* Caramel & Peanut Brownie photos */
+
+    .brownie-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      background: #eee5df;
+    }
+
+    .brownie-photos img {
+      display: block;
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+    }
+
+    .brownie-photos img:first-child {
+      grid-column: 1 / -1;
+      height: 300px;
+    }
+
     .card-content {
       display: flex;
       flex: 1;
@@ -412,7 +433,17 @@
         <!-- Caramel & Peanut Brownie -->
 
         <article class="brownie-card">
-          <div class="photo-placeholder">CARAMEL &amp; PEANUT BROWNIE PHOTO</div>
+          <div class="brownie-photos">
+            <img src="caramel-peanut-brownie.jpg"
+                 alt="Caramel and Peanut Brownie">
+
+            <img src="caramel-peanut-brownie-cut.jpg"
+                 alt="Caramel and Peanut Brownie cut open">
+
+            <img src="caramel-peanut-brownie-closeup.jpg"
+                 alt="Close-up of caramel and peanuts">
+          </div>
+
           <div class="card-content">
             <h2>Caramel &amp; Peanut Brownie</h2>
             <p class="description">
