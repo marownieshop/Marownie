@@ -133,6 +133,8 @@
       text-align: center;
     }
 
+    /* Photo placeholder */
+
     .photo-placeholder {
       display: flex;
       min-height: 245px;
@@ -145,25 +147,80 @@
       letter-spacing: .08em;
     }
 
+    /* Hover photo effect */
+
+    .brownie-hover {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      background: #eee5df;
+    }
+
+    .brownie-hover img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity .45s ease, transform .6s ease;
+    }
+
+    .brownie-hover img:first-child {
+      opacity: 1;
+    }
+
+    .brownie-hover img:last-child {
+      opacity: 0;
+    }
+
+    .brownie-hover:hover img:first-child {
+      opacity: 0;
+      transform: scale(1.04);
+    }
+
+    .brownie-hover:hover img:last-child {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
     /* Caramel & Peanut Brownie photos */
 
     .brownie-photos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5px;
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
       background: #eee5df;
     }
 
     .brownie-photos img {
+      position: absolute;
+      inset: 0;
       display: block;
       width: 100%;
-      height: 245px;
+      height: 100%;
       object-fit: cover;
+      opacity: 0;
+      transition: opacity .45s ease, transform .6s ease;
     }
 
     .brownie-photos img:first-child {
-      grid-column: 1 / -1;
-      height: 300px;
+      opacity: 1;
+    }
+
+    .brownie-photos:hover img:first-child {
+      opacity: 0;
+    }
+
+    .brownie-photos:hover img:nth-child(2) {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    .brownie-photos:hover img:nth-child(3) {
+      opacity: 0;
     }
 
     .card-content {
@@ -307,6 +364,14 @@
         min-height: 220px;
       }
 
+      .brownie-hover {
+        height: 260px;
+      }
+
+      .brownie-photos {
+        height: 260px;
+      }
+
       .description {
         min-height: auto;
       }
@@ -357,7 +422,11 @@
         <!-- Classic Brownie -->
 
         <article class="brownie-card">
-          <div class="photo-placeholder">CLASSIC BROWNIE PHOTO</div>
+          <div class="brownie-hover">
+            <img src="classic-brownie.jpg" alt="Classic Brownie">
+            <img src="classic-brownie-cut.jpg" alt="Classic Brownie cut open">
+          </div>
+
           <div class="card-content">
             <h2>Classic Brownie</h2>
             <p class="description">
@@ -376,7 +445,11 @@
         <!-- Cranberry Brownie -->
 
         <article class="brownie-card">
-          <div class="photo-placeholder">CRANBERRY BROWNIE PHOTO</div>
+          <div class="brownie-hover">
+            <img src="cranberry-brownie.jpg" alt="Cranberry Brownie">
+            <img src="cranberry-brownie-cut.jpg" alt="Cranberry Brownie cut open">
+          </div>
+
           <div class="card-content">
             <h2>Cranberry Brownie</h2>
             <p class="description">
@@ -395,7 +468,11 @@
         <!-- Brownie Cookies -->
 
         <article class="brownie-card">
-          <div class="photo-placeholder">BROWNIE COOKIES PHOTO</div>
+          <div class="brownie-hover">
+            <img src="brownie-cookies.jpg" alt="Brownie Cookies">
+            <img src="brownie-cookies-closeup.jpg" alt="Brownie Cookies close-up">
+          </div>
+
           <div class="card-content">
             <h2>Brownie Cookies</h2>
             <p class="description">
@@ -414,7 +491,11 @@
         <!-- Pecan Chocolate Brownie -->
 
         <article class="brownie-card">
-          <div class="photo-placeholder">PECAN CHOCOLATE BROWNIE PHOTO</div>
+          <div class="brownie-hover">
+            <img src="pecan-chocolate-brownie.jpg" alt="Pecan Chocolate Brownie">
+            <img src="pecan-chocolate-brownie-cut.jpg" alt="Pecan Chocolate Brownie cut open">
+          </div>
+
           <div class="card-content">
             <h2>Pecan Chocolate Brownie</h2>
             <p class="description">
@@ -462,7 +543,11 @@
         <!-- Chocolate Brownie with Vanilla Soufflé -->
 
         <article class="brownie-card">
-          <div class="photo-placeholder">CHOCOLATE BROWNIE WITH VANILLA SOUFFLÉ PHOTO</div>
+          <div class="brownie-hover">
+            <img src="vanilla-souffle-brownie.jpg" alt="Chocolate Brownie with Vanilla Soufflé">
+            <img src="vanilla-souffle-brownie-cut.jpg" alt="Vanilla Soufflé Brownie cut open">
+          </div>
+
           <div class="card-content">
             <h2>Chocolate Brownie with Vanilla Soufflé</h2>
             <p class="description">
