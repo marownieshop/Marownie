@@ -185,7 +185,7 @@
       transform: scale(1.04);
     }
 
-    /* Caramel & Peanut Brownie photos */
+    /* Caramel & Peanut Brownie - three-photo slideshow */
 
     .brownie-photos {
       position: relative;
@@ -203,7 +203,7 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity .45s ease, transform .6s ease;
+      transition: opacity .5s ease, transform .6s ease;
     }
 
     .brownie-photos img:first-child {
@@ -211,16 +211,51 @@
     }
 
     .brownie-photos:hover img:first-child {
-      opacity: 0;
+      animation: caramelPhotoOne 6s infinite;
     }
 
     .brownie-photos:hover img:nth-child(2) {
-      opacity: 1;
-      transform: scale(1.04);
+      animation: caramelPhotoTwo 6s infinite;
     }
 
     .brownie-photos:hover img:nth-child(3) {
-      opacity: 0;
+      animation: caramelPhotoThree 6s infinite;
+    }
+
+    @keyframes caramelPhotoOne {
+      0%, 30% {
+        opacity: 1;
+      }
+      33%, 97% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes caramelPhotoTwo {
+      0%, 30% {
+        opacity: 0;
+      }
+      33%, 63% {
+        opacity: 1;
+      }
+      66%, 100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes caramelPhotoThree {
+      0%, 63% {
+        opacity: 0;
+      }
+      66%, 97% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
 
     .card-content {
