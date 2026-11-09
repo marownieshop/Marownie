@@ -157,17 +157,25 @@
       transition: opacity 0.35s ease;
     }
 
+    /* Filling is the main photo */
+
     .product-gallery .filling-photo {
-      opacity: 0;
+      opacity: 1;
     }
 
-    .product-gallery:hover .filling-photo,
-    .product-gallery:focus .filling-photo {
-      opacity: 1;
+    /* Box appears on hover */
+
+    .product-gallery .box-photo {
+      opacity: 0;
     }
 
     .product-gallery:hover .box-photo,
     .product-gallery:focus .box-photo {
+      opacity: 1;
+    }
+
+    .product-gallery:hover .filling-photo,
+    .product-gallery:focus .filling-photo {
       opacity: 0;
     }
 
@@ -370,13 +378,13 @@
 
           <div class="product-gallery" tabindex="0">
             <img
-              class="box-photo"
-              src="milk-chocolate-oreshki.jpg"
-              alt="Milk Chocolate Oreshki in a box">
-            <img
               class="filling-photo"
               src="milk-chocolate-oreshki2.jpg"
               alt="Milk Chocolate Oreshki with creamy chocolate filling">
+            <img
+              class="box-photo"
+              src="milk-chocolate-oreshki.jpg"
+              alt="Milk Chocolate Oreshki in a box">
           </div>
 
           <h2 class="product-title">Milk Chocolate Oreshki</h2>
@@ -401,13 +409,13 @@
 
           <div class="product-gallery" tabindex="0">
             <img
-              class="box-photo"
-              src="peanut-butter-strawberry-jam-oreshki.jpg"
-              alt="Peanut Butter and Strawberry Jam Oreshki in a box">
-            <img
               class="filling-photo"
               src="peanut-butter-strawberry-jam-filling.jpg"
               alt="Peanut Butter and Strawberry Jam Oreshki filling">
+            <img
+              class="box-photo"
+              src="peanut-butter-strawberry-jam-oreshki.jpg"
+              alt="Peanut Butter and Strawberry Jam Oreshki in a box">
           </div>
 
           <h2 class="product-title">Peanut Butter &amp; Strawberry Jam Oreshki</h2>
