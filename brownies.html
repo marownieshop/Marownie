@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,7 +147,7 @@
       letter-spacing: .08em;
     }
 
-    /* Hover photo effect */
+    /* Two-photo brownie galleries */
 
     .brownie-hover {
       position: relative;
@@ -155,6 +155,8 @@
       height: 300px;
       overflow: hidden;
       background: #eee5df;
+      cursor: pointer;
+      touch-action: manipulation;
     }
 
     .brownie-hover img {
@@ -164,6 +166,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0;
       transition: opacity .45s ease, transform .6s ease;
     }
 
@@ -193,6 +196,8 @@
       height: 300px;
       overflow: hidden;
       background: #eee5df;
+      cursor: pointer;
+      touch-action: manipulation;
     }
 
     .brownie-photos img {
@@ -208,6 +213,13 @@
 
     .brownie-photos img:first-child {
       opacity: 1;
+    }
+
+    /* Third close-up photo: show the whole image */
+
+    .brownie-photos img:nth-child(3) {
+      object-fit: contain;
+      padding: 12px;
     }
 
     .brownie-photos:hover img:first-child {
@@ -256,6 +268,25 @@
       100% {
         opacity: 0;
       }
+    }
+
+    /* Touch and click photo switching */
+
+    .brownie-hover.is-tapped img,
+    .brownie-photos.is-tapped img {
+      animation: none;
+      opacity: 0;
+      transform: none;
+    }
+
+    .brownie-hover.is-tapped img.is-active,
+    .brownie-photos.is-tapped img.is-active {
+      opacity: 1;
+    }
+
+    .brownie-hover.is-tapped:hover img.is-active,
+    .brownie-photos.is-tapped:hover img.is-active {
+      transform: scale(1.02);
     }
 
     .card-content {
@@ -654,5 +685,43 @@
     <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
 
+  <script>
+    /* Tap or click a photo to see the next image */
+
+    document.querySelectorAll('.brownie-hover, .brownie-photos').forEach(gallery => {
+      const images = Array.from(gallery.querySelectorAll('img'));
+
+      if (images.length < 2) return;
+
+      let currentIndex = 0;
+
+      function showImage(index) {
+        currentIndex = index;
+
+        gallery.classList.add('is-tapped');
+
+        images.forEach((image, i) => {
+          image.classList.toggle('is-active', i === currentIndex);
+        });
+      }
+
+      gallery.addEventListener('click', () => {
+        showImage((currentIndex + 1) % images.length);
+      });
+
+      gallery.setAttribute('tabindex', '0');
+      gallery.setAttribute('role', 'button');
+      gallery.setAttribute('aria-label', 'Tap to see the next photo');
+
+      gallery.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          showImage((currentIndex + 1) % images.length);
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
+```
