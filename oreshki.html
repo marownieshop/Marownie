@@ -1,10 +1,10 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Homemade Marownie Oreshki cookies filled with caramel, milk chocolate, and peanut butter.">
+  <meta name="description" content="Homemade Marownie Oreshki cookies filled with milk chocolate, peanut butter and strawberry jam.">
   <title>Oreshki | Marownie</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,6 +145,22 @@
       color: var(--muted);
       font-size: 12px;
       letter-spacing: .08em;
+    }
+
+    /* Product photographs */
+
+    .product-photos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .product-photo {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
     }
 
     .product-card h2 {
@@ -333,25 +349,7 @@
       <div class="products">
 
         <article class="product-card">
-          <div class="photo-placeholder">
-            CARAMEL ORESHKI PHOTO
-          </div>
 
-          <h2>Caramel-Filled Oreshki</h2>
-          <div class="price">$5 per box of 4</div>
-
-          <p class="description">
-            Golden, delicate cookies filled with rich and creamy dulce de leche caramel.
-          </p>
-
-          <a class="button"
-             href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20order%20Caramel-Filled%20Oreshki%20-%20one%20box%20of%204."
-             target="_blank" rel="noopener noreferrer">
-            ORDER CARAMEL ORESHKI
-          </a>
-        </article>
-
-        <article class="product-card">
           <div class="photo-placeholder">
             MILK CHOCOLATE ORESHKI PHOTO
           </div>
@@ -368,88 +366,4 @@
              target="_blank" rel="noopener noreferrer">
             ORDER CHOCOLATE ORESHKI
           </a>
-        </article>
-
-        <article class="product-card">
-          <div class="photo-placeholder">
-            PEANUT BUTTER ORESHKI PHOTO
-          </div>
-
-          <h2>Peanut Butter Oreshki</h2>
-          <div class="price">$5 per box of 4</div>
-
-          <p class="description">
-            Golden cookies filled with smooth, creamy peanut butter for a rich, nutty flavor.
-          </p>
-
-          <a class="button"
-             href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20order%20Peanut%20Butter%20Oreshki%20-%20one%20box%20of%204."
-             target="_blank" rel="noopener noreferrer">
-            ORDER PEANUT BUTTER ORESHKI
-          </a>
-        </article>
-
-      </div>
-
-      <!-- Allergen Information -->
-
-      <div class="allergen-preview">
-
-        <h2>Allergen Information</h2>
-
-        <p>
-          <strong>Our Oreshki contain:</strong>
-          Wheat, Eggs and Milk.
-        </p>
-
-        <p>
-          <strong>Additional allergen by flavor:</strong>
-          Peanuts in Peanut Butter Oreshki.
-        </p>
-
-        <p>
-          Other allergens, including Soy, may depend on
-          the brands and ingredient labels used.
-        </p>
-
-        <p>
-          Please inform us of any food allergies
-          before placing your order.
-        </p>
-
-        <a href="food-safety.html">
-          VIEW FOOD SAFETY &amp; ALLERGEN INFORMATION
-        </a>
-
-      </div>
-
-      <p class="note">
-        All Oreshki are freshly prepared for your order.
-        Please message us to confirm availability and pickup details.
-      </p>
-
-      <section class="contact">
-        <div class="eyebrow">Let's Make It Sweet</div>
-        <h2>Ready to Order?</h2>
-        <p>
-          Contact Marownie with any questions about our Oreshki.
-        </p>
-
-        <a class="button"
-           href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20ask%20about%20your%20Oreshki."
-           target="_blank" rel="noopener noreferrer">
-          CONTACT US ON WHATSAPP
-        </a>
-      </section>
-
-    </div>
-  </main>
-
-  <footer>
-    <p class="brand">MAROWNIE</p>
-    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
-    <p>&copy; 2026 Marownie. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+       
