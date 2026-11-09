@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -29,134 +28,117 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       background: var(--cream);
       color: var(--ink);
-      font-family: "DM Sans", sans-serif;
+      font-family: "Montserrat", Arial, sans-serif;
       line-height: 1.7;
     }
 
     a {
-      color: inherit;
-      text-decoration: none;
+      color: var(--burgundy);
     }
 
-    header {
-      padding: 28px 20px 22px;
+    .site-header {
+      padding: 25px 20px 20px;
       text-align: center;
       background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      display: inline-block;
     }
 
     .logo img {
       display: block;
-      width: min(320px, 82%);
-      max-height: 170px;
-      object-fit: contain;
-      margin: 0 auto 18px;
-    }
-
-    .back-link {
-      display: inline-block;
-      color: var(--burgundy);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .04em;
-    }
-
-    .back-link:hover {
-      color: var(--pink);
-      text-decoration: underline;
-    }
-
-    .hero {
-      padding: 65px 24px 60px;
-      text-align: center;
-      border-top: 1px solid var(--line);
-    }
-
-    .eyebrow {
-      color: var(--burgundy);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3 {
-      color: var(--burgundy);
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 400;
-      line-height: 1.3;
-    }
-
-    h1 {
-      margin: 18px auto;
-      font-size: clamp(32px, 5vw, 52px);
-    }
-
-    .hero p {
-      max-width: 650px;
+      width: 210px;
+      max-width: 75%;
+      height: auto;
       margin: 0 auto;
-      color: var(--muted);
-      font-size: 15px;
     }
 
-    main {
-      padding: 55px 24px 70px;
-      background: var(--paper);
+    .content {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 55px 22px 65px;
     }
 
     .content-inner {
-      max-width: 850px;
-      margin: 0 auto;
+      background: var(--paper);
+      padding: 45px 50px;
+      border: 1px solid var(--line);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      color: var(--burgundy);
+    }
+
+    h1 {
+      margin: 0 0 15px;
+      font-size: 36px;
+      line-height: 1.25;
+      text-align: center;
     }
 
     .intro {
-      margin: 0 auto 35px;
+      max-width: 680px;
+      margin: 0 auto 40px;
       color: var(--muted);
       font-size: 14px;
+      text-align: center;
     }
 
     .info-section {
-      margin-bottom: 32px;
+      margin-top: 35px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
     }
 
     .info-section h2 {
-      margin-top: 35px;
-      margin-bottom: 15px;
-      padding-bottom: 9px;
-      border-bottom: 1px solid var(--line);
-      font-size: 27px;
-    }
-
-    .info-section h3 {
-      margin-top: 24px;
-      margin-bottom: 10px;
-      font-size: 20px;
+      margin: 0 0 15px;
+      font-size: 25px;
     }
 
     .info-section p {
-      color: var(--muted);
+      margin: 0 0 14px;
       font-size: 14px;
     }
 
-    .info-section strong {
-      color: var(--ink);
-      font-weight: 600;
+    .info-section ul {
+      padding-left: 22px;
+      margin: 12px 0 18px;
+      font-size: 14px;
+    }
+
+    .info-section li {
+      margin-bottom: 8px;
     }
 
     .notice {
-      margin: 22px 0;
-      padding: 18px 20px;
-      background: var(--cream);
+      margin-top: 20px;
+      padding: 18px 22px;
       border-left: 3px solid var(--pink);
+      background: var(--cream);
+      font-size: 13px;
+    }
+
+    .important {
+      margin-top: 35px;
+      padding: 18px 20px;
+      border: 1px solid var(--pink);
+      background: var(--cream);
       color: var(--muted);
-      font-size: 14px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .03em;
     }
 
     .brand-promise {
@@ -172,83 +154,71 @@
     }
 
     .questions {
-      margin-top: 45px;
+      margin-top: 35px;
       text-align: center;
     }
 
     .questions h2 {
-      font-size: 29px;
-    }
-
-    .questions p {
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 14px;
+      font-size: 24px;
     }
 
     .contact-button {
       display: inline-block;
-      margin-top: 22px;
-      padding: 13px 25px;
+      margin-top: 12px;
+      padding: 13px 27px;
       background: var(--burgundy);
-      border: 1px solid var(--burgundy);
       color: white;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .1em;
-      transition: .2s ease;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: .04em;
+      transition: background .2s ease;
     }
 
     .contact-button:hover {
-      background: transparent;
-      color: var(--burgundy);
+      background: #59303a;
     }
 
     .back {
       display: block;
-      margin-top: 38px;
-      color: var(--burgundy);
+      margin-top: 35px;
       text-align: center;
       font-size: 13px;
-      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      text-decoration: underline;
     }
 
     footer {
-      padding: 30px 20px;
+      padding: 22px 15px;
+      border-top: 1px solid var(--line);
       background: var(--paper);
       color: var(--muted);
       text-align: center;
       font-size: 12px;
     }
 
-    footer .brand {
-      margin: 0 0 8px;
-      color: var(--burgundy);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 24px;
-      letter-spacing: .08em;
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    @media (max-width: 650px) {
-      header {
-        padding: 24px 20px;
+    @media (max-width: 600px) {
+      .content {
+        padding: 30px 14px 40px;
       }
 
-      .hero {
-        padding: 48px 20px;
+      .content-inner {
+        padding: 28px 20px;
       }
 
-      main {
-        padding: 40px 20px 55px;
+      h1 {
+        font-size: 29px;
       }
 
       .info-section h2 {
-        font-size: 24px;
+        font-size: 22px;
+      }
+
+      .important {
+        padding: 15px;
+        font-size: 12px;
       }
 
       .brand-promise {
@@ -257,4 +227,164 @@
       }
     }
   </style>
-</
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="marownie-logo-pink.png" alt="Marownie">
+    </a>
+  </header>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <h1>Food Safety &amp; Allergen Information</h1>
+
+      <p class="intro">
+        At Marownie, we prepare our homemade desserts with care and attention
+        to ingredients. Please review the following information before placing
+        an order, especially if you have food allergies or dietary restrictions.
+      </p>
+
+      <section class="info-section">
+        <h2>Allergen Information</h2>
+
+        <p>
+          Our desserts may contain or come into contact with common allergens.
+          Please review the ingredient information for each product carefully.
+        </p>
+
+        <p><strong>Ingredients and allergens used in our kitchen may include:</strong></p>
+
+        <ul>
+          <li>Wheat</li>
+          <li>Eggs</li>
+          <li>Milk and dairy products</li>
+          <li>Soy</li>
+          <li>Peanuts</li>
+          <li>Tree nuts, including almonds</li>
+          <li>Sesame</li>
+        </ul>
+
+        <div class="notice">
+          <strong>Important:</strong>
+          Products are prepared in the same kitchen. We cannot guarantee
+          that any product is completely free from allergens or cross-contact.
+        </div>
+      </section>
+
+      <section class="info-section">
+        <h2>Product-Specific Allergen Information</h2>
+
+        <h3>Brownies</h3>
+        <p>
+          Brownies contain wheat, eggs and milk. Some varieties may also
+          contain peanuts, tree nuts, soy or other ingredients depending
+          on the recipe and the products used.
+        </p>
+
+        <h3>Oreshki</h3>
+        <p>
+          Our Oreshki contain wheat, eggs, milk and almonds (almond flour).
+        </p>
+        <p>
+          Peanut Butter &amp; Strawberry Jam Oreshki also contain peanuts.
+        </p>
+        <p>
+          Additional allergens may be present depending on the chocolate
+          and other packaged ingredients used.
+        </p>
+
+        <h3>Tiramisu</h3>
+        <p>
+          Our tiramisu contains eggs, milk and wheat. Additional allergens
+          may depend on the ingredients used in each variety.
+        </p>
+
+        <div class="notice">
+          Please contact us before ordering if you have an allergy or need
+          clarification about a specific dessert.
+        </div>
+      </section>
+
+      <section class="info-section">
+        <h2>Storage Instructions</h2>
+
+        <h3>Brownies</h3>
+        <p>
+          Store in an airtight container at room temperature for a short
+          period or refrigerate for longer storage. Allow refrigerated
+          brownies to come closer to room temperature before serving.
+        </p>
+
+        <h3>Oreshki</h3>
+        <p>
+          Store in an airtight container in a cool, dry place.
+          Keep away from direct sunlight and heat.
+        </p>
+
+        <h3>Tiramisu</h3>
+        <p>
+          Keep refrigerated at all times. Do not leave tiramisu at room
+          temperature for extended periods.
+        </p>
+      </section>
+
+      <section class="info-section">
+        <h2>Safe Handling</h2>
+
+        <p>
+          Our desserts are prepared in small batches. We take care to handle
+          ingredients and products responsibly and to keep our preparation
+          area clean.
+        </p>
+
+        <p>
+          Please refrigerate products that require refrigeration promptly
+          after pickup or delivery. Follow any storage instructions provided
+          with your order.
+        </p>
+      </section>
+
+      <div class="important">
+        THIS PRODUCT WAS PRODUCED IN A PRIVATE RESIDENCE
+        THAT IS NOT SUBJECT TO GOVERNMENTAL LICENSING OR INSPECTION.
+      </div>
+
+      <div class="brand-promise">
+        Homemade with Care, Made Fresh to Order
+      </div>
+
+      <section class="questions">
+        <h2>Questions About Ingredients?</h2>
+
+        <p>
+          If you have questions about allergens, ingredients or storage,
+          please contact us before placing your order.
+        </p>
+
+        <a
+          class="contact-button"
+          href="https://wa.me/13478881927"
+          target="_blank"
+          rel="noopener"
+        >
+          Contact Marownie
+        </a>
+      </section>
+
+      <a class="back" href="index.html">
+        &larr; Back to Marownie
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Marownie. Homemade with Care.
+  </footer>
+
+</body>
+</html>
