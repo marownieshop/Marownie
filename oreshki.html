@@ -135,23 +135,40 @@
       text-align: center;
     }
 
+    /* Product photos and hover effect */
+
     .product-gallery {
+      position: relative;
       width: 100%;
       height: 280px;
       margin-bottom: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow: hidden;
       background: #fdfaf5;
       border-radius: 10px;
     }
 
-    .product-photo {
+    .product-gallery img {
+      position: absolute;
+      inset: 0;
       display: block;
       width: 100%;
       height: 100%;
       object-fit: contain;
+      transition: opacity 0.35s ease;
+    }
+
+    .product-gallery .filling-photo {
+      opacity: 0;
+    }
+
+    .product-gallery:hover .filling-photo,
+    .product-gallery:focus .filling-photo {
+      opacity: 1;
+    }
+
+    .product-gallery:hover .box-photo,
+    .product-gallery:focus .box-photo {
+      opacity: 0;
     }
 
     .product-title {
@@ -351,11 +368,15 @@
 
         <article class="product-card">
 
-          <div class="product-gallery">
+          <div class="product-gallery" tabindex="0">
             <img
-              class="product-photo"
+              class="box-photo"
               src="milk-chocolate-oreshki.jpg"
               alt="Milk Chocolate Oreshki in a box">
+            <img
+              class="filling-photo"
+              src="milk-chocolate-oreshki2.jpg"
+              alt="Milk Chocolate Oreshki with creamy chocolate filling">
           </div>
 
           <h2 class="product-title">Milk Chocolate Oreshki</h2>
@@ -378,11 +399,15 @@
 
         <article class="product-card">
 
-          <div class="product-gallery">
+          <div class="product-gallery" tabindex="0">
             <img
-              class="product-photo"
+              class="box-photo"
               src="peanut-butter-strawberry-jam-oreshki.jpg"
               alt="Peanut Butter and Strawberry Jam Oreshki in a box">
+            <img
+              class="filling-photo"
+              src="peanut-butter-strawberry-jam-filling.jpg"
+              alt="Peanut Butter and Strawberry Jam Oreshki filling">
           </div>
 
           <h2 class="product-title">Peanut Butter &amp; Strawberry Jam Oreshki</h2>
