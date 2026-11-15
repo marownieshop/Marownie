@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Marownie | Homemade Desserts</title>
-  <meta name="description" content="Discover homemade brownies, oreshki, tiramisu and more from Marownie. Freshly prepared with care.">
+  <meta name="description" content="Discover homemade brownies, oreshki, tiramisu and more from Marownie. Thoughtfully made with cocoa, chocolate and quality ingredients.">
   <link rel="canonical" href="https://shopmarownie.com/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,13 +15,17 @@
 
   <style>
     :root {
-      --cream: #F5F1E8;
-      --paper: #FFFCF5;
-      --burgundy: #654332;
-      --pink: #E99A7E;
-      --ink: #39312C;
-      --muted: #82766D;
-      --line: #E8DED1;
+      --cream: #FAF7EF;
+      --paper: #FFFEFA;
+      --burgundy: #526D55;
+      --pink: #D98783;
+      --ink: #41463B;
+      --muted: #777D70;
+      --line: #E8E8D9;
+      --sage: #EAF0E4;
+      --coral: #F3D6C9;
+      --cocoa: #87634F;
+      --yellow: #F5E5AC;
     }
 
     * {
@@ -75,6 +79,7 @@
       font-weight: 600;
       letter-spacing: .09em;
       text-transform: uppercase;
+      transition: color .2s ease;
     }
 
     nav a:hover {
@@ -85,13 +90,14 @@
       padding: 85px 24px 90px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .10), transparent 24%),
-        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .09), transparent 25%),
+        radial-gradient(ellipse at 7% 20%, rgba(218, 135, 131, .16), transparent 22%),
+        radial-gradient(ellipse at 92% 75%, rgba(129, 158, 111, .18), transparent 25%),
+        radial-gradient(ellipse at 80% 10%, rgba(245, 229, 172, .25), transparent 18%),
         var(--cream);
     }
 
     .eyebrow {
-      color: #789064;
+      color: #78936C;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: .2em;
@@ -122,18 +128,20 @@
       margin-top: 28px;
       padding: 13px 27px;
       border: 1px solid var(--burgundy);
+      border-radius: 3px;
       background: var(--burgundy);
       color: white;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: .1em;
       text-align: center;
-      transition: .2s ease;
+      transition: .25s ease;
     }
 
     .button:hover {
-      background: transparent;
-      color: var(--burgundy);
+      border-color: var(--pink);
+      background: var(--pink);
+      color: white;
     }
 
     .treats {
@@ -172,6 +180,12 @@
       border: 1px solid var(--line);
       background: var(--paper);
       text-align: center;
+      transition: border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .treat-card:hover {
+      border-color: #D9C9B9;
+      box-shadow: 0 8px 24px rgba(91, 108, 78, .08);
     }
 
     .treat-content {
@@ -193,10 +207,11 @@
     .small-link {
       display: inline-block;
       margin-top: 18px;
-      color: #789064;
+      color: #78936C;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: .1em;
+      transition: color .2s ease;
     }
 
     .small-link:hover {
@@ -207,8 +222,8 @@
       padding: 80px 24px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 5% 50%, rgba(141, 164, 119, .10), transparent 23%),
-        radial-gradient(ellipse at 95% 50%, rgba(101, 67, 50, .08), transparent 23%),
+        radial-gradient(ellipse at 5% 50%, rgba(218, 135, 131, .13), transparent 23%),
+        radial-gradient(ellipse at 95% 50%, rgba(129, 158, 111, .16), transparent 23%),
         var(--cream);
     }
 
@@ -229,8 +244,16 @@
 
     .order-section {
       padding: 65px 24px 75px;
-      background: #E8EBDD;
+      background:
+        radial-gradient(ellipse at 8% 15%, rgba(255, 255, 255, .65), transparent 25%),
+        radial-gradient(ellipse at 92% 85%, rgba(217, 135, 131, .20), transparent 26%),
+        radial-gradient(ellipse at 85% 10%, rgba(245, 229, 172, .35), transparent 20%),
+        #EAF0E4;
       text-align: center;
+    }
+
+    .order-section .eyebrow {
+      color: #78936C;
     }
 
     .order-section h2 {
@@ -243,6 +266,16 @@
       margin: 0 auto;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .order-section .button {
+      background: var(--pink);
+      border-color: var(--pink);
+    }
+
+    .order-section .button:hover {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
     }
 
     footer {
@@ -311,8 +344,8 @@
     <div class="eyebrow">Homemade with Care</div>
     <h1>A Little Sweetness,<br>Made at Home.</h1>
     <p>
-      Thoughtfully prepared homemade desserts,
-      made in small batches with care and quality ingredients.
+      Thoughtfully made homemade desserts, crafted with cocoa,
+      chocolate, quality ingredients, and a little love.
     </p>
     <a class="button" href="#treats">EXPLORE OUR TREATS</a>
   </section>
