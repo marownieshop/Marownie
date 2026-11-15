@@ -202,6 +202,52 @@
       text-transform: uppercase;
     }
 
+    .pickup-address {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 20px 0;
+      padding: 17px 18px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+    }
+
+    .pickup-address-icon {
+      color: var(--leaf);
+      font-size: 21px;
+      line-height: 1.4;
+    }
+
+    .pickup-address strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--burgundy);
+      font-size: 13px;
+    }
+
+    .pickup-address span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pickup-directions {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 12px 20px;
+      border: 1px solid var(--burgundy);
+      background: var(--burgundy);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      transition: .2s ease;
+    }
+
+    .pickup-directions:hover {
+      background: transparent;
+      color: var(--burgundy);
+    }
+
     /* Delivery calculator */
 
     .calculator-section {
@@ -582,10 +628,28 @@
         Prefer to pick up your order?
         <span class="highlight">Pickup is always free!</span>
       </p>
+
+      <div class="pickup-address">
+        <div class="pickup-address-icon" aria-hidden="true">⌖</div>
+        <div>
+          <strong>Marownie Pickup Location</strong>
+          <span>4640 Hedgcoxe Rd, Plano, TX 75024</span>
+        </div>
+      </div>
+
       <p>
-        Pickup details, including the date, time, and location,
-        will be confirmed personally after we review your order.
+        Pickup date and time must be arranged in advance.
+        Your pickup details will be personally confirmed by Marownie
+        after we review your order.
       </p>
+
+      <a
+        class="pickup-directions"
+        href="https://www.google.com/maps/search/?api=1&amp;query=4640+Hedgcoxe+Rd%2C+Plano%2C+TX+75024"
+        target="_blank"
+        rel="noopener noreferrer">
+        GET DIRECTIONS
+      </a>
     </section>
 
     <section class="section calculator-section">
