@@ -84,7 +84,12 @@
       color: var(--pink);
     }
 
-    /* Delicate cocoa botanical illustrations */
+    /* Decorative cocoa illustrations are hidden */
+
+    .botanical,
+    .cocoa-decoration {
+      display: none !important;
+    }
 
     .botanical {
       position: absolute;
@@ -507,56 +512,33 @@
     <div class="botanical left" aria-hidden="true">
       <svg viewBox="0 0 150 200">
         <g fill="none" stroke="#805B43" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Main curved branch -->
           <path stroke-width="1.05" d="M23 190 C43 158 59 130 77 101 C95 71 111 43 128 12"/>
-
-          <!-- Fine side stems -->
           <path stroke-width=".8" d="M46 154 C34 137 25 120 19 102"/>
           <path stroke-width=".8" d="M65 121 C84 111 103 96 121 77"/>
           <path stroke-width=".8" d="M91 78 C78 62 70 47 67 30"/>
-
-          <!-- Upper leaf -->
           <path stroke-width=".85" d="M67 30 C48 13 48 1 63 5 C79 10 80 23 67 30Z"/>
           <path stroke-width=".55" d="M67 30 Q67 15 63 5"/>
           <path stroke-width=".5" d="M67 30 Q57 17 53 10"/>
-
-          <!-- Left leaf -->
           <path stroke-width=".85" d="M19 102 C1 84 3 66 18 69 C34 73 34 91 19 102Z"/>
           <path stroke-width=".55" d="M19 102 Q19 84 18 69"/>
           <path stroke-width=".5" d="M19 102 Q10 86 7 77"/>
-
-          <!-- Right leaf -->
           <path stroke-width=".85" d="M121 77 C140 58 146 43 132 43 C116 44 110 62 121 77Z"/>
           <path stroke-width=".55" d="M121 77 Q128 58 132 43"/>
           <path stroke-width=".5" d="M121 77 Q134 59 141 53"/>
-
-          <!-- Cocoa pod outline -->
-          <path stroke-width="1.05" d="M66 166
-            C49 154 43 135 48 116
-            C53 93 70 72 91 68
-            C111 64 129 80 132 101
-            C136 124 122 149 103 164
-            C90 174 77 174 66 166Z"/>
-
-          <!-- Cocoa pod ribs -->
+          <path stroke-width="1.05" d="M66 166 C49 154 43 135 48 116 C53 93 70 72 91 68 C111 64 129 80 132 101 C136 124 122 149 103 164 C90 174 77 174 66 166Z"/>
           <path stroke-width=".8" d="M66 166 C68 132 57 119 48 116"/>
           <path stroke-width=".8" d="M73 170 C81 130 69 94 62 82"/>
           <path stroke-width=".8" d="M82 172 C93 132 84 91 81 72"/>
           <path stroke-width=".8" d="M92 170 C107 132 99 91 98 68"/>
           <path stroke-width=".8" d="M102 164 C120 134 126 113 132 101"/>
-
-          <!-- Delicate pod texture -->
           <path stroke-width=".5" d="M51 119 Q58 123 61 132"/>
           <path stroke-width=".5" d="M50 132 Q57 136 62 145"/>
           <path stroke-width=".5" d="M57 148 Q64 152 69 159"/>
           <path stroke-width=".5" d="M119 91 Q126 98 128 107"/>
           <path stroke-width=".5" d="M115 108 Q123 114 125 123"/>
           <path stroke-width=".5" d="M108 128 Q115 134 117 142"/>
-
-          <!-- Small cocoa beans -->
           <path stroke-width=".85" d="M25 181 C21 175 25 168 32 168 C39 169 42 175 37 181 C34 185 28 185 25 181Z"/>
           <path stroke-width=".55" d="M26 181 Q31 174 37 170"/>
-
           <path stroke-width=".85" d="M43 192 C39 187 42 180 49 180 C56 180 59 186 54 192 C51 196 46 196 43 192Z"/>
           <path stroke-width=".55" d="M44 192 Q49 185 55 182"/>
         </g>
@@ -570,42 +552,29 @@
           <path stroke-width=".8" d="M46 154 C34 137 25 120 19 102"/>
           <path stroke-width=".8" d="M65 121 C84 111 103 96 121 77"/>
           <path stroke-width=".8" d="M91 78 C78 62 70 47 67 30"/>
-
           <path stroke-width=".85" d="M67 30 C48 13 48 1 63 5 C79 10 80 23 67 30Z"/>
           <path stroke-width=".55" d="M67 30 Q67 15 63 5"/>
           <path stroke-width=".5" d="M67 30 Q57 17 53 10"/>
-
           <path stroke-width=".85" d="M19 102 C1 84 3 66 18 69 C34 73 34 91 19 102Z"/>
           <path stroke-width=".55" d="M19 102 Q19 84 18 69"/>
           <path stroke-width=".5" d="M19 102 Q10 86 7 77"/>
-
           <path stroke-width=".85" d="M121 77 C140 58 146 43 132 43 C116 44 110 62 121 77Z"/>
           <path stroke-width=".55" d="M121 77 Q128 58 132 43"/>
           <path stroke-width=".5" d="M121 77 Q134 59 141 53"/>
-
-          <path stroke-width="1.05" d="M66 166
-            C49 154 43 135 48 116
-            C53 93 70 72 91 68
-            C111 64 129 80 132 101
-            C136 124 122 149 103 164
-            C90 174 77 174 66 166Z"/>
-
+          <path stroke-width="1.05" d="M66 166 C49 154 43 135 48 116 C53 93 70 72 91 68 C111 64 129 80 132 101 C136 124 122 149 103 164 C90 174 77 174 66 166Z"/>
           <path stroke-width=".8" d="M66 166 C68 132 57 119 48 116"/>
           <path stroke-width=".8" d="M73 170 C81 130 69 94 62 82"/>
           <path stroke-width=".8" d="M82 172 C93 132 84 91 81 72"/>
           <path stroke-width=".8" d="M92 170 C107 132 99 91 98 68"/>
           <path stroke-width=".8" d="M102 164 C120 134 126 113 132 101"/>
-
           <path stroke-width=".5" d="M51 119 Q58 123 61 132"/>
           <path stroke-width=".5" d="M50 132 Q57 136 62 145"/>
           <path stroke-width=".5" d="M57 148 Q64 152 69 159"/>
           <path stroke-width=".5" d="M119 91 Q126 98 128 107"/>
           <path stroke-width=".5" d="M115 108 Q123 114 125 123"/>
           <path stroke-width=".5" d="M108 128 Q115 134 117 142"/>
-
           <path stroke-width=".85" d="M25 181 C21 175 25 168 32 168 C39 169 42 175 37 181 C34 185 28 185 25 181Z"/>
           <path stroke-width=".55" d="M26 181 Q31 174 37 170"/>
-
           <path stroke-width=".85" d="M43 192 C39 187 42 180 49 180 C56 180 59 186 54 192 C51 196 46 196 43 192Z"/>
           <path stroke-width=".55" d="M44 192 Q49 185 55 182"/>
         </g>
@@ -625,23 +594,13 @@
     <div class="cocoa-decoration left" aria-hidden="true">
       <svg viewBox="0 0 110 130">
         <g fill="none" stroke="#805B43" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Cocoa pod outline -->
-          <path stroke-width="1.05" d="M48 116
-            C28 106 17 86 19 65
-            C21 42 37 18 57 12
-            C77 6 96 25 96 49
-            C97 75 79 103 59 114
-            C55 117 51 117 48 116Z"/>
-
-          <!-- Longitudinal pod ribs -->
+          <path stroke-width="1.05" d="M48 116 C28 106 17 86 19 65 C21 42 37 18 57 12 C77 6 96 25 96 49 C97 75 79 103 59 114 C55 117 51 117 48 116Z"/>
           <path stroke-width=".8" d="M48 116 Q42 72 57 12"/>
           <path stroke-width=".8" d="M48 116 Q30 78 19 65"/>
           <path stroke-width=".8" d="M48 116 Q36 65 37 27"/>
           <path stroke-width=".8" d="M52 116 Q57 67 57 12"/>
           <path stroke-width=".8" d="M57 114 Q76 67 57 12"/>
           <path stroke-width=".8" d="M59 114 Q91 80 96 49"/>
-
-          <!-- Fine natural texture -->
           <path stroke-width=".5" d="M22 61 Q29 65 33 74"/>
           <path stroke-width=".5" d="M23 76 Q31 80 35 90"/>
           <path stroke-width=".5" d="M29 91 Q37 96 41 105"/>
@@ -655,20 +614,13 @@
     <div class="cocoa-decoration right" aria-hidden="true">
       <svg viewBox="0 0 110 130">
         <g fill="none" stroke="#805B43" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke-width="1.05" d="M48 116
-            C28 106 17 86 19 65
-            C21 42 37 18 57 12
-            C77 6 96 25 96 49
-            C97 75 79 103 59 114
-            C55 117 51 117 48 116Z"/>
-
+          <path stroke-width="1.05" d="M48 116 C28 106 17 86 19 65 C21 42 37 18 57 12 C77 6 96 25 96 49 C97 75 79 103 59 114 C55 117 51 117 48 116Z"/>
           <path stroke-width=".8" d="M48 116 Q42 72 57 12"/>
           <path stroke-width=".8" d="M48 116 Q30 78 19 65"/>
           <path stroke-width=".8" d="M48 116 Q36 65 37 27"/>
           <path stroke-width=".8" d="M52 116 Q57 67 57 12"/>
           <path stroke-width=".8" d="M57 114 Q76 67 57 12"/>
           <path stroke-width=".8" d="M59 114 Q91 80 96 49"/>
-
           <path stroke-width=".5" d="M22 61 Q29 65 33 74"/>
           <path stroke-width=".5" d="M23 76 Q31 80 35 90"/>
           <path stroke-width=".5" d="M29 91 Q37 96 41 105"/>
@@ -740,42 +692,29 @@
           <path stroke-width=".8" d="M46 154 C34 137 25 120 19 102"/>
           <path stroke-width=".8" d="M65 121 C84 111 103 96 121 77"/>
           <path stroke-width=".8" d="M91 78 C78 62 70 47 67 30"/>
-
           <path stroke-width=".85" d="M67 30 C48 13 48 1 63 5 C79 10 80 23 67 30Z"/>
           <path stroke-width=".55" d="M67 30 Q67 15 63 5"/>
           <path stroke-width=".5" d="M67 30 Q57 17 53 10"/>
-
           <path stroke-width=".85" d="M19 102 C1 84 3 66 18 69 C34 73 34 91 19 102Z"/>
           <path stroke-width=".55" d="M19 102 Q19 84 18 69"/>
           <path stroke-width=".5" d="M19 102 Q10 86 7 77"/>
-
           <path stroke-width=".85" d="M121 77 C140 58 146 43 132 43 C116 44 110 62 121 77Z"/>
           <path stroke-width=".55" d="M121 77 Q128 58 132 43"/>
           <path stroke-width=".5" d="M121 77 Q134 59 141 53"/>
-
-          <path stroke-width="1.05" d="M66 166
-            C49 154 43 135 48 116
-            C53 93 70 72 91 68
-            C111 64 129 80 132 101
-            C136 124 122 149 103 164
-            C90 174 77 174 66 166Z"/>
-
+          <path stroke-width="1.05" d="M66 166 C49 154 43 135 48 116 C53 93 70 72 91 68 C111 64 129 80 132 101 C136 124 122 149 103 164 C90 174 77 174 66 166Z"/>
           <path stroke-width=".8" d="M66 166 C68 132 57 119 48 116"/>
           <path stroke-width=".8" d="M73 170 C81 130 69 94 62 82"/>
           <path stroke-width=".8" d="M82 172 C93 132 84 91 81 72"/>
           <path stroke-width=".8" d="M92 170 C107 132 99 91 98 68"/>
           <path stroke-width=".8" d="M102 164 C120 134 126 113 132 101"/>
-
           <path stroke-width=".5" d="M51 119 Q58 123 61 132"/>
           <path stroke-width=".5" d="M50 132 Q57 136 62 145"/>
           <path stroke-width=".5" d="M57 148 Q64 152 69 159"/>
           <path stroke-width=".5" d="M119 91 Q126 98 128 107"/>
           <path stroke-width=".5" d="M115 108 Q123 114 125 123"/>
           <path stroke-width=".5" d="M108 128 Q115 134 117 142"/>
-
           <path stroke-width=".85" d="M25 181 C21 175 25 168 32 168 C39 169 42 175 37 181 C34 185 28 185 25 181Z"/>
           <path stroke-width=".55" d="M26 181 Q31 174 37 170"/>
-
           <path stroke-width=".85" d="M43 192 C39 187 42 180 49 180 C56 180 59 186 54 192 C51 196 46 196 43 192Z"/>
           <path stroke-width=".55" d="M44 192 Q49 185 55 182"/>
         </g>
@@ -789,42 +728,29 @@
           <path stroke-width=".8" d="M46 154 C34 137 25 120 19 102"/>
           <path stroke-width=".8" d="M65 121 C84 111 103 96 121 77"/>
           <path stroke-width=".8" d="M91 78 C78 62 70 47 67 30"/>
-
           <path stroke-width=".85" d="M67 30 C48 13 48 1 63 5 C79 10 80 23 67 30Z"/>
           <path stroke-width=".55" d="M67 30 Q67 15 63 5"/>
           <path stroke-width=".5" d="M67 30 Q57 17 53 10"/>
-
           <path stroke-width=".85" d="M19 102 C1 84 3 66 18 69 C34 73 34 91 19 102Z"/>
           <path stroke-width=".55" d="M19 102 Q19 84 18 69"/>
           <path stroke-width=".5" d="M19 102 Q10 86 7 77"/>
-
           <path stroke-width=".85" d="M121 77 C140 58 146 43 132 43 C116 44 110 62 121 77Z"/>
           <path stroke-width=".55" d="M121 77 Q128 58 132 43"/>
           <path stroke-width=".5" d="M121 77 Q134 59 141 53"/>
-
-          <path stroke-width="1.05" d="M66 166
-            C49 154 43 135 48 116
-            C53 93 70 72 91 68
-            C111 64 129 80 132 101
-            C136 124 122 149 103 164
-            C90 174 77 174 66 166Z"/>
-
+          <path stroke-width="1.05" d="M66 166 C49 154 43 135 48 116 C53 93 70 72 91 68 C111 64 129 80 132 101 C136 124 122 149 103 164 C90 174 77 174 66 166Z"/>
           <path stroke-width=".8" d="M66 166 C68 132 57 119 48 116"/>
           <path stroke-width=".8" d="M73 170 C81 130 69 94 62 82"/>
           <path stroke-width=".8" d="M82 172 C93 132 84 91 81 72"/>
           <path stroke-width=".8" d="M92 170 C107 132 99 91 98 68"/>
           <path stroke-width=".8" d="M102 164 C120 134 126 113 132 101"/>
-
           <path stroke-width=".5" d="M51 119 Q58 123 61 132"/>
           <path stroke-width=".5" d="M50 132 Q57 136 62 145"/>
           <path stroke-width=".5" d="M57 148 Q64 152 69 159"/>
           <path stroke-width=".5" d="M119 91 Q126 98 128 107"/>
           <path stroke-width=".5" d="M115 108 Q123 114 125 123"/>
           <path stroke-width=".5" d="M108 128 Q115 134 117 142"/>
-
           <path stroke-width=".85" d="M25 181 C21 175 25 168 32 168 C39 169 42 175 37 181 C34 185 28 185 25 181Z"/>
           <path stroke-width=".55" d="M26 181 Q31 174 37 170"/>
-
           <path stroke-width=".85" d="M43 192 C39 187 42 180 49 180 C56 180 59 186 54 192 C51 196 46 196 43 192Z"/>
           <path stroke-width=".55" d="M44 192 Q49 185 55 182"/>
         </g>
@@ -852,42 +778,29 @@
           <path stroke-width=".8" d="M46 154 C34 137 25 120 19 102"/>
           <path stroke-width=".8" d="M65 121 C84 111 103 96 121 77"/>
           <path stroke-width=".8" d="M91 78 C78 62 70 47 67 30"/>
-
           <path stroke-width=".85" d="M67 30 C48 13 48 1 63 5 C79 10 80 23 67 30Z"/>
           <path stroke-width=".55" d="M67 30 Q67 15 63 5"/>
           <path stroke-width=".5" d="M67 30 Q57 17 53 10"/>
-
           <path stroke-width=".85" d="M19 102 C1 84 3 66 18 69 C34 73 34 91 19 102Z"/>
           <path stroke-width=".55" d="M19 102 Q19 84 18 69"/>
           <path stroke-width=".5" d="M19 102 Q10 86 7 77"/>
-
           <path stroke-width=".85" d="M121 77 C140 58 146 43 132 43 C116 44 110 62 121 77Z"/>
           <path stroke-width=".55" d="M121 77 Q128 58 132 43"/>
           <path stroke-width=".5" d="M121 77 Q134 59 141 53"/>
-
-          <path stroke-width="1.05" d="M66 166
-            C49 154 43 135 48 116
-            C53 93 70 72 91 68
-            C111 64 129 80 132 101
-            C136 124 122 149 103 164
-            C90 174 77 174 66 166Z"/>
-
+          <path stroke-width="1.05" d="M66 166 C49 154 43 135 48 116 C53 93 70 72 91 68 C111 64 129 80 132 101 C136 124 122 149 103 164 C90 174 77 174 66 166Z"/>
           <path stroke-width=".8" d="M66 166 C68 132 57 119 48 116"/>
           <path stroke-width=".8" d="M73 170 C81 130 69 94 62 82"/>
           <path stroke-width=".8" d="M82 172 C93 132 84 91 81 72"/>
           <path stroke-width=".8" d="M92 170 C107 132 99 91 98 68"/>
           <path stroke-width=".8" d="M102 164 C120 134 126 113 132 101"/>
-
           <path stroke-width=".5" d="M51 119 Q58 123 61 132"/>
           <path stroke-width=".5" d="M50 132 Q57 136 62 145"/>
           <path stroke-width=".5" d="M57 148 Q64 152 69 159"/>
           <path stroke-width=".5" d="M119 91 Q126 98 128 107"/>
           <path stroke-width=".5" d="M115 108 Q123 114 125 123"/>
           <path stroke-width=".5" d="M108 128 Q115 134 117 142"/>
-
           <path stroke-width=".85" d="M25 181 C21 175 25 168 32 168 C39 169 42 175 37 181 C34 185 28 185 25 181Z"/>
           <path stroke-width=".55" d="M26 181 Q31 174 37 170"/>
-
           <path stroke-width=".85" d="M43 192 C39 187 42 180 49 180 C56 180 59 186 54 192 C51 196 46 196 43 192Z"/>
           <path stroke-width=".55" d="M44 192 Q49 185 55 182"/>
         </g>
@@ -901,42 +814,29 @@
           <path stroke-width=".8" d="M46 154 C34 137 25 120 19 102"/>
           <path stroke-width=".8" d="M65 121 C84 111 103 96 121 77"/>
           <path stroke-width=".8" d="M91 78 C78 62 70 47 67 30"/>
-
           <path stroke-width=".85" d="M67 30 C48 13 48 1 63 5 C79 10 80 23 67 30Z"/>
           <path stroke-width=".55" d="M67 30 Q67 15 63 5"/>
           <path stroke-width=".5" d="M67 30 Q57 17 53 10"/>
-
           <path stroke-width=".85" d="M19 102 C1 84 3 66 18 69 C34 73 34 91 19 102Z"/>
           <path stroke-width=".55" d="M19 102 Q19 84 18 69"/>
           <path stroke-width=".5" d="M19 102 Q10 86 7 77"/>
-
           <path stroke-width=".85" d="M121 77 C140 58 146 43 132 43 C116 44 110 62 121 77Z"/>
           <path stroke-width=".55" d="M121 77 Q128 58 132 43"/>
           <path stroke-width=".5" d="M121 77 Q134 59 141 53"/>
-
-          <path stroke-width="1.05" d="M66 166
-            C49 154 43 135 48 116
-            C53 93 70 72 91 68
-            C111 64 129 80 132 101
-            C136 124 122 149 103 164
-            C90 174 77 174 66 166Z"/>
-
+          <path stroke-width="1.05" d="M66 166 C49 154 43 135 48 116 C53 93 70 72 91 68 C111 64 129 80 132 101 C136 124 122 149 103 164 C90 174 77 174 66 166Z"/>
           <path stroke-width=".8" d="M66 166 C68 132 57 119 48 116"/>
           <path stroke-width=".8" d="M73 170 C81 130 69 94 62 82"/>
           <path stroke-width=".8" d="M82 172 C93 132 84 91 81 72"/>
           <path stroke-width=".8" d="M92 170 C107 132 99 91 98 68"/>
           <path stroke-width=".8" d="M102 164 C120 134 126 113 132 101"/>
-
           <path stroke-width=".5" d="M51 119 Q58 123 61 132"/>
           <path stroke-width=".5" d="M50 132 Q57 136 62 145"/>
           <path stroke-width=".5" d="M57 148 Q64 152 69 159"/>
           <path stroke-width=".5" d="M119 91 Q126 98 128 107"/>
           <path stroke-width=".5" d="M115 108 Q123 114 125 123"/>
           <path stroke-width=".5" d="M108 128 Q115 134 117 142"/>
-
           <path stroke-width=".85" d="M25 181 C21 175 25 168 32 168 C39 169 42 175 37 181 C34 185 28 185 25 181Z"/>
           <path stroke-width=".55" d="M26 181 Q31 174 37 170"/>
-
           <path stroke-width=".85" d="M43 192 C39 187 42 180 49 180 C56 180 59 186 54 192 C51 196 46 196 43 192Z"/>
           <path stroke-width=".55" d="M44 192 Q49 185 55 182"/>
         </g>
