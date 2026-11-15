@@ -14,13 +14,16 @@
 
   <style>
     :root {
-      --cream: #f8f5ef;
-      --paper: #fffdf9;
-      --burgundy: #713c49;
-      --pink: #c58c99;
-      --ink: #39312f;
-      --muted: #817773;
-      --line: #e9e0d9;
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
+      --cocoa: #805B43;
     }
 
     * {
@@ -74,6 +77,7 @@
       font-weight: 600;
       letter-spacing: .09em;
       text-transform: uppercase;
+      transition: color .2s ease;
     }
 
     nav a:hover {
@@ -88,12 +92,23 @@
     }
 
     .hero {
-      padding: 75px 24px 55px;
+      position: relative;
+      overflow: hidden;
+      padding: 85px 24px 90px;
       text-align: center;
+      background:
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .14), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .10), transparent 25%),
+        var(--cream);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
-      color: var(--burgundy);
+      color: var(--leaf);
       font-size: 11px;
       font-weight: 600;
       letter-spacing: .2em;
@@ -102,7 +117,7 @@
 
     .hero h1 {
       margin: 18px auto;
-      font-size: clamp(36px, 5vw, 52px);
+      font-size: clamp(38px, 6vw, 58px);
     }
 
     .hero p {
@@ -112,31 +127,59 @@
       font-size: 15px;
     }
 
+    .botanical-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin: 22px auto;
+      color: var(--leaf);
+      font-size: 17px;
+    }
+
+    .botanical-divider::before,
+    .botanical-divider::after {
+      width: 48px;
+      height: 1px;
+      background: #C8CDBA;
+      content: "";
+    }
+
     .information {
-      padding: 65px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      padding: 75px 24px 85px;
       background: var(--paper);
       border-top: 1px solid var(--line);
     }
 
     .information-inner {
-      max-width: 850px;
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .info-section {
-      margin-top: 42px;
-      padding-top: 30px;
-      border-top: 1px solid var(--line);
+      margin-top: 30px;
+      padding: 32px 35px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      transition: border-color .25s ease;
+    }
+
+    .info-section:hover {
+      border-color: #C9B59E;
     }
 
     .info-section:first-child {
       margin-top: 0;
-      padding-top: 0;
-      border-top: none;
     }
 
     .info-section h2 {
       margin: 0 0 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--line);
       font-size: clamp(27px, 4vw, 34px);
     }
 
@@ -151,6 +194,10 @@
       font-size: 14px;
     }
 
+    .info-section p:last-child {
+      margin-bottom: 0;
+    }
+
     .info-section ul {
       padding-left: 22px;
       margin: 15px 0 22px;
@@ -162,26 +209,27 @@
       margin-bottom: 7px;
     }
 
+    .info-section li::marker {
+      color: var(--leaf);
+    }
+
     .notice {
       margin-top: 22px;
-      padding: 0 0 0 17px;
-      border-left: 2px solid var(--pink);
+      padding: 14px 18px;
+      border-left: 3px solid var(--pink);
+      background: #F8ECE5;
       color: var(--muted);
       font-size: 13px;
     }
 
-    .important {
-      margin-top: 55px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0;
+    .notice strong {
+      color: var(--burgundy);
     }
 
     .brand-promise {
-      margin-top: 45px;
-      padding: 28px 20px;
+      margin-top: 42px;
+      padding: 30px 20px;
+      border: 1px solid var(--line);
       background: var(--cream);
       color: var(--burgundy);
       text-align: center;
@@ -191,13 +239,28 @@
     }
 
     .questions {
-      padding: 75px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      padding: 75px 24px 85px;
       text-align: center;
+      background:
+        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        #E8EBDD;
+    }
+
+    .questions .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .questions .eyebrow {
+      color: #647653;
     }
 
     .questions h2 {
       margin: 12px 0;
-      font-size: clamp(30px, 4vw, 40px);
+      font-size: clamp(30px, 4vw, 42px);
     }
 
     .questions p {
@@ -229,11 +292,12 @@
     .back {
       display: block;
       margin-top: 35px;
-      color: var(--burgundy);
+      color: var(--leaf);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: .1em;
       text-align: center;
+      transition: color .2s ease;
     }
 
     .back:hover {
@@ -241,6 +305,8 @@
     }
 
     footer {
+      position: relative;
+      overflow: hidden;
       padding: 30px 20px;
       background: var(--paper);
       color: var(--muted);
@@ -260,22 +326,32 @@
       margin: 5px;
     }
 
+    @media (max-width: 900px) {
+      .information-inner {
+        max-width: 760px;
+      }
+    }
+
     @media (max-width: 650px) {
       nav {
         gap: 15px 22px;
       }
 
       .hero {
-        padding: 55px 20px 45px;
+        padding: 60px 20px 65px;
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 8vw, 46px);
       }
 
       .information {
-        padding: 50px 20px 60px;
+        padding: 55px 18px 60px;
       }
 
       .info-section {
-        margin-top: 35px;
-        padding-top: 25px;
+        margin-top: 20px;
+        padding: 25px 20px;
       }
 
       .info-section h2 {
@@ -286,19 +362,25 @@
         font-size: 21px;
       }
 
-      .important {
-        margin-top: 40px;
-        font-size: 10px;
-      }
-
       .brand-promise {
-        margin-top: 35px;
-        padding: 22px 15px;
+        margin-top: 30px;
+        padding: 24px 15px;
         font-size: 21px;
       }
 
       .questions {
-        padding: 55px 20px 60px;
+        padding: 60px 20px 65px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .info-section,
+      .button {
+        transition: none;
       }
     }
   </style>
@@ -322,14 +404,18 @@
   </nav>
 
   <section class="hero">
-    <div class="eyebrow">Made with Care</div>
+    <div class="content">
+      <div class="eyebrow">Made with Care</div>
 
-    <h1>Food Safety &amp;<br>Allergen Information</h1>
+      <h1>Food Safety &amp;<br>Allergen Information</h1>
 
-    <p>
-      Your trust matters to us. Learn more about our ingredients,
-      allergen information and how to store your favorite Marownie treats.
-    </p>
+      <div class="botanical-divider" aria-hidden="true">❧</div>
+
+      <p>
+        Your trust matters to us. Learn more about our ingredients,
+        allergen information and how to store your favorite Marownie treats.
+      </p>
+    </div>
   </section>
 
   <main class="information">
@@ -438,11 +524,6 @@
         </p>
       </section>
 
-      <p class="important">
-        This product was produced in a private residence
-        that is not subject to governmental licensing or inspection.
-      </p>
-
       <div class="brand-promise">
         Homemade with Care, Made Fresh to Order
       </div>
@@ -451,27 +532,31 @@
   </main>
 
   <section class="questions">
-    <div class="eyebrow">We're Here to Help</div>
+    <div class="content">
+      <div class="eyebrow">We're Here to Help</div>
 
-    <h2>Questions About Ingredients?</h2>
+      <h2>Questions About Ingredients?</h2>
 
-    <p>
-      If you have questions about allergens, ingredients or storage,
-      please contact us before placing your order.
-    </p>
+      <div class="botanical-divider" aria-hidden="true">❧</div>
 
-    <a
-      class="button"
-      href="https://wa.me/13478881927"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      CONTACT MAROWNIE
-    </a>
+      <p>
+        If you have questions about allergens, ingredients or storage,
+        please contact us before placing your order.
+      </p>
 
-    <a class="back" href="index.html">
-      &larr; BACK TO MAROWNIE
-    </a>
+      <a
+        class="button"
+        href="https://wa.me/13478881927"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CONTACT MAROWNIE
+      </a>
+
+      <a class="back" href="index.html">
+        &larr; BACK TO MAROWNIE
+      </a>
+    </div>
   </section>
 
   <footer>
