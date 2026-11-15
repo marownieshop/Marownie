@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Marownie | Homemade Desserts</title>
-  <meta name="description" content="Discover homemade brownies, oreshki, tiramisu and more from Marownie. Thoughtfully made with cocoa, chocolate and quality ingredients.">
+  <meta name="description" content="Discover homemade brownies, oreshki, tiramisu and more from Marownie. Freshly prepared with care and quality ingredients.">
   <link rel="canonical" href="https://shopmarownie.com/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,17 +15,16 @@
 
   <style>
     :root {
-      --cream: #FAF7EF;
-      --paper: #FFFEFA;
-      --burgundy: #526D55;
-      --pink: #D98783;
-      --ink: #41463B;
-      --muted: #777D70;
-      --line: #E8E8D9;
-      --sage: #EAF0E4;
-      --coral: #F3D6C9;
-      --cocoa: #87634F;
-      --yellow: #F5E5AC;
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
+      --cocoa: #805B43;
     }
 
     * {
@@ -79,25 +78,114 @@
       font-weight: 600;
       letter-spacing: .09em;
       text-transform: uppercase;
-      transition: color .2s ease;
     }
 
     nav a:hover {
       color: var(--pink);
     }
 
+    /* Botanical decorative elements */
+
+    .botanical {
+      position: absolute;
+      width: 145px;
+      height: 190px;
+      opacity: .48;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .botanical.left {
+      left: 2%;
+      top: 50%;
+      transform: translateY(-50%) rotate(-8deg);
+    }
+
+    .botanical.right {
+      right: 2%;
+      top: 50%;
+      transform: translateY(-50%) scaleX(-1) rotate(-8deg);
+    }
+
+    .botanical svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .botanical .stem {
+      fill: none;
+      stroke: var(--leaf);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+    }
+
+    .botanical .leaf {
+      fill: var(--leaf-light);
+      stroke: var(--leaf);
+      stroke-width: .8;
+    }
+
+    .botanical .vein {
+      fill: none;
+      stroke: var(--leaf);
+      stroke-width: .65;
+    }
+
+    .cocoa-decoration {
+      position: absolute;
+      width: 105px;
+      height: 125px;
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .cocoa-decoration.left {
+      left: 4%;
+      bottom: 12px;
+    }
+
+    .cocoa-decoration.right {
+      right: 4%;
+      bottom: 12px;
+      transform: scaleX(-1);
+    }
+
+    .cocoa-decoration svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .cocoa-decoration path {
+      fill: #A47A5B;
+      stroke: var(--cocoa);
+      stroke-width: 1.2;
+    }
+
+    .cocoa-decoration line {
+      stroke: var(--cocoa);
+      stroke-width: 1;
+      fill: none;
+    }
+
     .hero {
+      position: relative;
+      overflow: hidden;
       padding: 85px 24px 90px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 7% 20%, rgba(218, 135, 131, .16), transparent 22%),
-        radial-gradient(ellipse at 92% 75%, rgba(129, 158, 111, .18), transparent 25%),
-        radial-gradient(ellipse at 80% 10%, rgba(245, 229, 172, .25), transparent 18%),
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .14), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .10), transparent 25%),
         var(--cream);
     }
 
+    .hero .content {
+      position: relative;
+      z-index: 1;
+    }
+
     .eyebrow {
-      color: #78936C;
+      color: var(--leaf);
       font-size: 11px;
       font-weight: 600;
       letter-spacing: .2em;
@@ -128,29 +216,31 @@
       margin-top: 28px;
       padding: 13px 27px;
       border: 1px solid var(--burgundy);
-      border-radius: 3px;
       background: var(--burgundy);
       color: white;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: .1em;
       text-align: center;
-      transition: .25s ease;
+      transition: .2s ease;
     }
 
     .button:hover {
-      border-color: var(--pink);
-      background: var(--pink);
-      color: white;
+      background: transparent;
+      color: var(--burgundy);
     }
 
     .treats {
+      position: relative;
+      overflow: hidden;
       padding: 75px 24px 85px;
       background: var(--paper);
       border-top: 1px solid var(--line);
     }
 
     .section-inner {
+      position: relative;
+      z-index: 1;
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -176,16 +266,17 @@
     }
 
     .treat-card {
+      position: relative;
       overflow: hidden;
       border: 1px solid var(--line);
       background: var(--paper);
       text-align: center;
-      transition: border-color .25s ease, box-shadow .25s ease;
+      transition: border-color .25s ease, transform .25s ease;
     }
 
     .treat-card:hover {
-      border-color: #D9C9B9;
-      box-shadow: 0 8px 24px rgba(91, 108, 78, .08);
+      border-color: #C9B59E;
+      transform: translateY(-3px);
     }
 
     .treat-content {
@@ -207,11 +298,10 @@
     .small-link {
       display: inline-block;
       margin-top: 18px;
-      color: #78936C;
+      color: var(--leaf);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: .1em;
-      transition: color .2s ease;
     }
 
     .small-link:hover {
@@ -219,15 +309,19 @@
     }
 
     .story {
+      position: relative;
+      overflow: hidden;
       padding: 80px 24px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 5% 50%, rgba(218, 135, 131, .13), transparent 23%),
-        radial-gradient(ellipse at 95% 50%, rgba(129, 158, 111, .16), transparent 23%),
+        radial-gradient(ellipse at 5% 50%, rgba(141, 164, 119, .14), transparent 23%),
+        radial-gradient(ellipse at 95% 50%, rgba(101, 67, 50, .10), transparent 23%),
         var(--cream);
     }
 
     .story-inner {
+      position: relative;
+      z-index: 1;
       max-width: 680px;
       margin: 0 auto;
     }
@@ -243,17 +337,19 @@
     }
 
     .order-section {
+      position: relative;
+      overflow: hidden;
       padding: 65px 24px 75px;
       background:
-        radial-gradient(ellipse at 8% 15%, rgba(255, 255, 255, .65), transparent 25%),
-        radial-gradient(ellipse at 92% 85%, rgba(217, 135, 131, .20), transparent 26%),
-        radial-gradient(ellipse at 85% 10%, rgba(245, 229, 172, .35), transparent 20%),
-        #EAF0E4;
+        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        #E8EBDD;
       text-align: center;
     }
 
-    .order-section .eyebrow {
-      color: #78936C;
+    .order-section .content {
+      position: relative;
+      z-index: 1;
     }
 
     .order-section h2 {
@@ -268,17 +364,13 @@
       font-size: 14px;
     }
 
-    .order-section .button {
-      background: var(--pink);
-      border-color: var(--pink);
-    }
-
-    .order-section .button:hover {
-      background: var(--burgundy);
-      border-color: var(--burgundy);
+    .order-section .eyebrow {
+      color: #647653;
     }
 
     footer {
+      position: relative;
+      overflow: hidden;
       padding: 30px 20px;
       background: var(--paper);
       color: var(--muted);
@@ -298,6 +390,40 @@
       margin: 5px;
     }
 
+    /* Delicate decorative divider */
+
+    .botanical-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin: 22px auto;
+      color: var(--leaf);
+      font-size: 17px;
+    }
+
+    .botanical-divider::before,
+    .botanical-divider::after {
+      width: 48px;
+      height: 1px;
+      background: #C8CDBA;
+      content: "";
+    }
+
+    @media (max-width: 900px) {
+      .botanical {
+        width: 95px;
+        height: 140px;
+        opacity: .28;
+      }
+
+      .cocoa-decoration {
+        width: 75px;
+        height: 95px;
+        opacity: .25;
+      }
+    }
+
     @media (max-width: 650px) {
       nav {
         gap: 15px 22px;
@@ -305,6 +431,24 @@
 
       .hero {
         padding: 60px 20px 65px;
+      }
+
+      .botanical {
+        width: 65px;
+        height: 100px;
+        opacity: .18;
+      }
+
+      .botanical.left {
+        left: -10px;
+      }
+
+      .botanical.right {
+        right: -10px;
+      }
+
+      .cocoa-decoration {
+        display: none;
       }
 
       .treats {
@@ -318,6 +462,17 @@
 
       .story {
         padding: 60px 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .treat-card,
+      .button {
+        transition: none;
       }
     }
   </style>
@@ -341,19 +496,83 @@
   </nav>
 
   <section class="hero">
-    <div class="eyebrow">Homemade with Care</div>
-    <h1>A Little Sweetness,<br>Made at Home.</h1>
-    <p>
-      Thoughtfully made homemade desserts, crafted with cocoa,
-      chocolate, quality ingredients, and a little love.
-    </p>
-    <a class="button" href="#treats">EXPLORE OUR TREATS</a>
+
+    <div class="botanical left" aria-hidden="true">
+      <svg viewBox="0 0 150 200">
+        <path class="stem" d="M22 185 Q65 120 90 15"/>
+        <path class="stem" d="M49 142 Q24 119 14 93"/>
+        <path class="stem" d="M63 111 Q100 105 121 75"/>
+        <path class="stem" d="M76 76 Q43 69 33 39"/>
+        <path class="stem" d="M86 43 Q112 42 125 22"/>
+        <path class="leaf" d="M14 93 Q-4 69 19 59 Q39 72 14 93Z"/>
+        <path class="vein" d="M14 93 Q13 76 19 59"/>
+        <path class="leaf" d="M121 75 Q143 52 128 43 Q108 51 121 75Z"/>
+        <path class="vein" d="M121 75 Q126 55 128 43"/>
+        <path class="leaf" d="M33 39 Q13 15 38 12 Q55 25 33 39Z"/>
+        <path class="vein" d="M33 39 Q33 21 38 12"/>
+        <path class="leaf" d="M125 22 Q142 1 149 18 Q143 37 125 22Z"/>
+        <path class="vein" d="M125 22 Q141 18 149 18"/>
+        <path class="leaf" d="M49 142 Q21 132 31 114 Q53 116 49 142Z"/>
+        <path class="vein" d="M49 142 Q37 125 31 114"/>
+      </svg>
+    </div>
+
+    <div class="botanical right" aria-hidden="true">
+      <svg viewBox="0 0 150 200">
+        <path class="stem" d="M22 185 Q65 120 90 15"/>
+        <path class="stem" d="M49 142 Q24 119 14 93"/>
+        <path class="stem" d="M63 111 Q100 105 121 75"/>
+        <path class="stem" d="M76 76 Q43 69 33 39"/>
+        <path class="stem" d="M86 43 Q112 42 125 22"/>
+        <path class="leaf" d="M14 93 Q-4 69 19 59 Q39 72 14 93Z"/>
+        <path class="vein" d="M14 93 Q13 76 19 59"/>
+        <path class="leaf" d="M121 75 Q143 52 128 43 Q108 51 121 75Z"/>
+        <path class="vein" d="M121 75 Q126 55 128 43"/>
+        <path class="leaf" d="M33 39 Q13 15 38 12 Q55 25 33 39Z"/>
+        <path class="vein" d="M33 39 Q33 21 38 12"/>
+        <path class="leaf" d="M125 22 Q142 1 149 18 Q143 37 125 22Z"/>
+        <path class="vein" d="M125 22 Q141 18 149 18"/>
+        <path class="leaf" d="M49 142 Q21 132 31 114 Q53 116 49 142Z"/>
+        <path class="vein" d="M49 142 Q37 125 31 114"/>
+      </svg>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">Homemade with Care</div>
+      <h1>A Little Sweetness,<br>Made at Home.</h1>
+      <p>
+        Thoughtfully prepared homemade desserts,
+        made in small batches with care and quality ingredients.
+      </p>
+      <a class="button" href="#treats">EXPLORE OUR TREATS</a>
+    </div>
+
+    <div class="cocoa-decoration left" aria-hidden="true">
+      <svg viewBox="0 0 110 130">
+        <path d="M49 110 Q14 92 23 54 Q29 17 65 15 Q91 38 78 75 Q70 99 49 110Z"/>
+        <path d="M49 110 Q45 70 65 15" fill="none"/>
+        <line x1="49" y1="110" x2="36" y2="45"/>
+        <line x1="49" y1="110" x2="70" y2="37"/>
+      </svg>
+    </div>
+
+    <div class="cocoa-decoration right" aria-hidden="true">
+      <svg viewBox="0 0 110 130">
+        <path d="M49 110 Q14 92 23 54 Q29 17 65 15 Q91 38 78 75 Q70 99 49 110Z"/>
+        <path d="M49 110 Q45 70 65 15" fill="none"/>
+        <line x1="49" y1="110" x2="36" y2="45"/>
+        <line x1="49" y1="110" x2="70" y2="37"/>
+      </svg>
+    </div>
+
   </section>
 
   <section class="treats" id="treats">
     <div class="section-inner">
 
       <h2 class="section-heading">Our Treats</h2>
+
+      <div class="botanical-divider" aria-hidden="true">❧</div>
 
       <p class="section-intro">
         Discover something delicious for every sweet moment.
@@ -399,9 +618,35 @@
   </section>
 
   <section class="story" id="story">
+
+    <div class="botanical left" aria-hidden="true">
+      <svg viewBox="0 0 150 200">
+        <path class="stem" d="M22 185 Q65 120 90 15"/>
+        <path class="stem" d="M49 142 Q24 119 14 93"/>
+        <path class="stem" d="M63 111 Q100 105 121 75"/>
+        <path class="stem" d="M76 76 Q43 69 33 39"/>
+        <path class="leaf" d="M14 93 Q-4 69 19 59 Q39 72 14 93Z"/>
+        <path class="leaf" d="M121 75 Q143 52 128 43 Q108 51 121 75Z"/>
+        <path class="leaf" d="M33 39 Q13 15 38 12 Q55 25 33 39Z"/>
+      </svg>
+    </div>
+
+    <div class="botanical right" aria-hidden="true">
+      <svg viewBox="0 0 150 200">
+        <path class="stem" d="M22 185 Q65 120 90 15"/>
+        <path class="stem" d="M49 142 Q24 119 14 93"/>
+        <path class="stem" d="M63 111 Q100 105 121 75"/>
+        <path class="stem" d="M76 76 Q43 69 33 39"/>
+        <path class="leaf" d="M14 93 Q-4 69 19 59 Q39 72 14 93Z"/>
+        <path class="leaf" d="M121 75 Q143 52 128 43 Q108 51 121 75Z"/>
+        <path class="leaf" d="M33 39 Q13 15 38 12 Q55 25 33 39Z"/>
+      </svg>
+    </div>
+
     <div class="story-inner">
       <div class="eyebrow">A Little About Us</div>
       <h2>Made with Care, Shared with Love.</h2>
+      <div class="botanical-divider" aria-hidden="true">❧</div>
       <p>
         At Marownie, we believe that the sweetest moments
         are often the simplest ones. Each dessert is prepared
@@ -411,17 +656,44 @@
   </section>
 
   <section class="order-section" id="order">
-    <div class="eyebrow">Let's Make It Sweet</div>
-    <h2>Ready to Order?</h2>
-    <p>
-      Choose your favorite desserts and send us your order.
-      We will contact you to confirm the details.
-    </p>
-    <a class="button"
-       href="https://forms.gle/wLXREGUxqsH26gpY8"
-       target="_blank" rel="noopener noreferrer">
-      PLACE YOUR ORDER
-    </a>
+
+    <div class="botanical left" aria-hidden="true">
+      <svg viewBox="0 0 150 200">
+        <path class="stem" d="M22 185 Q65 120 90 15"/>
+        <path class="stem" d="M49 142 Q24 119 14 93"/>
+        <path class="stem" d="M63 111 Q100 105 121 75"/>
+        <path class="leaf" d="M14 93 Q-4 69 19 59 Q39 72 14 93Z"/>
+        <path class="leaf" d="M121 75 Q143 52 128 43 Q108 51 121 75Z"/>
+        <path class="leaf" d="M33 39 Q13 15 38 12 Q55 25 33 39Z"/>
+      </svg>
+    </div>
+
+    <div class="botanical right" aria-hidden="true">
+      <svg viewBox="0 0 150 200">
+        <path class="stem" d="M22 185 Q65 120 90 15"/>
+        <path class="stem" d="M49 142 Q24 119 14 93"/>
+        <path class="stem" d="M63 111 Q100 105 121 75"/>
+        <path class="leaf" d="M14 93 Q-4 69 19 59 Q39 72 14 93Z"/>
+        <path class="leaf" d="M121 75 Q143 52 128 43 Q108 51 121 75Z"/>
+        <path class="leaf" d="M33 39 Q13 15 38 12 Q55 25 33 39Z"/>
+      </svg>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">Let's Make It Sweet</div>
+      <h2>Ready to Order?</h2>
+      <div class="botanical-divider" aria-hidden="true">❧</div>
+      <p>
+        Choose your favorite desserts and send us your order.
+        We will contact you to confirm the details.
+      </p>
+      <a class="button"
+         href="https://forms.gle/wLXREGUxqsH26gpY8"
+         target="_blank" rel="noopener noreferrer">
+        PLACE YOUR ORDER
+      </a>
+    </div>
+
   </section>
 
   <footer>
