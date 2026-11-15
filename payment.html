@@ -13,13 +13,16 @@
 
   <style>
     :root {
-      --cream: #f8f5ef;
-      --paper: #fffdf9;
-      --burgundy: #713c49;
-      --pink: #c58c99;
-      --ink: #39312f;
-      --muted: #817773;
-      --line: #e9e0d9;
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
+      --cocoa: #805B43;
     }
 
     * {
@@ -28,7 +31,10 @@
 
     body {
       margin: 0;
-      background: var(--cream);
+      background:
+        radial-gradient(ellipse at 8% 18%, rgba(167, 179, 148, 0.13), transparent 30%),
+        radial-gradient(ellipse at 92% 55%, rgba(233, 154, 126, 0.10), transparent 28%),
+        var(--cream);
       color: var(--ink);
       font-family: "DM Sans", sans-serif;
     }
@@ -54,12 +60,14 @@
       padding: 14px 15px;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+      background: rgba(255, 252, 245, 0.55);
     }
 
     nav a {
       color: var(--burgundy);
       text-decoration: none;
       font-size: 14px;
+      transition: color 0.25s ease;
     }
 
     nav a:hover {
@@ -83,26 +91,47 @@
 
     .intro {
       max-width: 590px;
-      margin: 0 auto 40px;
+      margin: 0 auto 28px;
       color: var(--muted);
       text-align: center;
       line-height: 1.8;
       font-size: 15px;
     }
 
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 0 auto 35px;
+      color: var(--leaf);
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      width: 65px;
+      height: 1px;
+      background: var(--line);
+    }
+
     .payment-card {
       margin-bottom: 20px;
-      padding: 28px;
+      padding: 30px 28px;
       background: var(--paper);
       border: 1px solid var(--line);
+      border-radius: 3px;
       text-align: center;
+      box-shadow: 0 8px 25px rgba(80, 59, 43, 0.035);
     }
 
     .payment-card h2 {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       color: var(--burgundy);
       font-family: "Playfair Display", Georgia, serif;
-      font-size: 26px;
+      font-size: 27px;
       font-weight: 400;
     }
 
@@ -113,11 +142,27 @@
       line-height: 1.8;
     }
 
+    .business-recipient {
+      margin-top: 15px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--burgundy);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .business-recipient strong {
+      color: var(--cocoa);
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+
     .note {
       margin-top: 30px;
       padding: 20px;
-      background: var(--cream);
-      border: 1px solid var(--line);
+      background: #E8EBDD;
+      border: 1px solid #D9DFD0;
+      border-radius: 3px;
       color: var(--burgundy);
       text-align: center;
       font-size: 14px;
@@ -127,6 +172,7 @@
     footer {
       padding: 25px 15px;
       border-top: 1px solid var(--line);
+      background: rgba(255, 252, 245, 0.45);
       color: var(--muted);
       text-align: center;
       font-size: 13px;
@@ -146,7 +192,7 @@
       }
 
       .payment-card {
-        padding: 23px 18px;
+        padding: 25px 18px;
       }
     }
   </style>
@@ -178,12 +224,18 @@
       We currently offer the following payment options for your convenience.
     </p>
 
+    <div class="divider">❧</div>
+
     <section class="payment-card">
       <h2>Zelle</h2>
       <p>
         Pay by Zelle after your order has been confirmed by Marownie.
         Payment details will be provided directly after confirmation.
       </p>
+
+      <div class="business-recipient">
+        Business recipient: <strong>MAROWNIE LLC</strong>
+      </div>
     </section>
 
     <section class="payment-card">
