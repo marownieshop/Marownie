@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Delivery & Pickup | Marownie</title>
+  <title>Delivery &amp; Pickup | Marownie</title>
   <meta name="description" content="Explore Marownie pickup and local delivery options. Check estimated delivery availability by ZIP code.">
   <link rel="canonical" href="https://shopmarownie.com/delivery.html">
 
@@ -292,6 +292,11 @@
     .button:hover {
       background: transparent;
       color: var(--burgundy);
+    }
+
+    .button:disabled {
+      opacity: .65;
+      cursor: wait;
     }
 
     .zip-row .button {
@@ -637,15 +642,15 @@
           <tbody>
             <tr>
               <td>Up to 5 miles</td>
-              <td>$10</td>
+              <td>$5</td>
             </tr>
             <tr>
               <td>5–10 miles</td>
-              <td>$15</td>
+              <td>$10</td>
             </tr>
             <tr>
               <td>10–15 miles</td>
-              <td>Fee confirmed</td>
+              <td>$15</td>
             </tr>
             <tr>
               <td>15–20 miles</td>
@@ -656,8 +661,8 @@
               <td>$30</td>
             </tr>
             <tr>
-              <td>Over 30 miles</td>
-              <td>Outside delivery area</td>
+              <td>More than 30 miles</td>
+              <td>Personalized quote</td>
             </tr>
           </tbody>
         </table>
@@ -665,6 +670,7 @@
         <p class="price-footnote">
           All fees are preliminary estimates. Final delivery availability
           and pricing are confirmed personally after order review.
+          Locations beyond 30 miles may be considered with an individual quote.
         </p>
       </div>
 
@@ -743,12 +749,11 @@
   <script>
     const BASE_ZIP = "75024";
 
-    // Preliminary delivery fee settings.
-    // Change these values whenever you need.
+    // Preliminary delivery fees based on estimated distance.
     const DELIVERY_FEES = [
-      { max: 5, fee: 10 },
-      { max: 10, fee: 15 },
-      { max: 15, fee: null },
+      { max: 5, fee: 5 },
+      { max: 10, fee: 10 },
+      { max: 15, fee: 15 },
       { max: 20, fee: 20 },
       { max: 30, fee: 30 }
     ];
@@ -831,11 +836,20 @@
           getZipCoordinates(zip)
         ]);
 
+        // ZIP codes outside Texas can still be considered
+        // with a personalized delivery quote.
         if (destination.state !== "TX" || origin.state !== "TX") {
           showResult("warning", `
-            <h3>Delivery area not confirmed</h3>
-            <p>Our local delivery service is currently focused on the Plano, Texas area.</p>
-            <p>Please contact Marownie to check your location.</p>
+            <h3>Let's Check Your Location!</h3>
+            <p><strong>${destination.city}, ${destination.state} ${zip}</strong></p>
+            <p class="fee">Personalized delivery quote</p>
+            <p>Delivery may still be available outside our regular local area.</p>
+            <p>Please contact Marownie for an individual delivery quote.
+            The fee will be calculated based on your location.</p>
+            <p class="result-disclaimer">
+              Final delivery availability and pricing are confirmed personally
+              after reviewing your full address.
+            </p>
           `);
           return;
         }
@@ -849,13 +863,21 @@
 
         const roundedDistance = distance.toFixed(1);
 
+        // More than 30 miles: offer an individual quote.
         if (distance > 30) {
           showResult("warning", `
-            <h3>Outside Our Estimated Delivery Area</h3>
+            <h3>Delivery May Still Be Available!</h3>
             <p><strong>${destination.city}, TX ${zip}</strong></p>
             <p>Approximate distance from Plano: ${roundedDistance} miles.</p>
-            <p>Our regular delivery area extends up to approximately 30 miles.</p>
-            <p>Please contact us if you would like to discuss special arrangements.</p>
+            <p class="fee">Personalized delivery quote</p>
+            <p>You're outside our standard delivery area, but we'd still love
+            to see if we can bring Marownie treats to you!</p>
+            <p>Please contact us for a personalized delivery quote.
+            The fee will be calculated individually based on your location.</p>
+            <p class="result-disclaimer">
+              Final delivery availability and pricing are confirmed personally
+              after reviewing your full address.
+            </p>
           `);
           return;
         }
@@ -864,21 +886,6 @@
 
         if (!bracket) {
           throw new Error("CALCULATION_ERROR");
-        }
-
-        if (bracket.fee === null) {
-          showResult("warning", `
-            <h3>You're in Our Nearby Area!</h3>
-            <p><strong>${destination.city}, TX ${zip}</strong></p>
-            <p>Approximate distance: ${roundedDistance} miles.</p>
-            <p class="fee">Fee to be confirmed</p>
-            <p>Please contact Marownie to confirm your delivery price.</p>
-            <p class="result-disclaimer">
-              This is an estimate based on ZIP code coordinates.
-              Final availability and delivery fee are confirmed personally.
-            </p>
-          `);
-          return;
         }
 
         showResult("success", `
