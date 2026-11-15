@@ -84,7 +84,7 @@
       color: var(--pink);
     }
 
-    /* Botanical decorative elements */
+    /* Delicate cocoa botanical illustrations */
 
     .botanical {
       position: absolute;
@@ -115,21 +115,25 @@
 
     .botanical .stem {
       fill: none;
-      stroke: var(--leaf);
-      stroke-width: 1.5;
+      stroke: var(--cocoa);
+      stroke-width: 1.15;
       stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .botanical .leaf {
-      fill: var(--leaf-light);
-      stroke: var(--leaf);
-      stroke-width: .8;
+      fill: none;
+      stroke: var(--cocoa);
+      stroke-width: 1;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .botanical .vein {
       fill: none;
-      stroke: var(--leaf);
+      stroke: var(--cocoa);
       stroke-width: .65;
+      stroke-linecap: round;
     }
 
     .cocoa-decoration {
@@ -157,15 +161,18 @@
     }
 
     .cocoa-decoration path {
-      fill: #A47A5B;
+      fill: none;
       stroke: var(--cocoa);
-      stroke-width: 1.2;
+      stroke-width: 1.05;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .cocoa-decoration line {
       stroke: var(--cocoa);
-      stroke-width: 1;
+      stroke-width: .8;
       fill: none;
+      stroke-linecap: round;
     }
 
     .hero {
@@ -499,117 +506,101 @@
 
     <div class="botanical left" aria-hidden="true">
       <svg viewBox="0 0 150 200">
-        <path class="stem"
-              d="M25 190 C43 160 58 132 75 103 C91 75 105 45 119 12"/>
-        <path class="stem" d="M47 151 Q27 135 18 111"/>
-        <path class="stem" d="M65 120 Q91 112 116 91"/>
-        <path class="stem" d="M88 83 Q65 68 58 43"/>
+        <!-- Main branch -->
+        <path class="stem" d="M25 190 C42 160 59 132 76 102 C93 73 108 43 124 12"/>
 
-        <path class="leaf"
-              d="M18 111 C-1 88 7 70 24 76 C39 82 36 99 18 111Z"/>
-        <path class="vein" d="M18 111 Q20 91 24 76"/>
+        <!-- Small branches -->
+        <path class="stem" d="M47 151 C34 135 24 121 17 103"/>
+        <path class="stem" d="M65 120 C85 112 103 99 120 81"/>
+        <path class="stem" d="M88 81 C75 66 66 52 61 35"/>
 
-        <path class="leaf"
-              d="M116 91 C139 68 147 54 131 52 C114 53 107 74 116 91Z"/>
-        <path class="vein" d="M116 91 Q127 66 131 52"/>
+        <!-- Leaves -->
+        <path class="leaf" d="M17 103 C-1 84 3 65 19 70 C34 75 32 91 17 103Z"/>
+        <path class="vein" d="M17 103 Q18 84 19 70"/>
+        <path class="vein" d="M17 103 Q10 86 7 78"/>
 
-        <path class="leaf"
-              d="M58 43 C39 22 42 5 59 12 C76 20 73 34 58 43Z"/>
-        <path class="vein" d="M58 43 Q62 25 59 12"/>
+        <path class="leaf" d="M120 81 C141 60 146 44 130 45 C114 47 109 65 120 81Z"/>
+        <path class="vein" d="M120 81 Q127 60 130 45"/>
+        <path class="vein" d="M120 81 Q130 63 139 57"/>
 
-        <path d="M65 164 C48 151 43 127 52 105 C61 82 82 64 103 70 C125 76 134 101 125 126 C117 151 95 169 76 169 C71 169 68 167 65 164Z"
-              fill="#A47A5B" fill-opacity=".10"
-              stroke="#805B43" stroke-width="1.25"
-              stroke-linejoin="round"/>
+        <path class="leaf" d="M61 35 C45 16 47 2 62 8 C76 14 74 27 61 35Z"/>
+        <path class="vein" d="M61 35 Q64 18 62 8"/>
 
-        <path d="M65 164 Q73 119 52 105
-                 M72 168 Q83 119 68 79
-                 M80 169 Q95 119 84 69
-                 M89 165 Q108 119 103 70
-                 M99 157 Q124 119 125 103"
-              fill="none" stroke="#805B43" stroke-width=".8"
-              stroke-linecap="round" opacity=".8"/>
+        <!-- Cocoa pod -->
+        <path class="leaf" d="M66 165
+          C48 151 43 128 51 105
+          C59 82 78 65 99 68
+          C121 71 133 93 128 117
+          C124 143 103 164 82 170
+          C76 172 70 169 66 165Z"/>
 
-        <path d="M54 113 Q59 116 63 122
-                 M51 121 Q57 125 61 131
-                 M57 135 Q63 139 67 145
-                 M113 91 Q119 96 122 102
-                 M109 101 Q116 106 119 112
-                 M105 112 Q112 117 115 123"
-              fill="none" stroke="#805B43" stroke-width=".55"
-              stroke-linecap="round" opacity=".55"/>
+        <!-- Pod ribs -->
+        <path class="vein" d="M66 165 Q73 119 51 105"/>
+        <path class="vein" d="M72 168 Q83 116 65 79"/>
+        <path class="vein" d="M81 170 Q94 116 82 68"/>
+        <path class="vein" d="M90 166 Q108 119 99 68"/>
+        <path class="vein" d="M99 158 Q123 119 128 111"/>
 
-        <ellipse cx="31" cy="176" rx="7" ry="4.5"
-                 transform="rotate(-28 31 176)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M25 179 Q31 175 37 173"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <!-- Delicate pod details -->
+        <path class="vein" d="M53 112 Q59 116 63 124"/>
+        <path class="vein" d="M51 123 Q57 128 61 135"/>
+        <path class="vein" d="M56 138 Q62 142 67 148"/>
+        <path class="vein" d="M115 91 Q121 97 124 104"/>
+        <path class="vein" d="M111 103 Q117 108 121 115"/>
+        <path class="vein" d="M105 119 Q111 123 115 130"/>
 
-        <ellipse cx="48" cy="185" rx="6.5" ry="4"
-                 transform="rotate(20 48 185)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M42 183 Q48 185 54 187"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <!-- Cocoa beans -->
+        <path class="leaf" d="M28 179 C24 174 28 168 34 169 C40 170 42 176 37 180 C34 182 30 182 28 179Z"/>
+        <path class="vein" d="M29 179 Q34 174 38 170"/>
+
+        <path class="leaf" d="M45 190 C40 186 43 180 49 180 C55 180 58 185 54 190 C51 193 48 193 45 190Z"/>
+        <path class="vein" d="M45 190 Q49 185 54 181"/>
       </svg>
     </div>
 
     <div class="botanical right" aria-hidden="true">
       <svg viewBox="0 0 150 200">
-        <path class="stem"
-              d="M25 190 C43 160 58 132 75 103 C91 75 105 45 119 12"/>
-        <path class="stem" d="M47 151 Q27 135 18 111"/>
-        <path class="stem" d="M65 120 Q91 112 116 91"/>
-        <path class="stem" d="M88 83 Q65 68 58 43"/>
+        <path class="stem" d="M25 190 C42 160 59 132 76 102 C93 73 108 43 124 12"/>
+        <path class="stem" d="M47 151 C34 135 24 121 17 103"/>
+        <path class="stem" d="M65 120 C85 112 103 99 120 81"/>
+        <path class="stem" d="M88 81 C75 66 66 52 61 35"/>
 
-        <path class="leaf"
-              d="M18 111 C-1 88 7 70 24 76 C39 82 36 99 18 111Z"/>
-        <path class="vein" d="M18 111 Q20 91 24 76"/>
+        <path class="leaf" d="M17 103 C-1 84 3 65 19 70 C34 75 32 91 17 103Z"/>
+        <path class="vein" d="M17 103 Q18 84 19 70"/>
+        <path class="vein" d="M17 103 Q10 86 7 78"/>
 
-        <path class="leaf"
-              d="M116 91 C139 68 147 54 131 52 C114 53 107 74 116 91Z"/>
-        <path class="vein" d="M116 91 Q127 66 131 52"/>
+        <path class="leaf" d="M120 81 C141 60 146 44 130 45 C114 47 109 65 120 81Z"/>
+        <path class="vein" d="M120 81 Q127 60 130 45"/>
+        <path class="vein" d="M120 81 Q130 63 139 57"/>
 
-        <path class="leaf"
-              d="M58 43 C39 22 42 5 59 12 C76 20 73 34 58 43Z"/>
-        <path class="vein" d="M58 43 Q62 25 59 12"/>
+        <path class="leaf" d="M61 35 C45 16 47 2 62 8 C76 14 74 27 61 35Z"/>
+        <path class="vein" d="M61 35 Q64 18 62 8"/>
 
-        <path d="M65 164 C48 151 43 127 52 105 C61 82 82 64 103 70 C125 76 134 101 125 126 C117 151 95 169 76 169 C71 169 68 167 65 164Z"
-              fill="#A47A5B" fill-opacity=".10"
-              stroke="#805B43" stroke-width="1.25"
-              stroke-linejoin="round"/>
+        <path class="leaf" d="M66 165
+          C48 151 43 128 51 105
+          C59 82 78 65 99 68
+          C121 71 133 93 128 117
+          C124 143 103 164 82 170
+          C76 172 70 169 66 165Z"/>
 
-        <path d="M65 164 Q73 119 52 105
-                 M72 168 Q83 119 68 79
-                 M80 169 Q95 119 84 69
-                 M89 165 Q108 119 103 70
-                 M99 157 Q124 119 125 103"
-              fill="none" stroke="#805B43" stroke-width=".8"
-              stroke-linecap="round" opacity=".8"/>
+        <path class="vein" d="M66 165 Q73 119 51 105"/>
+        <path class="vein" d="M72 168 Q83 116 65 79"/>
+        <path class="vein" d="M81 170 Q94 116 82 68"/>
+        <path class="vein" d="M90 166 Q108 119 99 68"/>
+        <path class="vein" d="M99 158 Q123 119 128 111"/>
 
-        <path d="M54 113 Q59 116 63 122
-                 M51 121 Q57 125 61 131
-                 M57 135 Q63 139 67 145
-                 M113 91 Q119 96 122 102
-                 M109 101 Q116 106 119 112
-                 M105 112 Q112 117 115 123"
-              fill="none" stroke="#805B43" stroke-width=".55"
-              stroke-linecap="round" opacity=".55"/>
+        <path class="vein" d="M53 112 Q59 116 63 124"/>
+        <path class="vein" d="M51 123 Q57 128 61 135"/>
+        <path class="vein" d="M56 138 Q62 142 67 148"/>
+        <path class="vein" d="M115 91 Q121 97 124 104"/>
+        <path class="vein" d="M111 103 Q117 108 121 115"/>
+        <path class="vein" d="M105 119 Q111 123 115 130"/>
 
-        <ellipse cx="31" cy="176" rx="7" ry="4.5"
-                 transform="rotate(-28 31 176)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M25 179 Q31 175 37 173"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M28 179 C24 174 28 168 34 169 C40 170 42 176 37 180 C34 182 30 182 28 179Z"/>
+        <path class="vein" d="M29 179 Q34 174 38 170"/>
 
-        <ellipse cx="48" cy="185" rx="6.5" ry="4"
-                 transform="rotate(20 48 185)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M42 183 Q48 185 54 187"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M45 190 C40 186 43 180 49 180 C55 180 58 185 54 190 C51 193 48 193 45 190Z"/>
+        <path class="vein" d="M45 190 Q49 185 54 181"/>
       </svg>
     </div>
 
@@ -625,69 +616,49 @@
 
     <div class="cocoa-decoration left" aria-hidden="true">
       <svg viewBox="0 0 110 130">
-        <path d="M49 113
-                 C25 102 15 79 22 53
-                 C28 27 45 12 66 14
-                 C88 18 98 43 86 72
-                 C78 96 63 109 49 113Z"/>
+        <path d="M48 116
+          C26 105 16 82 21 58
+          C26 34 43 13 63 13
+          C85 14 99 37 91 63
+          C84 91 67 109 48 116Z"/>
 
-        <path d="M49 113 Q49 67 66 14"
-              fill="none"/>
+        <path d="M48 116 Q47 64 63 13"/>
+        <path d="M48 116 Q33 79 21 58"/>
+        <path d="M48 116 Q39 65 39 26"/>
+        <path d="M48 116 Q57 64 54 14"/>
+        <path d="M48 116 Q75 72 63 13"/>
+        <path d="M48 116 Q88 81 91 63"/>
 
-        <path d="M49 113 Q34 72 22 53
-                 M49 113 Q43 60 38 27
-                 M49 113 Q55 61 53 16
-                 M49 113 Q72 67 66 14
-                 M49 113 Q83 76 86 72"
-              fill="none"
-              stroke="#805B43"
-              stroke-width=".9"
-              stroke-linecap="round"/>
-
-        <path d="M25 56 Q31 60 35 67
-                 M28 67 Q34 71 38 78
-                 M34 83 Q40 87 43 94
-                 M78 35 Q84 42 86 49
-                 M77 47 Q83 54 85 61
-                 M71 64 Q78 70 81 77"
-              fill="none"
-              stroke="#805B43"
-              stroke-width=".65"
-              stroke-linecap="round"/>
+        <path d="M24 58 Q30 62 34 70"/>
+        <path d="M25 70 Q32 75 36 83"/>
+        <path d="M31 86 Q37 91 41 99"/>
+        <path d="M81 36 Q87 43 88 51"/>
+        <path d="M78 51 Q85 58 87 67"/>
+        <path d="M70 72 Q77 78 81 85"/>
       </svg>
     </div>
 
     <div class="cocoa-decoration right" aria-hidden="true">
       <svg viewBox="0 0 110 130">
-        <path d="M49 113
-                 C25 102 15 79 22 53
-                 C28 27 45 12 66 14
-                 C88 18 98 43 86 72
-                 C78 96 63 109 49 113Z"/>
+        <path d="M48 116
+          C26 105 16 82 21 58
+          C26 34 43 13 63 13
+          C85 14 99 37 91 63
+          C84 91 67 109 48 116Z"/>
 
-        <path d="M49 113 Q49 67 66 14"
-              fill="none"/>
+        <path d="M48 116 Q47 64 63 13"/>
+        <path d="M48 116 Q33 79 21 58"/>
+        <path d="M48 116 Q39 65 39 26"/>
+        <path d="M48 116 Q57 64 54 14"/>
+        <path d="M48 116 Q75 72 63 13"/>
+        <path d="M48 116 Q88 81 91 63"/>
 
-        <path d="M49 113 Q34 72 22 53
-                 M49 113 Q43 60 38 27
-                 M49 113 Q55 61 53 16
-                 M49 113 Q72 67 66 14
-                 M49 113 Q83 76 86 72"
-              fill="none"
-              stroke="#805B43"
-              stroke-width=".9"
-              stroke-linecap="round"/>
-
-        <path d="M25 56 Q31 60 35 67
-                 M28 67 Q34 71 38 78
-                 M34 83 Q40 87 43 94
-                 M78 35 Q84 42 86 49
-                 M77 47 Q83 54 85 61
-                 M71 64 Q78 70 81 77"
-              fill="none"
-              stroke="#805B43"
-              stroke-width=".65"
-              stroke-linecap="round"/>
+        <path d="M24 58 Q30 62 34 70"/>
+        <path d="M25 70 Q32 75 36 83"/>
+        <path d="M31 86 Q37 91 41 99"/>
+        <path d="M81 36 Q87 43 88 51"/>
+        <path d="M78 51 Q85 58 87 67"/>
+        <path d="M70 72 Q77 78 81 85"/>
       </svg>
     </div>
 
@@ -747,117 +718,93 @@
 
     <div class="botanical left" aria-hidden="true">
       <svg viewBox="0 0 150 200">
-        <path class="stem"
-              d="M25 190 C43 160 58 132 75 103 C91 75 105 45 119 12"/>
-        <path class="stem" d="M47 151 Q27 135 18 111"/>
-        <path class="stem" d="M65 120 Q91 112 116 91"/>
-        <path class="stem" d="M88 83 Q65 68 58 43"/>
+        <path class="stem" d="M25 190 C42 160 59 132 76 102 C93 73 108 43 124 12"/>
+        <path class="stem" d="M47 151 C34 135 24 121 17 103"/>
+        <path class="stem" d="M65 120 C85 112 103 99 120 81"/>
+        <path class="stem" d="M88 81 C75 66 66 52 61 35"/>
 
-        <path class="leaf"
-              d="M18 111 C-1 88 7 70 24 76 C39 82 36 99 18 111Z"/>
-        <path class="vein" d="M18 111 Q20 91 24 76"/>
+        <path class="leaf" d="M17 103 C-1 84 3 65 19 70 C34 75 32 91 17 103Z"/>
+        <path class="vein" d="M17 103 Q18 84 19 70"/>
+        <path class="vein" d="M17 103 Q10 86 7 78"/>
 
-        <path class="leaf"
-              d="M116 91 C139 68 147 54 131 52 C114 53 107 74 116 91Z"/>
-        <path class="vein" d="M116 91 Q127 66 131 52"/>
+        <path class="leaf" d="M120 81 C141 60 146 44 130 45 C114 47 109 65 120 81Z"/>
+        <path class="vein" d="M120 81 Q127 60 130 45"/>
+        <path class="vein" d="M120 81 Q130 63 139 57"/>
 
-        <path class="leaf"
-              d="M58 43 C39 22 42 5 59 12 C76 20 73 34 58 43Z"/>
-        <path class="vein" d="M58 43 Q62 25 59 12"/>
+        <path class="leaf" d="M61 35 C45 16 47 2 62 8 C76 14 74 27 61 35Z"/>
+        <path class="vein" d="M61 35 Q64 18 62 8"/>
 
-        <path d="M65 164 C48 151 43 127 52 105 C61 82 82 64 103 70 C125 76 134 101 125 126 C117 151 95 169 76 169 C71 169 68 167 65 164Z"
-              fill="#A47A5B" fill-opacity=".10"
-              stroke="#805B43" stroke-width="1.25"
-              stroke-linejoin="round"/>
+        <path class="leaf" d="M66 165
+          C48 151 43 128 51 105
+          C59 82 78 65 99 68
+          C121 71 133 93 128 117
+          C124 143 103 164 82 170
+          C76 172 70 169 66 165Z"/>
 
-        <path d="M65 164 Q73 119 52 105
-                 M72 168 Q83 119 68 79
-                 M80 169 Q95 119 84 69
-                 M89 165 Q108 119 103 70
-                 M99 157 Q124 119 125 103"
-              fill="none" stroke="#805B43" stroke-width=".8"
-              stroke-linecap="round" opacity=".8"/>
+        <path class="vein" d="M66 165 Q73 119 51 105"/>
+        <path class="vein" d="M72 168 Q83 116 65 79"/>
+        <path class="vein" d="M81 170 Q94 116 82 68"/>
+        <path class="vein" d="M90 166 Q108 119 99 68"/>
+        <path class="vein" d="M99 158 Q123 119 128 111"/>
 
-        <path d="M54 113 Q59 116 63 122
-                 M51 121 Q57 125 61 131
-                 M57 135 Q63 139 67 145
-                 M113 91 Q119 96 122 102
-                 M109 101 Q116 106 119 112
-                 M105 112 Q112 117 115 123"
-              fill="none" stroke="#805B43" stroke-width=".55"
-              stroke-linecap="round" opacity=".55"/>
+        <path class="vein" d="M53 112 Q59 116 63 124"/>
+        <path class="vein" d="M51 123 Q57 128 61 135"/>
+        <path class="vein" d="M56 138 Q62 142 67 148"/>
+        <path class="vein" d="M115 91 Q121 97 124 104"/>
+        <path class="vein" d="M111 103 Q117 108 121 115"/>
+        <path class="vein" d="M105 119 Q111 123 115 130"/>
 
-        <ellipse cx="31" cy="176" rx="7" ry="4.5"
-                 transform="rotate(-28 31 176)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M25 179 Q31 175 37 173"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M28 179 C24 174 28 168 34 169 C40 170 42 176 37 180 C34 182 30 182 28 179Z"/>
+        <path class="vein" d="M29 179 Q34 174 38 170"/>
 
-        <ellipse cx="48" cy="185" rx="6.5" ry="4"
-                 transform="rotate(20 48 185)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M42 183 Q48 185 54 187"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M45 190 C40 186 43 180 49 180 C55 180 58 185 54 190 C51 193 48 193 45 190Z"/>
+        <path class="vein" d="M45 190 Q49 185 54 181"/>
       </svg>
     </div>
 
     <div class="botanical right" aria-hidden="true">
       <svg viewBox="0 0 150 200">
-        <path class="stem"
-              d="M25 190 C43 160 58 132 75 103 C91 75 105 45 119 12"/>
-        <path class="stem" d="M47 151 Q27 135 18 111"/>
-        <path class="stem" d="M65 120 Q91 112 116 91"/>
-        <path class="stem" d="M88 83 Q65 68 58 43"/>
+        <path class="stem" d="M25 190 C42 160 59 132 76 102 C93 73 108 43 124 12"/>
+        <path class="stem" d="M47 151 C34 135 24 121 17 103"/>
+        <path class="stem" d="M65 120 C85 112 103 99 120 81"/>
+        <path class="stem" d="M88 81 C75 66 66 52 61 35"/>
 
-        <path class="leaf"
-              d="M18 111 C-1 88 7 70 24 76 C39 82 36 99 18 111Z"/>
-        <path class="vein" d="M18 111 Q20 91 24 76"/>
+        <path class="leaf" d="M17 103 C-1 84 3 65 19 70 C34 75 32 91 17 103Z"/>
+        <path class="vein" d="M17 103 Q18 84 19 70"/>
+        <path class="vein" d="M17 103 Q10 86 7 78"/>
 
-        <path class="leaf"
-              d="M116 91 C139 68 147 54 131 52 C114 53 107 74 116 91Z"/>
-        <path class="vein" d="M116 91 Q127 66 131 52"/>
+        <path class="leaf" d="M120 81 C141 60 146 44 130 45 C114 47 109 65 120 81Z"/>
+        <path class="vein" d="M120 81 Q127 60 130 45"/>
+        <path class="vein" d="M120 81 Q130 63 139 57"/>
 
-        <path class="leaf"
-              d="M58 43 C39 22 42 5 59 12 C76 20 73 34 58 43Z"/>
-        <path class="vein" d="M58 43 Q62 25 59 12"/>
+        <path class="leaf" d="M61 35 C45 16 47 2 62 8 C76 14 74 27 61 35Z"/>
+        <path class="vein" d="M61 35 Q64 18 62 8"/>
 
-        <path d="M65 164 C48 151 43 127 52 105 C61 82 82 64 103 70 C125 76 134 101 125 126 C117 151 95 169 76 169 C71 169 68 167 65 164Z"
-              fill="#A47A5B" fill-opacity=".10"
-              stroke="#805B43" stroke-width="1.25"
-              stroke-linejoin="round"/>
+        <path class="leaf" d="M66 165
+          C48 151 43 128 51 105
+          C59 82 78 65 99 68
+          C121 71 133 93 128 117
+          C124 143 103 164 82 170
+          C76 172 70 169 66 165Z"/>
 
-        <path d="M65 164 Q73 119 52 105
-                 M72 168 Q83 119 68 79
-                 M80 169 Q95 119 84 69
-                 M89 165 Q108 119 103 70
-                 M99 157 Q124 119 125 103"
-              fill="none" stroke="#805B43" stroke-width=".8"
-              stroke-linecap="round" opacity=".8"/>
+        <path class="vein" d="M66 165 Q73 119 51 105"/>
+        <path class="vein" d="M72 168 Q83 116 65 79"/>
+        <path class="vein" d="M81 170 Q94 116 82 68"/>
+        <path class="vein" d="M90 166 Q108 119 99 68"/>
+        <path class="vein" d="M99 158 Q123 119 128 111"/>
 
-        <path d="M54 113 Q59 116 63 122
-                 M51 121 Q57 125 61 131
-                 M57 135 Q63 139 67 145
-                 M113 91 Q119 96 122 102
-                 M109 101 Q116 106 119 112
-                 M105 112 Q112 117 115 123"
-              fill="none" stroke="#805B43" stroke-width=".55"
-              stroke-linecap="round" opacity=".55"/>
+        <path class="vein" d="M53 112 Q59 116 63 124"/>
+        <path class="vein" d="M51 123 Q57 128 61 135"/>
+        <path class="vein" d="M56 138 Q62 142 67 148"/>
+        <path class="vein" d="M115 91 Q121 97 124 104"/>
+        <path class="vein" d="M111 103 Q117 108 121 115"/>
+        <path class="vein" d="M105 119 Q111 123 115 130"/>
 
-        <ellipse cx="31" cy="176" rx="7" ry="4.5"
-                 transform="rotate(-28 31 176)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M25 179 Q31 175 37 173"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M28 179 C24 174 28 168 34 169 C40 170 42 176 37 180 C34 182 30 182 28 179Z"/>
+        <path class="vein" d="M29 179 Q34 174 38 170"/>
 
-        <ellipse cx="48" cy="185" rx="6.5" ry="4"
-                 transform="rotate(20 48 185)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M42 183 Q48 185 54 187"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M45 190 C40 186 43 180 49 180 C55 180 58 185 54 190 C51 193 48 193 45 190Z"/>
+        <path class="vein" d="M45 190 Q49 185 54 181"/>
       </svg>
     </div>
 
@@ -877,115 +824,91 @@
 
     <div class="botanical left" aria-hidden="true">
       <svg viewBox="0 0 150 200">
-        <path class="stem"
-              d="M25 190 C43 160 58 132 75 103 C91 75 105 45 119 12"/>
-        <path class="stem" d="M47 151 Q27 135 18 111"/>
-        <path class="stem" d="M65 120 Q91 112 116 91"/>
+        <path class="stem" d="M25 190 C42 160 59 132 76 102 C93 73 108 43 124 12"/>
+        <path class="stem" d="M47 151 C34 135 24 121 17 103"/>
+        <path class="stem" d="M65 120 C85 112 103 99 120 81"/>
 
-        <path class="leaf"
-              d="M18 111 C-1 88 7 70 24 76 C39 82 36 99 18 111Z"/>
-        <path class="vein" d="M18 111 Q20 91 24 76"/>
+        <path class="leaf" d="M17 103 C-1 84 3 65 19 70 C34 75 32 91 17 103Z"/>
+        <path class="vein" d="M17 103 Q18 84 19 70"/>
+        <path class="vein" d="M17 103 Q10 86 7 78"/>
 
-        <path class="leaf"
-              d="M116 91 C139 68 147 54 131 52 C114 53 107 74 116 91Z"/>
-        <path class="vein" d="M116 91 Q127 66 131 52"/>
+        <path class="leaf" d="M120 81 C141 60 146 44 130 45 C114 47 109 65 120 81Z"/>
+        <path class="vein" d="M120 81 Q127 60 130 45"/>
+        <path class="vein" d="M120 81 Q130 63 139 57"/>
 
-        <path class="leaf"
-              d="M58 43 C39 22 42 5 59 12 C76 20 73 34 58 43Z"/>
-        <path class="vein" d="M58 43 Q62 25 59 12"/>
+        <path class="leaf" d="M61 35 C45 16 47 2 62 8 C76 14 74 27 61 35Z"/>
+        <path class="vein" d="M61 35 Q64 18 62 8"/>
 
-        <path d="M65 164 C48 151 43 127 52 105 C61 82 82 64 103 70 C125 76 134 101 125 126 C117 151 95 169 76 169 C71 169 68 167 65 164Z"
-              fill="#A47A5B" fill-opacity=".10"
-              stroke="#805B43" stroke-width="1.25"
-              stroke-linejoin="round"/>
+        <path class="leaf" d="M66 165
+          C48 151 43 128 51 105
+          C59 82 78 65 99 68
+          C121 71 133 93 128 117
+          C124 143 103 164 82 170
+          C76 172 70 169 66 165Z"/>
 
-        <path d="M65 164 Q73 119 52 105
-                 M72 168 Q83 119 68 79
-                 M80 169 Q95 119 84 69
-                 M89 165 Q108 119 103 70
-                 M99 157 Q124 119 125 103"
-              fill="none" stroke="#805B43" stroke-width=".8"
-              stroke-linecap="round" opacity=".8"/>
+        <path class="vein" d="M66 165 Q73 119 51 105"/>
+        <path class="vein" d="M72 168 Q83 116 65 79"/>
+        <path class="vein" d="M81 170 Q94 116 82 68"/>
+        <path class="vein" d="M90 166 Q108 119 99 68"/>
+        <path class="vein" d="M99 158 Q123 119 128 111"/>
 
-        <path d="M54 113 Q59 116 63 122
-                 M51 121 Q57 125 61 131
-                 M57 135 Q63 139 67 145
-                 M113 91 Q119 96 122 102
-                 M109 101 Q116 106 119 112
-                 M105 112 Q112 117 115 123"
-              fill="none" stroke="#805B43" stroke-width=".55"
-              stroke-linecap="round" opacity=".55"/>
+        <path class="vein" d="M53 112 Q59 116 63 124"/>
+        <path class="vein" d="M51 123 Q57 128 61 135"/>
+        <path class="vein" d="M56 138 Q62 142 67 148"/>
+        <path class="vein" d="M115 91 Q121 97 124 104"/>
+        <path class="vein" d="M111 103 Q117 108 121 115"/>
+        <path class="vein" d="M105 119 Q111 123 115 130"/>
 
-        <ellipse cx="31" cy="176" rx="7" ry="4.5"
-                 transform="rotate(-28 31 176)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M25 179 Q31 175 37 173"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M28 179 C24 174 28 168 34 169 C40 170 42 176 37 180 C34 182 30 182 28 179Z"/>
+        <path class="vein" d="M29 179 Q34 174 38 170"/>
 
-        <ellipse cx="48" cy="185" rx="6.5" ry="4"
-                 transform="rotate(20 48 185)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M42 183 Q48 185 54 187"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M45 190 C40 186 43 180 49 180 C55 180 58 185 54 190 C51 193 48 193 45 190Z"/>
+        <path class="vein" d="M45 190 Q49 185 54 181"/>
       </svg>
     </div>
 
     <div class="botanical right" aria-hidden="true">
       <svg viewBox="0 0 150 200">
-        <path class="stem"
-              d="M25 190 C43 160 58 132 75 103 C91 75 105 45 119 12"/>
-        <path class="stem" d="M47 151 Q27 135 18 111"/>
-        <path class="stem" d="M65 120 Q91 112 116 91"/>
+        <path class="stem" d="M25 190 C42 160 59 132 76 102 C93 73 108 43 124 12"/>
+        <path class="stem" d="M47 151 C34 135 24 121 17 103"/>
+        <path class="stem" d="M65 120 C85 112 103 99 120 81"/>
 
-        <path class="leaf"
-              d="M18 111 C-1 88 7 70 24 76 C39 82 36 99 18 111Z"/>
-        <path class="vein" d="M18 111 Q20 91 24 76"/>
+        <path class="leaf" d="M17 103 C-1 84 3 65 19 70 C34 75 32 91 17 103Z"/>
+        <path class="vein" d="M17 103 Q18 84 19 70"/>
+        <path class="vein" d="M17 103 Q10 86 7 78"/>
 
-        <path class="leaf"
-              d="M116 91 C139 68 147 54 131 52 C114 53 107 74 116 91Z"/>
-        <path class="vein" d="M116 91 Q127 66 131 52"/>
+        <path class="leaf" d="M120 81 C141 60 146 44 130 45 C114 47 109 65 120 81Z"/>
+        <path class="vein" d="M120 81 Q127 60 130 45"/>
+        <path class="vein" d="M120 81 Q130 63 139 57"/>
 
-        <path class="leaf"
-              d="M58 43 C39 22 42 5 59 12 C76 20 73 34 58 43Z"/>
-        <path class="vein" d="M58 43 Q62 25 59 12"/>
+        <path class="leaf" d="M61 35 C45 16 47 2 62 8 C76 14 74 27 61 35Z"/>
+        <path class="vein" d="M61 35 Q64 18 62 8"/>
 
-        <path d="M65 164 C48 151 43 127 52 105 C61 82 82 64 103 70 C125 76 134 101 125 126 C117 151 95 169 76 169 C71 169 68 167 65 164Z"
-              fill="#A47A5B" fill-opacity=".10"
-              stroke="#805B43" stroke-width="1.25"
-              stroke-linejoin="round"/>
+        <path class="leaf" d="M66 165
+          C48 151 43 128 51 105
+          C59 82 78 65 99 68
+          C121 71 133 93 128 117
+          C124 143 103 164 82 170
+          C76 172 70 169 66 165Z"/>
 
-        <path d="M65 164 Q73 119 52 105
-                 M72 168 Q83 119 68 79
-                 M80 169 Q95 119 84 69
-                 M89 165 Q108 119 103 70
-                 M99 157 Q124 119 125 103"
-              fill="none" stroke="#805B43" stroke-width=".8"
-              stroke-linecap="round" opacity=".8"/>
+        <path class="vein" d="M66 165 Q73 119 51 105"/>
+        <path class="vein" d="M72 168 Q83 116 65 79"/>
+        <path class="vein" d="M81 170 Q94 116 82 68"/>
+        <path class="vein" d="M90 166 Q108 119 99 68"/>
+        <path class="vein" d="M99 158 Q123 119 128 111"/>
 
-        <path d="M54 113 Q59 116 63 122
-                 M51 121 Q57 125 61 131
-                 M57 135 Q63 139 67 145
-                 M113 91 Q119 96 122 102
-                 M109 101 Q116 106 119 112
-                 M105 112 Q112 117 115 123"
-              fill="none" stroke="#805B43" stroke-width=".55"
-              stroke-linecap="round" opacity=".55"/>
+        <path class="vein" d="M53 112 Q59 116 63 124"/>
+        <path class="vein" d="M51 123 Q57 128 61 135"/>
+        <path class="vein" d="M56 138 Q62 142 67 148"/>
+        <path class="vein" d="M115 91 Q121 97 124 104"/>
+        <path class="vein" d="M111 103 Q117 108 121 115"/>
+        <path class="vein" d="M105 119 Q111 123 115 130"/>
 
-        <ellipse cx="31" cy="176" rx="7" ry="4.5"
-                 transform="rotate(-28 31 176)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M25 179 Q31 175 37 173"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M28 179 C24 174 28 168 34 169 C40 170 42 176 37 180 C34 182 30 182 28 179Z"/>
+        <path class="vein" d="M29 179 Q34 174 38 170"/>
 
-        <ellipse cx="48" cy="185" rx="6.5" ry="4"
-                 transform="rotate(20 48 185)"
-                 fill="#A47A5B" fill-opacity=".18"
-                 stroke="#805B43" stroke-width=".9"/>
-        <path d="M42 183 Q48 185 54 187"
-              fill="none" stroke="#805B43" stroke-width=".65"/>
+        <path class="leaf" d="M45 190 C40 186 43 180 49 180 C55 180 58 185 54 190 C51 193 48 193 45 190Z"/>
+        <path class="vein" d="M45 190 Q49 185 54 181"/>
       </svg>
     </div>
 
