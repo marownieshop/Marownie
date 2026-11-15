@@ -15,13 +15,13 @@
 
   <style>
     :root {
-      --cream: #F5F7EF;
+      --cream: #F5F1E8;
       --paper: #FFFCF5;
-      --burgundy: #405A43;
+      --burgundy: #654332;
       --pink: #E99A7E;
-      --ink: #343B31;
-      --muted: #777D70;
-      --line: #E1E7DA;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
     }
 
     * {
@@ -84,10 +84,14 @@
     .hero {
       padding: 85px 24px 90px;
       text-align: center;
+      background:
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .10), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .09), transparent 25%),
+        var(--cream);
     }
 
     .eyebrow {
-      color: var(--burgundy);
+      color: #789064;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: .2em;
@@ -189,7 +193,7 @@
     .small-link {
       display: inline-block;
       margin-top: 18px;
-      color: var(--burgundy);
+      color: #789064;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: .1em;
@@ -202,6 +206,10 @@
     .story {
       padding: 80px 24px;
       text-align: center;
+      background:
+        radial-gradient(ellipse at 5% 50%, rgba(141, 164, 119, .10), transparent 23%),
+        radial-gradient(ellipse at 95% 50%, rgba(101, 67, 50, .08), transparent 23%),
+        var(--cream);
     }
 
     .story-inner {
@@ -221,7 +229,7 @@
 
     .order-section {
       padding: 65px 24px 75px;
-      background: #E5EBDD;
+      background: #E8EBDD;
       text-align: center;
     }
 
