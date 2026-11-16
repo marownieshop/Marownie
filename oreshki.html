@@ -9,17 +9,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #f8f5ef;
-      --paper: #fffdf9;
-      --burgundy: #713c49;
-      --pink: #c58c99;
-      --ink: #39312f;
-      --muted: #817773;
-      --line: #e9e0d9;
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
+      --cocoa: #805B43;
     }
 
     * {
@@ -61,23 +64,30 @@
       display: inline-block;
       color: var(--burgundy);
       font-size: 13px;
+      font-weight: 600;
       letter-spacing: .04em;
     }
 
     .back-link:hover {
+      color: var(--pink);
       text-decoration: underline;
     }
 
     .hero {
-      padding: 65px 24px 70px;
+      padding: 75px 24px 80px;
       text-align: center;
+      background:
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .14), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .10), transparent 25%),
+        var(--cream);
       border-top: 1px solid var(--line);
     }
 
     .eyebrow {
-      color: var(--burgundy);
-      font-size: 12px;
-      letter-spacing: .18em;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
@@ -89,8 +99,8 @@
 
     h1 {
       margin: 18px 0;
-      font-size: clamp(38px, 6vw, 64px);
       color: var(--burgundy);
+      font-size: clamp(38px, 6vw, 64px);
     }
 
     .hero p {
@@ -101,8 +111,9 @@
     }
 
     main {
-      padding: 55px 24px 70px;
+      padding: 65px 24px 75px;
       background: var(--paper);
+      border-top: 1px solid var(--line);
     }
 
     .section-inner {
@@ -112,7 +123,7 @@
 
     .intro {
       max-width: 600px;
-      margin: 0 auto 35px;
+      margin: 0 auto 40px;
       color: var(--muted);
       text-align: center;
       font-size: 14px;
@@ -129,10 +140,16 @@
       display: flex;
       flex-direction: column;
       padding: 20px;
-      background: var(--cream);
+      background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 8px;
       text-align: center;
+      transition: border-color .25s ease, transform .25s ease;
+    }
+
+    .product-card:hover {
+      border-color: #C9B59E;
+      transform: translateY(-3px);
     }
 
     /* Product photos and hover effect */
@@ -143,8 +160,8 @@
       height: 280px;
       margin-bottom: 22px;
       overflow: hidden;
-      background: #fdfaf5;
-      border-radius: 10px;
+      background: #FFFFFF;
+      border-radius: 6px;
     }
 
     .product-gallery img {
@@ -154,6 +171,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+      mix-blend-mode: multiply;
       transition: opacity 0.35s ease;
     }
 
@@ -170,18 +188,20 @@
     }
 
     .product-gallery:hover .box-photo,
-    .product-gallery:focus .box-photo {
+    .product-gallery:focus .box-photo,
+    .product-gallery:focus-within .box-photo {
       opacity: 1;
     }
 
     .product-gallery:hover .filling-photo,
-    .product-gallery:focus .filling-photo {
+    .product-gallery:focus .filling-photo,
+    .product-gallery:focus-within .filling-photo {
       opacity: 0;
     }
 
     .product-title {
       margin: 0 0 8px;
-      color: #713c49;
+      color: var(--burgundy);
       font-family: "Playfair Display", Georgia, serif;
       font-size: 27px;
       font-weight: 400;
@@ -189,8 +209,9 @@
 
     .price {
       margin-bottom: 12px;
-      color: #713c49;
-      font-size: 18px;
+      color: var(--burgundy);
+      font-size: 17px;
+      font-weight: 600;
     }
 
     .description {
@@ -207,33 +228,35 @@
       padding: 13px 15px;
       background: var(--burgundy);
       border: 1px solid var(--burgundy);
-      border-radius: 4px;
+      border-radius: 2px;
       color: white;
-      font-size: 12px;
-      letter-spacing: .05em;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
       text-align: center;
-      transition: background .2s ease;
+      transition: .2s ease;
     }
 
     .button:hover {
-      background: #552d37;
+      background: transparent;
+      color: var(--burgundy);
     }
 
     /* Allergen Information */
 
     .allergen-preview {
       max-width: 850px;
-      margin: 38px auto 0;
-      padding: 25px 28px;
+      margin: 42px auto 0;
+      padding: 28px;
       border: 1px solid var(--line);
       background: var(--cream);
       text-align: center;
     }
 
     .allergen-preview h2 {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
       color: var(--burgundy);
-      font-size: 25px;
+      font-size: 27px;
     }
 
     .allergen-preview p {
@@ -242,13 +265,22 @@
       font-size: 14px;
     }
 
+    .allergen-preview strong {
+      color: var(--ink);
+    }
+
     .allergen-preview a {
       display: inline-block;
-      margin-top: 12px;
-      color: var(--burgundy);
-      font-size: 13px;
-      font-weight: 600;
+      margin-top: 14px;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
       text-decoration: underline;
+    }
+
+    .allergen-preview a:hover {
+      color: var(--pink);
     }
 
     .note {
@@ -259,34 +291,41 @@
     }
 
     .contact {
-      margin-top: 55px;
-      padding: 50px 20px;
-      background: #eee5df;
+      margin-top: 60px;
+      padding: 55px 20px;
+      background:
+        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        #E8EBDD;
       text-align: center;
     }
 
     .contact h2 {
-      margin: 8px 0 15px;
-      font-size: 38px;
+      margin: 12px 0 15px;
+      color: var(--burgundy);
+      font-size: clamp(30px, 4vw, 42px);
     }
 
     .contact p {
       max-width: 540px;
       margin: 0 auto 25px;
-      color: #71645f;
+      color: var(--muted);
       font-size: 14px;
+    }
+
+    .contact .eyebrow {
+      color: #647653;
     }
 
     .contact .button {
       display: inline-block;
       width: auto;
       margin-top: 0;
-      padding-left: 25px;
-      padding-right: 25px;
+      padding: 13px 27px;
     }
 
     footer {
-      padding: 28px 20px;
+      padding: 30px 20px;
       background: var(--paper);
       color: var(--muted);
       text-align: center;
@@ -298,9 +337,10 @@
     }
 
     footer .brand {
+      margin: 0 0 8px;
       color: var(--burgundy);
       font-family: "Playfair Display", Georgia, serif;
-      font-size: 20px;
+      font-size: 24px;
       letter-spacing: .08em;
     }
 
@@ -316,7 +356,7 @@
       }
 
       .allergen-preview {
-        padding: 22px 18px;
+        padding: 24px 18px;
       }
     }
 
@@ -326,19 +366,31 @@
       }
 
       .hero {
-        padding: 50px 22px;
+        padding: 55px 22px;
       }
 
       main {
-        padding: 40px 20px 55px;
+        padding: 45px 20px 60px;
       }
 
       .product-card {
-        padding: 20px;
+        padding: 18px;
       }
 
       .contact {
-        padding: 42px 20px;
+        padding: 45px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .product-card,
+      .product-gallery img,
+      .button {
+        transition: none;
       }
     }
   </style>
