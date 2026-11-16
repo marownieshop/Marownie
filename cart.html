@@ -888,7 +888,8 @@
         const token = createToken();
         payload.token = token;
 
-        pendingRequests[token] = payload.action;
+        // Recognize quote requests and normal order submissions.
+        pendingRequests[token] = payload.action || "order";
 
         const form = document.createElement("form");
         form.method = "POST";
