@@ -1,28 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Tiramisu | Marownie</title>
+  <meta name="description" content="Discover homemade Classic and Brownie Tiramisu from Marownie, freshly prepared with care and quality ingredients.">
+  <link rel="canonical" href="https://shopmarownie.com/tiramisu.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #f8f5ef;
-      --paper: #fffdf9;
-      --burgundy: #713c49;
-      --pink: #c58c99;
-      --ink: #39312f;
-      --muted: #817773;
-      --line: #e9e0d9;
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
+      --cocoa: #805B43;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -34,48 +43,68 @@
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
     .top {
-      padding: 30px 20px 20px;
+      padding: 28px 20px 22px;
       text-align: center;
       background: var(--paper);
     }
 
     .logo {
       display: block;
-      width: min(320px, 85%);
-      max-height: 180px;
+      width: min(320px, 82%);
+      max-height: 170px;
       object-fit: contain;
-      margin: 0 auto 20px;
+      margin: 0 auto 18px;
     }
 
     .back-link {
       color: var(--burgundy);
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .06em;
+    }
+
+    .back-link:hover {
+      color: var(--pink);
     }
 
     .hero {
-      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      padding: 75px 20px 80px;
       text-align: center;
+      background:
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .14), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .10), transparent 25%),
+        var(--cream);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
-      color: var(--burgundy);
-      font-size: 12px;
-      letter-spacing: .16em;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
     h1, h2 {
+      color: var(--burgundy);
       font-family: "Playfair Display", Georgia, serif;
       font-weight: 400;
+      line-height: 1.2;
     }
 
     h1 {
-      margin: 15px 0;
-      color: #713c49;
+      margin: 18px 0;
       font-size: clamp(40px, 6vw, 58px);
     }
 
@@ -86,8 +115,26 @@
       font-size: 15px;
     }
 
+    .botanical-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin: 22px auto;
+      color: var(--leaf);
+      font-size: 17px;
+    }
+
+    .botanical-divider::before,
+    .botanical-divider::after {
+      width: 48px;
+      height: 1px;
+      background: #C8CDBA;
+      content: "";
+    }
+
     main {
-      padding: 50px 24px 65px;
+      padding: 65px 24px 0;
       background: var(--paper);
     }
 
@@ -98,7 +145,7 @@
 
     .intro {
       max-width: 600px;
-      margin: 0 auto 35px;
+      margin: 0 auto 42px;
       color: var(--muted);
       text-align: center;
       font-size: 14px;
@@ -107,7 +154,7 @@
     .products {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px;
+      gap: 25px;
       align-items: stretch;
     }
 
@@ -115,22 +162,26 @@
       display: flex;
       flex-direction: column;
       padding: 20px;
-      background: var(--cream);
+      background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 12px;
       text-align: center;
+      transition: border-color .25s ease, transform .25s ease;
+    }
+
+    .product-card:hover {
+      border-color: #C9B59E;
+      transform: translateY(-3px);
     }
 
     .product-gallery {
       width: 100%;
-      height: 280px;
+      height: 300px;
       margin-bottom: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: #fdfaf5;
-      border-radius: 10px;
+      background: var(--cream);
     }
 
     .product-photo {
@@ -142,7 +193,7 @@
 
     .product-title {
       margin: 0 0 8px;
-      color: #713c49;
+      color: var(--burgundy);
       font-family: "Playfair Display", Georgia, serif;
       font-size: 27px;
       font-weight: 400;
@@ -150,8 +201,9 @@
 
     .price {
       margin-bottom: 12px;
-      color: #713c49;
+      color: var(--burgundy);
       font-size: 18px;
+      font-weight: 500;
     }
 
     .description {
@@ -168,15 +220,17 @@
       padding: 13px 15px;
       background: var(--burgundy);
       border: 1px solid var(--burgundy);
-      border-radius: 4px;
       color: white;
-      font-size: 12px;
-      letter-spacing: .05em;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
       text-align: center;
+      transition: .2s ease;
     }
 
     .order-button:hover {
-      background: #552d37;
+      background: transparent;
+      color: var(--burgundy);
     }
 
     .note {
@@ -186,21 +240,21 @@
       font-size: 13px;
     }
 
-    /* Allergen Information - same style as Brownies */
+    /* Allergen Information */
 
     .allergen-preview {
       max-width: 850px;
-      margin: 38px auto 0;
-      padding: 25px 28px;
+      margin: 42px auto 0;
+      padding: 30px 28px;
       border: 1px solid var(--line);
       background: var(--cream);
       text-align: center;
     }
 
     .allergen-preview h2 {
-      margin: 0 0 14px;
+      margin: 0 0 12px;
       color: var(--burgundy);
-      font-size: 25px;
+      font-size: 27px;
     }
 
     .allergen-preview p {
@@ -209,28 +263,55 @@
       font-size: 14px;
     }
 
-    .allergen-preview a {
-      display: inline-block;
-      margin-top: 12px;
+    .allergen-preview strong {
       color: var(--burgundy);
-      font-size: 13px;
       font-weight: 600;
-      text-decoration: underline;
     }
 
+    .allergen-preview a {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+
+    .allergen-preview a:hover {
+      color: var(--pink);
+    }
+
+    /* Contact Section */
+
     .contact {
-      margin-top: 55px;
-      padding: 45px 20px;
-      background: #eee5df;
+      position: relative;
+      overflow: hidden;
+      margin: 65px -24px 0;
+      padding: 60px 20px 65px;
+      background:
+        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        #E8EBDD;
       text-align: center;
     }
 
+    .contact-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact .eyebrow {
+      color: #647653;
+    }
+
     .contact h2 {
-      margin: 10px 0;
-      font-size: 36px;
+      margin: 12px 0;
+      font-size: clamp(30px, 4vw, 42px);
     }
 
     .contact p {
+      max-width: 520px;
       margin: 0 auto 22px;
       color: var(--muted);
       font-size: 14px;
@@ -239,16 +320,24 @@
     .contact .order-button {
       display: inline-block;
       width: auto;
-      padding-left: 25px;
-      padding-right: 25px;
+      margin-top: 5px;
+      padding: 13px 27px;
     }
 
     footer {
-      padding: 25px 20px;
+      padding: 30px 20px;
       background: var(--paper);
       color: var(--muted);
       text-align: center;
       font-size: 12px;
+    }
+
+    footer .brand {
+      margin: 0 0 8px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      letter-spacing: .08em;
     }
 
     footer p {
@@ -256,10 +345,19 @@
     }
 
     @media (max-width: 700px) {
+      .hero {
+        padding: 60px 20px 65px;
+      }
+
+      main {
+        padding: 50px 18px 0;
+      }
+
       .products {
         grid-template-columns: 1fr;
         max-width: 450px;
         margin: 0 auto;
+        gap: 20px;
       }
 
       .product-gallery {
@@ -267,7 +365,24 @@
       }
 
       .allergen-preview {
-        padding: 22px 18px;
+        padding: 25px 18px;
+      }
+
+      .contact {
+        margin-left: -18px;
+        margin-right: -18px;
+        padding: 50px 18px 55px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .product-card,
+      .order-button {
+        transition: none;
       }
     }
   </style>
@@ -276,7 +391,7 @@
 <body>
 
   <header class="top">
-    <a href="index.html">
+    <a href="index.html" aria-label="Marownie home">
       <img
         class="logo"
         src="marownie-logo-pink.png"
@@ -284,16 +399,19 @@
       >
     </a>
 
-    <a class="back-link" href="index.html">← Back to Home</a>
+    <a class="back-link" href="index.html">← BACK TO HOME</a>
   </header>
 
   <section class="hero">
-    <div class="eyebrow">Homemade in Small Batches</div>
-    <h1>Tiramisu</h1>
-    <p>
-      Homemade tiramisu, carefully prepared with delicious ingredients
-      for your sweet moments.
-    </p>
+    <div class="hero-content">
+      <div class="eyebrow">Homemade in Small Batches</div>
+      <h1>Tiramisu</h1>
+      <div class="botanical-divider" aria-hidden="true">❧</div>
+      <p>
+        Homemade tiramisu, carefully prepared with delicious ingredients
+        for your sweet moments.
+      </p>
+    </div>
   </section>
 
   <main>
@@ -370,11 +488,11 @@
         Please contact us to confirm your order and pickup details.
       </p>
 
-      <!-- Allergen Information Preview -->
-
       <div class="allergen-preview">
 
         <h2>Allergen Information</h2>
+
+        <div class="botanical-divider" aria-hidden="true">❧</div>
 
         <p>
           <strong>Classic Tiramisu:</strong>
@@ -392,7 +510,7 @@
         </p>
 
         <a href="food-safety.html">
-          VIEW FOOD SAFETY &amp; ALLERGEN INFORMATION
+          VIEW FOOD SAFETY &amp; ALLERGEN INFORMATION →
         </a>
 
       </div>
@@ -400,28 +518,31 @@
     </div>
 
     <section class="contact">
-      <div class="eyebrow">Marownie</div>
-      <h2>Ready to Order?</h2>
+      <div class="contact-content">
+        <div class="eyebrow">Marownie</div>
+        <h2>Ready to Order?</h2>
+        <div class="botanical-divider" aria-hidden="true">❧</div>
 
-      <p>
-        Have a question? We'd love to hear from you.
-      </p>
+        <p>
+          Have a question? We'd love to hear from you.
+        </p>
 
-      <a
-        class="order-button"
-        href="https://wa.me/13478881927"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        CONTACT US ON WHATSAPP
-      </a>
+        <a
+          class="order-button"
+          href="https://wa.me/13478881927"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CONTACT US ON WHATSAPP
+        </a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>MAROWNIE</p>
+    <p class="brand">MAROWNIE</p>
     <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
-    <p>© 2026 Marownie. All rights reserved.</p>
+    <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
 
 </body>
