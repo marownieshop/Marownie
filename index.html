@@ -65,6 +65,7 @@
     nav {
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       gap: 30px;
       padding: 12px 15px 18px;
@@ -82,6 +83,29 @@
 
     nav a:hover {
       color: var(--pink);
+    }
+
+    /* Shopping cart navigation */
+
+    nav .cart-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .cart-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 21px;
+      height: 21px;
+      padding: 0 6px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0;
     }
 
     /* Decorative cocoa illustrations are hidden */
@@ -505,6 +529,12 @@
     <a href="delivery.html">Delivery &amp; Pickup</a>
     <a href="payment.html">Payment</a>
     <a href="#order">Order</a>
+
+    <!-- Shopping cart -->
+    <a href="cart.html" class="cart-nav" aria-label="Shopping cart">
+      Cart
+      <span class="cart-count" data-cart-count>0</span>
+    </a>
   </nav>
 
   <section class="hero">
@@ -865,6 +895,9 @@
     <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
     <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
+
+  <!-- Shared shopping cart script -->
+  <script src="cart.js"></script>
 
 </body>
 </html>
