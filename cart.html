@@ -25,13 +25,9 @@
       --leaf: #788766;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -41,10 +37,7 @@
       line-height: 1.7;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .top {
       padding: 28px 20px 22px;
@@ -67,9 +60,7 @@
       letter-spacing: .06em;
     }
 
-    .back-link:hover {
-      color: var(--pink);
-    }
+    .back-link:hover { color: var(--pink); }
 
     .hero {
       padding: 65px 20px 55px;
@@ -221,9 +212,7 @@
       cursor: pointer;
     }
 
-    .remove-button:hover {
-      color: var(--pink);
-    }
+    .remove-button:hover { color: var(--pink); }
 
     .empty-cart {
       padding: 55px 20px;
@@ -337,9 +326,7 @@
       font-size: 25px;
     }
 
-    .form-field {
-      margin-bottom: 16px;
-    }
+    .form-field { margin-bottom: 16px; }
 
     .form-field label,
     .field-label {
@@ -389,17 +376,10 @@
       cursor: pointer;
     }
 
-    .fulfillment-options input {
-      accent-color: var(--burgundy);
-    }
+    .fulfillment-options input { accent-color: var(--burgundy); }
 
-    .delivery-fields {
-      display: none;
-    }
-
-    .delivery-fields.visible {
-      display: block;
-    }
+    .delivery-fields { display: none; }
+    .delivery-fields.visible { display: block; }
 
     .quote-button {
       width: 100%;
@@ -431,13 +411,8 @@
       font-size: 12px;
     }
 
-    .form-status.error {
-      color: #a13d32;
-    }
-
-    .form-status.success {
-      color: var(--leaf);
-    }
+    .form-status.error { color: #a13d32; }
+    .form-status.success { color: var(--leaf); }
 
     .clear-button:disabled {
       opacity: .5;
@@ -460,14 +435,10 @@
       letter-spacing: .08em;
     }
 
-    footer p {
-      margin: 5px;
-    }
+    footer p { margin: 5px; }
 
     @media (max-width: 600px) {
-      main {
-        padding: 40px 15px 55px;
-      }
+      main { padding: 40px 15px 55px; }
 
       .cart-item {
         grid-template-columns: 90px 1fr;
@@ -480,28 +451,19 @@
         height: 95px;
       }
 
-      .item-name {
-        font-size: 18px;
-      }
+      .item-name { font-size: 18px; }
 
       .item-total {
         grid-column: 2;
         text-align: left;
       }
 
-      .remove-button {
-        margin-left: 0;
-      }
-
-      .cart-summary {
-        max-width: none;
-      }
+      .remove-button { margin-left: 0; }
+      .cart-summary { max-width: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
@@ -726,9 +688,6 @@
       const placeOrderButton = document.getElementById("place-order");
       const clearButton = document.getElementById("clear-cart");
 
-      /*
-       * Connected Marownie Order System web app.
-       */
       const ORDER_SYSTEM_URL =
         "https://script.google.com/macros/s/AKfycbwGZEtBE1KDavSJ17T1Vq0b-9iUy-ohTWj-9f83AtZBOrihalIrLkFmkrAJhHBk0LtPJA/exec";
 
@@ -778,6 +737,23 @@
         return selected ? selected.value : "Pickup";
       }
 
+      // Enable PLACE ORDER for Pickup when the cart has items.
+      // For Delivery, require a successful quote for the current address.
+      function updatePlaceOrderState() {
+        const hasItems = cart.getItems().length > 0;
+        const isPickup = getFulfillment() === "Pickup";
+
+        const hasValidDeliveryQuote =
+          deliveryQuote !== null &&
+          quotedAddress === deliveryAddress.value.trim() &&
+          deliveryQuote.deliveryFee !== null;
+
+        placeOrderButton.disabled =
+          !hasItems ||
+          isSubmitting ||
+          (!isPickup && !hasValidDeliveryQuote);
+      }
+
       function updateTotal() {
         const subtotal = cart.getSubtotal();
         let fee = 0;
@@ -791,11 +767,8 @@
         }
 
         subtotalElement.textContent = cart.formatPrice(subtotal);
-
         deliveryFeeElement.textContent = cart.formatPrice(fee);
-
         deliveryFeeRow.hidden = getFulfillment() !== "Delivery";
-
         totalElement.textContent = cart.formatPrice(subtotal + fee);
       }
 
@@ -804,6 +777,7 @@
         quotedAddress = "";
         setStatus(quoteStatus, "", "");
         updateTotal();
+        updatePlaceOrderState();
       }
 
       function renderCart() {
@@ -867,6 +841,7 @@
         });
 
         updateTotal();
+        updatePlaceOrderState();
         cart.updateCartCount();
       }
 
@@ -883,7 +858,6 @@
         const token = createToken();
         payload.token = token;
 
-        // Recognize quote requests and normal order submissions.
         pendingRequests[token] = payload.action || "order";
 
         const form = document.createElement("form");
@@ -960,15 +934,16 @@
           );
 
           updateTotal();
+          updatePlaceOrderState();
           return;
         }
 
         if (requestType === "order") {
           isSubmitting = false;
-          placeOrderButton.disabled = false;
           placeOrderButton.textContent = "PLACE ORDER";
 
           if (!data.success) {
+            updatePlaceOrderState();
             setStatus(
               orderStatus,
               data.message || "We could not submit your order. Please try again.",
@@ -1052,6 +1027,7 @@
           }
 
           updateTotal();
+          updatePlaceOrderState();
         });
       });
 
@@ -1162,8 +1138,8 @@
 
         if (!token) {
           isSubmitting = false;
-          placeOrderButton.disabled = false;
           placeOrderButton.textContent = "PLACE ORDER";
+          updatePlaceOrderState();
         }
       });
 
