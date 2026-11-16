@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Cart | Marownie</title>
+  <meta name="description" content="Review your Marownie dessert order and contact us to complete your order.">
+  <link rel="canonical" href="https://shopmarownie.com/cart.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top {
+      padding: 28px 20px 22px;
+      text-align: center;
+      background: var(--paper);
+    }
+
+    .logo {
+      display: block;
+      width: min(320px, 82%);
+      max-height: 170px;
+      object-fit: contain;
+      margin: 0 auto 18px;
+    }
+
+    .back-link {
+      color: var(--burgundy);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .06em;
+    }
+
+    .back-link:hover {
+      color: var(--pink);
+    }
+
+    .hero {
+      padding: 65px 20px 55px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .14), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .10), transparent 25%),
+        var(--cream);
+    }
+
+    .eyebrow {
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: clamp(38px, 6vw, 54px);
+    }
+
+    .hero p {
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      min-height: 400px;
+      padding: 55px 20px 70px;
+      background: var(--paper);
+    }
+
+    .cart-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cart-heading {
+      margin: 0 0 28px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 125px 1fr auto;
+      align-items: center;
+      gap: 22px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .item-image-wrap {
+      width: 125px;
+      height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: white;
+    }
+
+    .item-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .item-name {
+      margin: 0 0 5px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 21px;
+      font-weight: 400;
+    }
+
+    .item-unit {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .item-price {
+      color: var(--burgundy);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .quantity-controls button {
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      color: var(--burgundy);
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    .quantity-value {
+      min-width: 20px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .item-total {
+      color: var(--burgundy);
+      font-size: 16px;
+      font-weight: 600;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .remove-button {
+      display: block;
+      margin: 10px 0 0 auto;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 11px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .remove-button:hover {
+      color: var(--pink);
+    }
+
+    .empty-cart {
+      padding: 55px 20px;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .empty-cart h2 {
+      margin: 0 0 12px;
+      font-size: 27px;
+    }
+
+    .empty-cart p {
+      margin: 0 0 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .shop-button,
+    .checkout-button {
+      display: inline-block;
+      padding: 13px 25px;
+      border: 1px solid var(--burgundy);
+      background: var(--burgundy);
+      color: white;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-align: center;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .shop-button:hover,
+    .checkout-button:hover {
+      background: transparent;
+      color: var(--burgundy);
+    }
+
+    .cart-summary {
+      max-width: 430px;
+      margin: 30px 0 0 auto;
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .summary-total {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--burgundy);
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .summary-note {
+      margin: 12px 0 18px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .checkout-button {
+      display: block;
+      width: 100%;
+    }
+
+    .clear-button {
+      display: block;
+      margin: 18px 0 0 auto;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 11px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .contact-note {
+      margin-top: 40px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 30px 20px;
+      background: var(--paper);
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer .brand {
+      margin: 0 0 8px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      letter-spacing: .08em;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 40px 15px 55px;
+      }
+
+      .cart-item {
+        grid-template-columns: 90px 1fr;
+        gap: 13px;
+        padding: 12px;
+      }
+
+      .item-image-wrap {
+        width: 90px;
+        height: 95px;
+      }
+
+      .item-name {
+        font-size: 18px;
+      }
+
+      .item-total {
+        grid-column: 2;
+        text-align: left;
+      }
+
+      .remove-button {
+        margin-left: 0;
+      }
+
+      .cart-summary {
+        max-width: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top">
+    <a href="index.html" aria-label="Marownie home">
+      <img
+        class="logo"
+        src="marownie-logo-pink.png"
+        alt="Marownie"
+      >
+    </a>
+
+    <a class="back-link" href="index.html">← BACK TO HOME</a>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Marownie</div>
+    <h1>Your Shopping Cart</h1>
+    <p>Review your favorite homemade desserts.</p>
+  </section>
+
+  <main>
+    <div class="cart-container">
+
+      <h2 class="cart-heading">Your Order</h2>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div id="cart-summary" class="cart-summary" hidden>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+
+        <p class="summary-note">
+          Pickup or delivery details and final order confirmation
+          will be arranged with Marownie.
+        </p>
+
+        <button
+          type="button"
+          class="checkout-button"
+          id="checkout-button"
+        >
+          CONTINUE TO ORDER
+        </button>
+
+        <button
+          type="button"
+          class="clear-button"
+          id="clear-cart"
+        >
+          CLEAR CART
+        </button>
+      </div>
+
+      <div id="empty-cart" class="empty-cart" hidden>
+        <h2>Your cart is empty</h2>
+        <p>
+          Discover our homemade desserts and add your favorites.
+        </p>
+        <a href="index.html" class="shop-button">
+          EXPLORE DESSERTS
+        </a>
+      </div>
+
+      <p class="contact-note">
+        Thank you for choosing Marownie!
+      </p>
+
+    </div>
+  </main>
+
+  <footer>
+    <p class="brand">MAROWNIE</p>
+    <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
+    <p>&copy; 2026 Marownie. All rights reserved.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cart = window.MarownieCart;
+
+      const itemsContainer = document.getElementById("cart-items");
+      const summary = document.getElementById("cart-summary");
+      const emptyCart = document.getElementById("empty-cart");
+      const subtotalElement = document.getElementById("cart-subtotal");
+      const totalElement = document.getElementById("cart-total");
+
+      if (!cart) {
+        itemsContainer.textContent =
+          "The cart could not be loaded. Please refresh the page.";
+        return;
+      }
+
+      function escapeHTML(value) {
+        return String(value ?? "").replace(/[&<>"']/g, function (char) {
+          return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+          }[char];
+        });
+      }
+
+      function renderCart() {
+        const items = cart.getItems();
+
+        itemsContainer.innerHTML = "";
+
+        if (!items.length) {
+          summary.hidden = true;
+          emptyCart.hidden = false;
+          cart.updateCartCount();
+          return;
+        }
+
+        emptyCart.hidden = true;
+        summary.hidden = false;
+
+        items.forEach(function (item) {
+          const quantity = Number(item.quantity) || 0;
+          const price = Number(item.price) || 0;
+          const lineTotal = price * quantity;
+
+          const image = item.image
+            ? `<img class="item-image" src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" onerror="this.style.display='none'">`
+            : "";
+
+          const card = document.createElement("article");
+          card.className = "cart-item";
+
+          card.innerHTML = `
+            <div class="item-image-wrap">
+              ${image}
+            </div>
+
+            <div class="item-details">
+              <h3 class="item-name">${escapeHTML(item.name)}</h3>
+              ${item.unit ? `<p class="item-unit">${escapeHTML(item.unit)}</p>` : ""}
+              <div class="item-price">${cart.formatPrice(price)} each</div>
+
+              <div class="quantity-controls">
+                <button type="button" data-action="decrease" data-id="${escapeHTML(item.id)}" aria-label="Decrease quantity">−</button>
+                <span class="quantity-value">${quantity}</span>
+                <button type="button" data-action="increase" data-id="${escapeHTML(item.id)}" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="item-total">
+              ${cart.formatPrice(lineTotal)}
+              <button
+                type="button"
+                class="remove-button"
+                data-action="remove"
+                data-id="${escapeHTML(item.id)}"
+              >
+                Remove
+              </button>
+            </div>
+          `;
+
+          itemsContainer.appendChild(card);
+        });
+
+        const subtotal = cart.getSubtotal();
+
+        subtotalElement.textContent = cart.formatPrice(subtotal);
+        totalElement.textContent = cart.formatPrice(subtotal);
+
+        cart.updateCartCount();
+      }
+
+      itemsContainer.addEventListener("click", function (event) {
+        const button = event.target.closest("button[data-action]");
+
+        if (!button) return;
+
+        const id = button.dataset.id;
+        const action = button.dataset.action;
+        const item = cart.getItems().find(function (entry) {
+          return entry.id === id;
+        });
+
+        if (!item) return;
+
+        if (action === "increase") {
+          cart.updateQuantity(id, item.quantity + 1);
+        }
+
+        if (action === "decrease") {
+          cart.updateQuantity(id, item.quantity - 1);
+        }
+
+        if (action === "remove") {
+          cart.removeItem(id);
+        }
+
+        renderCart();
+      });
+
+      document.getElementById("clear-cart").addEventListener("click", function () {
+        if (cart.getItems().length && confirm("Are you sure you want to clear your cart?")) {
+          cart.clearCart();
+          renderCart();
+        }
+      });
+
+      document.getElementById("checkout-button").addEventListener("click", function () {
+        const items = cart.getItems();
+
+        if (!items.length) return;
+
+        let message = "Hello Marownie! I would like to place an order:\n\n";
+
+        items.forEach(function (item) {
+          message +=
+            item.name +
+            " x " +
+            item.quantity +
+            " — " +
+            cart.formatPrice(item.price * item.quantity) +
+            "\n";
+        });
+
+        message +=
+          "\nSubtotal: " +
+          cart.formatPrice(cart.getSubtotal()) +
+          "\n\nPlease confirm availability and pickup or delivery details. Thank you!";
+
+        const whatsappURL =
+          "https://wa.me/13478881927?text=" +
+          encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+      });
+
+      renderCart();
+    });
+  </script>
+
+</body>
+</html>
