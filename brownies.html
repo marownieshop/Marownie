@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover six delicious homemade Marownie brownies, freshly prepared to order.">
+
   <title>Brownies | Marownie</title>
+  <meta name="description" content="Discover six delicious homemade Marownie brownies, freshly prepared to order.">
+  <link rel="canonical" href="https://shopmarownie.com/brownies.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -19,7 +21,9 @@
       --ink: #39312C;
       --muted: #82766D;
       --line: #E8DED1;
-      --white: #FFFFFF;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
+      --cocoa: #805B43;
     }
 
     * {
@@ -43,81 +47,140 @@
       text-decoration: none;
     }
 
+    /* Header and navigation */
+
     header {
-      padding: 32px 20px 22px;
+      padding: 28px 20px 18px;
       text-align: center;
       background: var(--paper);
     }
 
     .logo img {
       display: block;
-      width: min(340px, 85%);
-      max-height: 190px;
+      width: min(320px, 82%);
+      max-height: 170px;
       object-fit: contain;
-      margin: 0 auto 22px;
+      margin: 0 auto 18px;
     }
 
-    .back-link {
-      display: inline-block;
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 12px 15px 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    nav a {
       color: var(--burgundy);
-      font-size: 13px;
-      letter-spacing: .04em;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      transition: color .2s ease;
     }
 
-    .back-link:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: var(--pink);
     }
+
+    /* Hero */
 
     .hero {
-      padding: 65px 24px 70px;
+      position: relative;
+      overflow: hidden;
+      padding: 75px 24px 80px;
       text-align: center;
-      background: var(--cream);
-      border-top: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .14), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .10), transparent 25%),
+        var(--cream);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
-      color: var(--burgundy);
-      font-size: 12px;
-      letter-spacing: .18em;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
     h1, h2, h3 {
+      color: var(--burgundy);
       font-family: "Playfair Display", Georgia, serif;
       font-weight: 400;
       line-height: 1.2;
     }
 
-    h1 {
-      margin: 18px 0;
-      font-size: clamp(38px, 6vw, 64px);
-      color: var(--burgundy);
+    .hero h1 {
+      margin: 18px auto;
+      font-size: clamp(38px, 6vw, 66px);
     }
 
     .hero p {
-      max-width: 560px;
+      max-width: 570px;
       margin: 0 auto;
       color: var(--muted);
       font-size: 16px;
     }
 
+    /* Main section */
+
     main {
-      padding: 55px 24px 70px;
+      position: relative;
+      overflow: hidden;
+      padding: 75px 24px 85px;
       background: var(--paper);
+      border-top: 1px solid var(--line);
     }
 
     .section-inner {
-      max-width: 1080px;
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
-    .section-intro {
-      max-width: 650px;
-      margin: 0 auto 38px;
-      color: var(--muted);
+    .section-heading {
+      margin: 0 0 12px;
       text-align: center;
-      font-size: 14px;
+      font-size: clamp(30px, 4vw, 42px);
     }
+
+    .botanical-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin: 22px auto;
+      color: var(--leaf);
+      font-size: 17px;
+    }
+
+    .botanical-divider::before,
+    .botanical-divider::after {
+      width: 48px;
+      height: 1px;
+      background: #C8CDBA;
+      content: "";
+    }
+
+    .section-intro {
+      max-width: 590px;
+      margin: 0 auto 42px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Brownie cards */
 
     .brownie-grid {
       display: grid;
@@ -126,15 +189,22 @@
     }
 
     .brownie-card {
+      position: relative;
       display: flex;
       flex-direction: column;
       overflow: hidden;
       border: 1px solid var(--line);
       background: var(--paper);
       text-align: center;
+      transition: border-color .25s ease, transform .25s ease;
     }
 
-    /* Product photo gallery - clean white background */
+    .brownie-card:hover {
+      border-color: #C9B59E;
+      transform: translateY(-3px);
+    }
+
+    /* Product photo gallery */
 
     .brownie-hover {
       position: relative;
@@ -167,7 +237,17 @@
       opacity: 1;
     }
 
-    /* Show selected photo after tapping */
+    /* Second photo appears on hover */
+
+    .brownie-hover:not(.is-tapped):hover img:first-child {
+      opacity: 0;
+    }
+
+    .brownie-hover:not(.is-tapped):hover img:nth-child(2) {
+      opacity: 1;
+    }
+
+    /* Photo switching on touch devices */
 
     .brownie-hover.is-tapped img {
       opacity: 0;
@@ -186,52 +266,57 @@
       display: flex;
       flex: 1;
       flex-direction: column;
-      padding: 26px 25px 30px;
+      padding: 25px 22px 30px;
     }
 
     .brownie-card h2 {
-      margin: 0 0 12px;
-      color: var(--burgundy);
+      margin: 0 0 10px;
       font-size: 27px;
     }
 
     .description {
       flex-grow: 1;
       min-height: 76px;
-      margin: 0 0 12px;
+      margin: 0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .price {
-      margin: 10px 0 20px;
+      margin: 15px 0 4px;
       color: var(--burgundy);
-      font-size: 21px;
+      font-size: 20px;
+      font-weight: 500;
     }
+
+    /* Buttons */
 
     .button {
       display: inline-block;
       align-self: center;
-      padding: 13px 20px;
-      background: var(--burgundy);
+      margin-top: 18px;
+      padding: 13px 27px;
       border: 1px solid var(--burgundy);
-      color: #FFFFFF;
-      font-size: 12px;
-      letter-spacing: .04em;
-      transition: background .2s ease, border-color .2s ease;
+      background: var(--burgundy);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-align: center;
+      transition: .2s ease;
     }
 
     .button:hover {
-      background: #4F3428;
-      border-color: #4F3428;
+      background: transparent;
+      color: var(--burgundy);
     }
 
     /* Allergen information */
 
     .allergen-preview {
       max-width: 850px;
-      margin: 38px auto 0;
-      padding: 25px 28px;
+      margin: 55px auto 0;
+      padding: 28px;
       border: 1px solid var(--line);
       background: var(--cream);
       text-align: center;
@@ -239,8 +324,7 @@
 
     .allergen-preview h2 {
       margin: 0 0 14px;
-      color: var(--burgundy);
-      font-size: 25px;
+      font-size: 27px;
     }
 
     .allergen-preview p {
@@ -252,10 +336,15 @@
     .allergen-preview a {
       display: inline-block;
       margin-top: 12px;
-      color: var(--burgundy);
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: underline;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-decoration: none;
+    }
+
+    .allergen-preview a:hover {
+      color: var(--pink);
     }
 
     .fresh-note {
@@ -265,62 +354,92 @@
       font-size: 13px;
     }
 
+    /* Order section */
+
     .order-section {
-      padding: 50px 20px;
-      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+      padding: 65px 24px 75px;
+      background:
+        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        #E8EBDD;
       text-align: center;
-      border-top: 1px solid var(--line);
+    }
+
+    .order-section .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .order-section .eyebrow {
+      color: #647653;
     }
 
     .order-section h2 {
-      margin: 8px 0 15px;
-      color: var(--burgundy);
-      font-size: 38px;
+      margin: 12px 0;
+      font-size: clamp(30px, 4vw, 42px);
     }
 
     .order-section p {
-      max-width: 540px;
-      margin: 0 auto 25px;
+      max-width: 520px;
+      margin: 0 auto;
       color: var(--muted);
       font-size: 14px;
     }
 
     .order-section .button {
-      margin-top: 0;
+      margin-top: 28px;
     }
 
+    /* Footer */
+
     footer {
-      padding: 28px 20px;
+      position: relative;
+      overflow: hidden;
+      padding: 30px 20px;
       background: var(--paper);
       color: var(--muted);
       text-align: center;
       font-size: 12px;
-      border-top: 1px solid var(--line);
+    }
+
+    footer .brand {
+      margin: 0 0 8px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      letter-spacing: .08em;
     }
 
     footer p {
       margin: 5px;
     }
 
-    footer .brand {
-      color: var(--burgundy);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 20px;
-      letter-spacing: .08em;
+    /* Responsive layout */
+
+    @media (max-width: 900px) {
+      .brownie-hover {
+        height: 280px;
+      }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 650px) {
+      nav {
+        gap: 15px 22px;
+      }
+
       .hero {
-        padding: 50px 20px;
+        padding: 60px 20px 65px;
       }
 
       main {
-        padding: 40px 20px 55px;
+        padding: 55px 18px 60px;
       }
 
       .brownie-grid {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 18px;
       }
 
       .brownie-hover {
@@ -332,15 +451,27 @@
       }
 
       .card-content {
-        padding: 24px 20px 28px;
-      }
-
-      .order-section {
-        padding: 42px 20px;
+        padding: 25px 20px 30px;
       }
 
       .allergen-preview {
         padding: 22px 18px;
+      }
+
+      .order-section {
+        padding: 55px 20px 65px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .brownie-card,
+      .button,
+      .brownie-hover img {
+        transition: none;
       }
     }
   </style>
@@ -350,22 +481,36 @@
 
   <header>
     <a class="logo" href="index.html" aria-label="Marownie home">
-      <img src="marownie-logo-pink.png" alt="Marownie logo">
+      <img src="marownie-logo-pink.png" alt="Marownie">
     </a>
-    <a class="back-link" href="index.html">← Back to Home</a>
   </header>
 
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#treats">Our Treats</a>
+    <a href="index.html#story">Our Story</a>
+    <a href="delivery.html">Delivery &amp; Pickup</a>
+    <a href="payment.html">Payment</a>
+    <a href="index.html#order">Order</a>
+  </nav>
+
   <section class="hero">
-    <div class="eyebrow">Homemade in Small Batches</div>
-    <h1>Our Brownies</h1>
-    <p>
-      Rich chocolate, delicious flavors, and a soft,
-      fudgy texture. Freshly prepared for your order.
-    </p>
+    <div class="content">
+      <div class="eyebrow">Homemade in Small Batches</div>
+      <h1>Our Brownies</h1>
+      <p>
+        Rich chocolate, delicious flavors, and a soft,
+        fudgy texture. Freshly prepared for your order.
+      </p>
+    </div>
   </section>
 
   <main>
     <div class="section-inner">
+
+      <h2 class="section-heading">Our Brownie Selection</h2>
+
+      <div class="botanical-divider" aria-hidden="true">❧</div>
 
       <p class="section-intro">
         Discover your favorite brownie. Choose a flavor
@@ -471,7 +616,7 @@
         <article class="brownie-card">
           <div class="brownie-hover">
             <img src="caramel-peanut-brownie.jpg" alt="Caramel and Peanut Brownie">
-            <img src="caramel-peanut-brownie-box.jpg" alt="Caramel and Peanut Brownie in a box">
+            <img src="caramel-peanut-brownie-closeup.jpg" alt="Caramel and Peanut Brownie in a box">
           </div>
 
           <div class="card-content">
@@ -515,10 +660,9 @@
 
       </div>
 
-      <!-- Allergen Information Preview -->
+      <!-- Allergen Information -->
 
       <div class="allergen-preview">
-
         <h2>Allergen Information</h2>
 
         <p>
@@ -540,7 +684,6 @@
         <a href="food-safety.html">
           VIEW FOOD SAFETY &amp; ALLERGEN INFORMATION
         </a>
-
       </div>
 
       <p class="fresh-note">
@@ -552,14 +695,22 @@
   </main>
 
   <section class="order-section">
-    <div class="eyebrow">Let's Make It Sweet</div>
-    <h2>Ready to Order?</h2>
-    <p>Contact Marownie with any questions about our brownies.</p>
-    <a class="button"
-       href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20your%20brownies."
-       target="_blank" rel="noopener noreferrer">
-      CONTACT US ON WHATSAPP
-    </a>
+    <div class="content">
+      <div class="eyebrow">Let's Make It Sweet</div>
+      <h2>Ready to Order?</h2>
+
+      <div class="botanical-divider" aria-hidden="true">❧</div>
+
+      <p>
+        Contact Marownie with any questions about our brownies.
+      </p>
+
+      <a class="button"
+         href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20your%20brownies."
+         target="_blank" rel="noopener noreferrer">
+        CONTACT US ON WHATSAPP
+      </a>
+    </div>
   </section>
 
   <footer>
@@ -586,7 +737,6 @@
 
       function showImage(index) {
         currentIndex = index;
-
         gallery.classList.add('is-tapped');
 
         images.forEach((image, i) => {
@@ -601,7 +751,6 @@
 
         if (availableImages.length < 2) return;
 
-        const currentImage = images[currentIndex];
         let nextIndex = (currentIndex + 1) % images.length;
 
         while (
