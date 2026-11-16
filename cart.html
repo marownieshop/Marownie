@@ -669,6 +669,12 @@
     document.addEventListener("DOMContentLoaded", function () {
       const cart = window.MarownieCart;
 
+      if (!cart) {
+        document.getElementById("order-status").textContent =
+          "The shopping cart could not be loaded. Please refresh the page.";
+        return;
+      }
+
       const itemsContainer = document.getElementById("cart-items");
       const summary = document.getElementById("cart-summary");
       const emptyCart = document.getElementById("empty-cart");
@@ -690,6 +696,8 @@
 
       const ORDER_SYSTEM_URL =
         "https://script.google.com/macros/s/AKfycbwGZEtBE1KDavSJ17T1Vq0b-9iUy-ohTWj-9f83AtZBOrihalIrLkFmkrAJhHBk0LtPJA/exec";
+
+      const RESPONSE_TIMEOUT = 45000;
 
       const iframe = document.createElement("iframe");
       iframe.name = "marownie-order-response";
@@ -737,8 +745,6 @@
         return selected ? selected.value : "Pickup";
       }
 
-      // Enable PLACE ORDER for Pickup when the cart has items.
-      // For Delivery, require a successful quote for the current address.
       function updatePlaceOrderState() {
         const hasItems = cart.getItems().length > 0;
         const isPickup = getFulfillment() === "Pickup";
@@ -858,7 +864,40 @@
         const token = createToken();
         payload.token = token;
 
-        pendingRequests[token] = payload.action || "order";
+        const requestType = payload.action || "order";
+
+        const timeoutId = window.setTimeout(function () {
+          if (!pendingRequests[token]) return;
+
+          delete pendingRequests[token];
+
+          if (requestType === "quote") {
+            calculateButton.disabled = false;
+            invalidateQuote();
+
+            setStatus(
+              quoteStatus,
+              "The delivery calculator did not respond. Please try again.",
+              "error"
+            );
+            return;
+          }
+
+          isSubmitting = false;
+          placeOrderButton.textContent = "PLACE ORDER";
+          placeOrderButton.disabled = true;
+
+          setStatus(
+            orderStatus,
+            "We have not received a response from the order system. Please check your email and contact Marownie before submitting again, to avoid a duplicate order.",
+            "error"
+          );
+        }, RESPONSE_TIMEOUT);
+
+        pendingRequests[token] = {
+          type: requestType,
+          timeoutId: timeoutId
+        };
 
         const form = document.createElement("form");
         form.method = "POST";
@@ -873,6 +912,7 @@
 
         form.appendChild(input);
         document.body.appendChild(form);
+
         form.submit();
         form.remove();
 
@@ -880,29 +920,27 @@
       }
 
       window.addEventListener("message", function (event) {
-        if (event.source !== iframe.contentWindow) {
-          return;
-        }
-
         const data = event.data;
 
         if (!data || typeof data !== "object" || !data.token) {
           return;
         }
 
-        const requestType = pendingRequests[data.token];
+        const request = pendingRequests[data.token];
 
-        if (!requestType) {
+        if (!request) {
           return;
         }
 
+        window.clearTimeout(request.timeoutId);
         delete pendingRequests[data.token];
 
-        if (requestType === "quote") {
+        if (request.type === "quote") {
           calculateButton.disabled = false;
 
           if (!data.success) {
             invalidateQuote();
+
             setStatus(
               quoteStatus,
               data.message || "We could not calculate delivery.",
@@ -913,6 +951,7 @@
 
           if (data.deliveryFee === null) {
             invalidateQuote();
+
             setStatus(
               quoteStatus,
               data.message ||
@@ -938,12 +977,13 @@
           return;
         }
 
-        if (requestType === "order") {
+        if (request.type === "order") {
           isSubmitting = false;
           placeOrderButton.textContent = "PLACE ORDER";
 
           if (!data.success) {
             updatePlaceOrderState();
+
             setStatus(
               orderStatus,
               data.message || "We could not submit your order. Please try again.",
