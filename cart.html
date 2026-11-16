@@ -727,12 +727,10 @@
       const clearButton = document.getElementById("clear-cart");
 
       /*
-       * IMPORTANT:
-       * Replace this placeholder with the deployed
-       * Marownie Order System web app URL.
+       * Connected Marownie Order System web app.
        */
       const ORDER_SYSTEM_URL =
-        "PASTE_MAROWNIE_ORDER_SYSTEM_WEB_APP_URL_HERE";
+        "https://script.google.com/macros/s/AKfycbwGZEtBE1KDavSJ17T1Vq0b-9iUy-ohTWj-9f83AtZBOrihalIrLkFmkrAJhHBk0LtPJA/exec";
 
       const iframe = document.createElement("iframe");
       iframe.name = "marownie-order-response";
@@ -873,10 +871,7 @@
       }
 
       function sendToOrderSystem(payload) {
-        if (
-          !ORDER_SYSTEM_URL ||
-          ORDER_SYSTEM_URL === "PASTE_MAROWNIE_ORDER_SYSTEM_WEB_APP_URL_HERE"
-        ) {
+        if (!ORDER_SYSTEM_URL) {
           setStatus(
             orderStatus,
             "The order system has not been connected yet. Please contact Marownie.",
