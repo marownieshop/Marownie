@@ -9,17 +9,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #f8f5ef;
-      --paper: #fffdf9;
-      --burgundy: #713c49;
-      --pink: #c58c99;
-      --ink: #39312f;
-      --muted: #817773;
-      --line: #e9e0d9;
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
+      --cocoa: #805B43;
     }
 
     * {
@@ -61,23 +64,61 @@
       display: inline-block;
       color: var(--burgundy);
       font-size: 13px;
+      font-weight: 600;
       letter-spacing: .04em;
     }
 
     .back-link:hover {
+      color: var(--pink);
       text-decoration: underline;
     }
 
+    .cart-nav {
+      margin-top: 15px;
+    }
+
+    .cart-link {
+      display: inline-block;
+      color: var(--burgundy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    .cart-link:hover {
+      color: var(--pink);
+    }
+
+    .cart-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      padding: 0 6px;
+      background: var(--burgundy);
+      border-radius: 50%;
+      color: white;
+      font-size: 11px;
+      line-height: 1;
+    }
+
     .hero {
-      padding: 65px 24px 70px;
+      padding: 75px 24px 80px;
       text-align: center;
+      background:
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .14), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .10), transparent 25%),
+        var(--cream);
       border-top: 1px solid var(--line);
     }
 
     .eyebrow {
-      color: var(--burgundy);
-      font-size: 12px;
-      letter-spacing: .18em;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
@@ -89,7 +130,7 @@
 
     h1 {
       margin: 18px 0;
-      color: #713c49;
+      color: var(--burgundy);
       font-size: clamp(38px, 6vw, 64px);
     }
 
@@ -101,18 +142,19 @@
     }
 
     main {
-      padding: 55px 24px 70px;
+      padding: 65px 24px 75px;
       background: var(--paper);
+      border-top: 1px solid var(--line);
     }
 
     .section-inner {
-      max-width: 1080px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     .intro {
-      max-width: 650px;
-      margin: 0 auto 38px;
+      max-width: 600px;
+      margin: 0 auto 40px;
       color: var(--muted);
       text-align: center;
       font-size: 14px;
@@ -122,7 +164,7 @@
       display: grid;
       grid-template-columns: minmax(0, 520px);
       justify-content: center;
-      gap: 28px;
+      gap: 30px;
     }
 
     .product-card {
@@ -130,19 +172,27 @@
       flex-direction: column;
       min-width: 0;
       padding: 24px;
+      background: var(--paper);
       border: 1px solid var(--line);
-      background: var(--cream);
+      border-radius: 8px;
       text-align: center;
+      transition: border-color .25s ease, transform .25s ease;
+    }
+
+    .product-card:hover {
+      border-color: #C9B59E;
+      transform: translateY(-3px);
     }
 
     .photo-placeholder {
       display: flex;
-      min-height: 260px;
+      min-height: 300px;
       align-items: center;
       justify-content: center;
       margin-bottom: 22px;
       padding: 15px;
-      background: #eee5df;
+      background: #F8F5EF;
+      border-radius: 5px;
       color: var(--muted);
       font-size: 12px;
       letter-spacing: .08em;
@@ -164,10 +214,9 @@
 
     .price {
       margin: 8px 0 12px;
-      font-family: "DM Sans", sans-serif;
+      color: var(--burgundy);
       font-size: 19px;
-      font-weight: 500;
-      color: #713c49;
+      font-weight: 600;
     }
 
     .description {
@@ -178,37 +227,64 @@
     }
 
     .button {
-      display: inline-block;
+      display: block;
+      width: 100%;
       margin-top: auto;
       padding: 13px 18px;
       background: var(--burgundy);
       border: 1px solid var(--burgundy);
+      border-radius: 2px;
       color: white;
-      font-size: 12px;
-      letter-spacing: .04em;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
       text-align: center;
-      transition: background .2s ease;
+      transition: .2s ease;
     }
 
     .button:hover {
-      background: #552d37;
+      background: transparent;
+      color: var(--burgundy);
     }
 
-    /* Allergen information - same style as Brownies */
+    .cart-add {
+      display: block;
+      width: 100%;
+      margin: 0 0 10px;
+      padding: 13px 15px;
+      background: transparent;
+      border: 1px solid var(--burgundy);
+      border-radius: 2px;
+      color: var(--burgundy);
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-align: center;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .cart-add:hover {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    /* Allergen Information */
 
     .allergen-preview {
       max-width: 850px;
-      margin: 38px auto 0;
-      padding: 25px 28px;
+      margin: 42px auto 0;
+      padding: 28px;
       border: 1px solid var(--line);
       background: var(--cream);
       text-align: center;
     }
 
     .allergen-preview h2 {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
       color: var(--burgundy);
-      font-size: 25px;
+      font-size: 27px;
     }
 
     .allergen-preview p {
@@ -217,47 +293,67 @@
       font-size: 14px;
     }
 
+    .allergen-preview strong {
+      color: var(--ink);
+    }
+
     .allergen-preview a {
       display: inline-block;
-      margin-top: 12px;
-      color: var(--burgundy);
-      font-size: 13px;
-      font-weight: 600;
+      margin-top: 14px;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
       text-decoration: underline;
     }
 
+    .allergen-preview a:hover {
+      color: var(--pink);
+    }
+
     .note {
-      margin: 38px auto 0;
+      margin: 35px auto 0;
       color: var(--muted);
       text-align: center;
       font-size: 13px;
     }
 
     .contact {
-      margin-top: 55px;
-      padding: 50px 20px;
-      background: #eee5df;
+      margin-top: 60px;
+      padding: 55px 20px;
+      background:
+        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        #E8EBDD;
       text-align: center;
     }
 
     .contact h2 {
-      margin: 8px 0 15px;
-      font-size: 38px;
+      margin: 12px 0 15px;
+      color: var(--burgundy);
+      font-size: clamp(30px, 4vw, 42px);
     }
 
     .contact p {
       max-width: 540px;
       margin: 0 auto 25px;
-      color: #71645f;
+      color: var(--muted);
       font-size: 14px;
     }
 
+    .contact .eyebrow {
+      color: #647653;
+    }
+
     .contact .button {
+      display: inline-block;
+      width: auto;
       margin-top: 0;
+      padding: 13px 27px;
     }
 
     footer {
-      padding: 28px 20px;
+      padding: 30px 20px;
       background: var(--paper);
       color: var(--muted);
       text-align: center;
@@ -269,9 +365,10 @@
     }
 
     footer .brand {
+      margin: 0 0 8px;
       color: var(--burgundy);
       font-family: "Playfair Display", Georgia, serif;
-      font-size: 20px;
+      font-size: 24px;
       letter-spacing: .08em;
     }
 
@@ -281,27 +378,39 @@
       }
 
       .hero {
-        padding: 50px 22px;
+        padding: 55px 22px;
       }
 
       main {
-        padding: 40px 20px 55px;
+        padding: 45px 20px 60px;
       }
 
       .product-card {
-        padding: 20px;
+        padding: 18px;
       }
 
       .photo-placeholder {
-        min-height: 220px;
+        min-height: 240px;
       }
 
       .allergen-preview {
-        padding: 22px 18px;
+        padding: 24px 18px;
       }
 
       .contact {
-        padding: 42px 20px;
+        padding: 45px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .product-card,
+      .button,
+      .cart-add {
+        transition: none;
       }
     }
   </style>
@@ -313,7 +422,14 @@
     <a href="index.html" aria-label="Marownie home">
       <img class="logo" src="marownie-logo-pink.png" alt="Marownie Handmade Sweets">
     </a>
+
     <a class="back-link" href="index.html">← Back to Home</a>
+
+    <div class="cart-nav">
+      <a class="cart-link" href="cart.html">
+        Cart <span class="cart-count" data-cart-count hidden>0</span>
+      </a>
+    </div>
   </header>
 
   <section class="hero">
@@ -351,6 +467,17 @@
             A homemade treat inspired by the classic Eastern European dessert.
           </p>
 
+          <button
+            class="cart-add"
+            type="button"
+            data-cart-add
+            data-product-id="ptichye-moloko"
+            data-product-name="Ptichye Moloko"
+            data-product-price="7"
+          >
+            ADD TO CART
+          </button>
+
           <a
             class="button"
             href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Ptichye%20Moloko."
@@ -364,7 +491,7 @@
 
       </div>
 
-      <!-- Allergen Information Preview - same placement as Brownies -->
+      <!-- Allergen Information -->
 
       <div class="allergen-preview">
 
@@ -417,6 +544,8 @@
     <p>Homemade Brownies, Oreshki, Tiramisu &amp; Ptichye Moloko</p>
     <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
+
+  <script src="cart.js"></script>
 
 </body>
 </html>
