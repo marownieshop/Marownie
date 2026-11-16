@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,8 +48,6 @@
       text-decoration: none;
     }
 
-    /* Header and navigation */
-
     header {
       padding: 28px 20px 18px;
       text-align: center;
@@ -66,6 +65,7 @@
     nav {
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       gap: 30px;
       padding: 12px 15px 18px;
@@ -86,7 +86,24 @@
       color: var(--pink);
     }
 
-    /* Hero */
+    .cart-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 19px;
+      height: 19px;
+      margin-left: 4px;
+      padding: 0 5px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 0;
+    }
+
+    .cart-count[hidden] {
+      display: none;
+    }
 
     .hero {
       position: relative;
@@ -130,8 +147,6 @@
       color: var(--muted);
       font-size: 16px;
     }
-
-    /* Main section */
 
     main {
       position: relative;
@@ -180,8 +195,6 @@
       text-align: center;
     }
 
-    /* Brownie cards */
-
     .brownie-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -203,8 +216,6 @@
       border-color: #C9B59E;
       transform: translateY(-3px);
     }
-
-    /* Product photo gallery */
 
     .brownie-hover {
       position: relative;
@@ -237,8 +248,6 @@
       opacity: 1;
     }
 
-    /* Second photo appears on hover */
-
     .brownie-hover:not(.is-tapped):hover img:first-child {
       opacity: 0;
     }
@@ -246,8 +255,6 @@
     .brownie-hover:not(.is-tapped):hover img:nth-child(2) {
       opacity: 1;
     }
-
-    /* Photo switching on touch devices */
 
     .brownie-hover.is-tapped img {
       opacity: 0;
@@ -289,8 +296,6 @@
       font-weight: 500;
     }
 
-    /* Buttons */
-
     .button {
       display: inline-block;
       align-self: center;
@@ -299,6 +304,7 @@
       border: 1px solid var(--burgundy);
       background: var(--burgundy);
       color: white;
+      font-family: "DM Sans", sans-serif;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: .1em;
@@ -311,7 +317,20 @@
       color: var(--burgundy);
     }
 
-    /* Allergen information */
+    .cart-add {
+      cursor: pointer;
+    }
+
+    .whatsapp-order {
+      margin-top: 10px;
+      background: transparent;
+      color: var(--burgundy);
+    }
+
+    .whatsapp-order:hover {
+      background: var(--burgundy);
+      color: white;
+    }
 
     .allergen-preview {
       max-width: 850px;
@@ -354,8 +373,6 @@
       font-size: 13px;
     }
 
-    /* Order section */
-
     .order-section {
       position: relative;
       overflow: hidden;
@@ -392,8 +409,6 @@
       margin-top: 28px;
     }
 
-    /* Footer */
-
     footer {
       position: relative;
       overflow: hidden;
@@ -415,8 +430,6 @@
     footer p {
       margin: 5px;
     }
-
-    /* Responsive layout */
 
     @media (max-width: 900px) {
       .brownie-hover {
@@ -492,6 +505,7 @@
     <a href="delivery.html">Delivery &amp; Pickup</a>
     <a href="payment.html">Payment</a>
     <a href="index.html#order">Order</a>
+    <a href="cart.html">Cart <span class="cart-count" data-cart-count hidden>0</span></a>
   </nav>
 
   <section class="hero">
@@ -513,8 +527,8 @@
       <div class="botanical-divider" aria-hidden="true">❧</div>
 
       <p class="section-intro">
-        Discover your favorite brownie. Choose a flavor
-        and click its order button to message us on WhatsApp.
+        Discover your favorite brownie. Add your selection to the cart
+        or order directly through WhatsApp.
       </p>
 
       <div class="brownie-grid">
@@ -534,10 +548,20 @@
               texture and deep cocoa flavor.
             </p>
             <div class="price">$6</div>
-            <a class="button"
+
+            <button class="button cart-add" type="button"
+              data-cart-add
+              data-product-id="classic-brownie"
+              data-product-name="Classic Brownie"
+              data-product-price="6"
+              data-product-image="classic-brownie.jpg">
+              ADD TO CART
+            </button>
+
+            <a class="button whatsapp-order"
                href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Classic%20Brownie."
                target="_blank" rel="noopener noreferrer">
-              ORDER THIS BROWNIE
+              ORDER ON WHATSAPP
             </a>
           </div>
         </article>
@@ -557,10 +581,20 @@
               for a delicious sweet-and-tart contrast.
             </p>
             <div class="price">$6</div>
-            <a class="button"
+
+            <button class="button cart-add" type="button"
+              data-cart-add
+              data-product-id="cranberry-brownie"
+              data-product-name="Cranberry Brownie"
+              data-product-price="6"
+              data-product-image="cranberry-brownie.jpg">
+              ADD TO CART
+            </button>
+
+            <a class="button whatsapp-order"
                href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Cranberry%20Brownie."
                target="_blank" rel="noopener noreferrer">
-              ORDER THIS BROWNIE
+              ORDER ON WHATSAPP
             </a>
           </div>
         </article>
@@ -580,10 +614,20 @@
               fudgy flavor of a classic brownie.
             </p>
             <div class="price">$6</div>
-            <a class="button"
+
+            <button class="button cart-add" type="button"
+              data-cart-add
+              data-product-id="brownie-cookies"
+              data-product-name="Brownie Cookies"
+              data-product-price="6"
+              data-product-image="brownie-cookies.jpg">
+              ADD TO CART
+            </button>
+
+            <a class="button whatsapp-order"
                href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Brownie%20Cookies."
                target="_blank" rel="noopener noreferrer">
-              ORDER THIS BROWNIE
+              ORDER ON WHATSAPP
             </a>
           </div>
         </article>
@@ -603,10 +647,20 @@
               crunchy pecans for a delicious nutty finish.
             </p>
             <div class="price">$6</div>
-            <a class="button"
+
+            <button class="button cart-add" type="button"
+              data-cart-add
+              data-product-id="pecan-chocolate-brownie"
+              data-product-name="Pecan Chocolate Brownie"
+              data-product-price="6"
+              data-product-image="pecan-chocolate-brownie.jpg">
+              ADD TO CART
+            </button>
+
+            <a class="button whatsapp-order"
                href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Pecan%20Chocolate%20Brownie."
                target="_blank" rel="noopener noreferrer">
-              ORDER THIS BROWNIE
+              ORDER ON WHATSAPP
             </a>
           </div>
         </article>
@@ -626,10 +680,20 @@
               caramel and crunchy peanuts.
             </p>
             <div class="price">$7</div>
-            <a class="button"
+
+            <button class="button cart-add" type="button"
+              data-cart-add
+              data-product-id="caramel-peanut-brownie"
+              data-product-name="Caramel & Peanut Brownie"
+              data-product-price="7"
+              data-product-image="caramel-peanut-brownie.jpg">
+              ADD TO CART
+            </button>
+
+            <a class="button whatsapp-order"
                href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Caramel%20and%20Peanut%20Brownie."
                target="_blank" rel="noopener noreferrer">
-              ORDER THIS BROWNIE
+              ORDER ON WHATSAPP
             </a>
           </div>
         </article>
@@ -650,17 +714,25 @@
               finished with a smooth chocolate glaze.
             </p>
             <div class="price">$7</div>
-            <a class="button"
+
+            <button class="button cart-add" type="button"
+              data-cart-add
+              data-product-id="vanilla-souffle-brownie"
+              data-product-name="Chocolate Brownie with Vanilla Soufflé"
+              data-product-price="7"
+              data-product-image="vanilla-souffle-brownie.jpg">
+              ADD TO CART
+            </button>
+
+            <a class="button whatsapp-order"
                href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20a%20Chocolate%20Brownie%20with%20Vanilla%20Souffle."
                target="_blank" rel="noopener noreferrer">
-              ORDER THIS BROWNIE
+              ORDER ON WHATSAPP
             </a>
           </div>
         </article>
 
       </div>
-
-      <!-- Allergen Information -->
 
       <div class="allergen-preview">
         <h2>Allergen Information</h2>
@@ -718,6 +790,8 @@
     <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
     <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
+
+  <script src="cart.js"></script>
 
   <script>
     /* Tap or click a photo to see the next image */
