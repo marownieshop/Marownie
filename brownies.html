@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +12,14 @@
 
   <style>
     :root {
-      --cream: #f8f5ef;
-      --paper: #fffdf9;
-      --burgundy: #713c49;
-      --pink: #c58c99;
-      --ink: #39312f;
-      --muted: #817773;
-      --line: #e9e0d9;
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --white: #FFFFFF;
     }
 
     * {
@@ -71,6 +71,7 @@
     .hero {
       padding: 65px 24px 70px;
       text-align: center;
+      background: var(--cream);
       border-top: 1px solid var(--line);
     }
 
@@ -129,55 +130,54 @@
       flex-direction: column;
       overflow: hidden;
       border: 1px solid var(--line);
-      background: var(--cream);
+      background: var(--paper);
       text-align: center;
     }
 
-    /* Responsive two-photo galleries */
+    /* Product photo gallery - clean white background */
 
-    .brownie-hover,
-    .brownie-photos {
+    .brownie-hover {
       position: relative;
       width: 100%;
       height: 300px;
       overflow: hidden;
-      background: #eee5df;
+      background: #FFFFFF;
       cursor: pointer;
       touch-action: manipulation;
     }
 
-    .brownie-hover img,
-    .brownie-photos img {
+    .brownie-hover img {
       position: absolute;
       inset: 0;
       display: block;
       width: 100%;
       height: 100%;
       object-fit: contain;
-      padding: 8px;
+      object-position: center;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      background: #FFFFFF;
+      mix-blend-mode: normal;
       opacity: 0;
       transition: opacity .4s ease;
     }
 
-    .brownie-hover img:first-child,
-    .brownie-photos img:first-child {
+    .brownie-hover img:first-child {
       opacity: 1;
     }
 
-    /* Only the selected photo is visible */
+    /* Show selected photo after tapping */
 
-    .brownie-hover.is-tapped img,
-    .brownie-photos.is-tapped img {
+    .brownie-hover.is-tapped img {
       opacity: 0;
     }
 
-    .brownie-hover.is-tapped img.is-active,
-    .brownie-photos.is-tapped img.is-active {
+    .brownie-hover.is-tapped img.is-active {
       opacity: 1;
     }
 
-    .brownie-hover:focus-visible,
-    .brownie-photos:focus-visible {
+    .brownie-hover:focus-visible {
       outline: 2px solid var(--burgundy);
       outline-offset: -3px;
     }
@@ -215,14 +215,15 @@
       padding: 13px 20px;
       background: var(--burgundy);
       border: 1px solid var(--burgundy);
-      color: white;
+      color: #FFFFFF;
       font-size: 12px;
       letter-spacing: .04em;
-      transition: background .2s ease;
+      transition: background .2s ease, border-color .2s ease;
     }
 
     .button:hover {
-      background: #552d37;
+      background: #4F3428;
+      border-color: #4F3428;
     }
 
     /* Allergen information */
@@ -266,19 +267,21 @@
 
     .order-section {
       padding: 50px 20px;
-      background: #eee5df;
+      background: var(--cream);
       text-align: center;
+      border-top: 1px solid var(--line);
     }
 
     .order-section h2 {
       margin: 8px 0 15px;
+      color: var(--burgundy);
       font-size: 38px;
     }
 
     .order-section p {
       max-width: 540px;
       margin: 0 auto 25px;
-      color: #71645f;
+      color: var(--muted);
       font-size: 14px;
     }
 
@@ -292,6 +295,7 @@
       color: var(--muted);
       text-align: center;
       font-size: 12px;
+      border-top: 1px solid var(--line);
     }
 
     footer p {
@@ -319,8 +323,7 @@
         gap: 22px;
       }
 
-      .brownie-hover,
-      .brownie-photos {
+      .brownie-hover {
         height: 260px;
       }
 
