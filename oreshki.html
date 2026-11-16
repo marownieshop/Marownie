@@ -73,6 +73,37 @@
       text-decoration: underline;
     }
 
+    .cart-nav {
+      margin-top: 15px;
+    }
+
+    .cart-link {
+      display: inline-block;
+      color: var(--burgundy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    .cart-link:hover {
+      color: var(--pink);
+    }
+
+    .cart-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      padding: 0 6px;
+      background: var(--burgundy);
+      border-radius: 50%;
+      color: white;
+      font-size: 11px;
+      line-height: 1;
+    }
+
     .hero {
       padding: 75px 24px 80px;
       text-align: center;
@@ -181,13 +212,9 @@
       transition: opacity .35s ease, transform .4s ease;
     }
 
-    /* Filling is the main photo */
-
     .product-gallery .filling-photo {
       opacity: 1;
     }
-
-    /* Box appears on hover */
 
     .product-gallery .box-photo {
       opacity: 0;
@@ -250,6 +277,31 @@
     .button:hover {
       background: transparent;
       color: var(--burgundy);
+    }
+
+    /* Add to Cart button */
+
+    .cart-add {
+      display: block;
+      width: 100%;
+      margin: 0 0 10px;
+      padding: 13px 15px;
+      background: transparent;
+      border: 1px solid var(--burgundy);
+      border-radius: 2px;
+      color: var(--burgundy);
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-align: center;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .cart-add:hover {
+      background: var(--burgundy);
+      color: white;
     }
 
     /* Allergen Information */
@@ -399,7 +451,8 @@
 
       .product-card,
       .product-gallery img,
-      .button {
+      .button,
+      .cart-add {
         transition: none;
       }
     }
@@ -413,6 +466,12 @@
       <img class="logo" src="marownie-logo-pink.png" alt="Marownie Handmade Sweets">
     </a>
     <a class="back-link" href="index.html">← Back to Home</a>
+
+    <div class="cart-nav">
+      <a class="cart-link" href="cart.html">
+        Cart <span class="cart-count" data-cart-count hidden>0</span>
+      </a>
+    </div>
   </header>
 
   <section class="hero">
@@ -457,6 +516,18 @@
             Crisp, golden cookies with a smooth and creamy milk chocolate filling.
           </p>
 
+          <button
+            class="cart-add"
+            type="button"
+            data-cart-add
+            data-product-id="milk-chocolate-oreshki"
+            data-product-name="Milk Chocolate Oreshki"
+            data-product-price="5"
+            data-product-image="milk-chocolate-oreshki.jpg"
+            data-product-unit="box of 4">
+            ADD TO CART
+          </button>
+
           <a class="button"
              href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20order%20Milk%20Chocolate%20Oreshki%20-%20one%20box%20of%204."
              target="_blank" rel="noopener noreferrer">
@@ -487,6 +558,18 @@
           <p class="description">
             Golden, delicate cookies filled with creamy peanut butter and sweet strawberry jam. A delicious combination of rich, nutty flavor and fruity sweetness in every bite.
           </p>
+
+          <button
+            class="cart-add"
+            type="button"
+            data-cart-add
+            data-product-id="peanut-butter-strawberry-jam-oreshki"
+            data-product-name="Peanut Butter & Strawberry Jam Oreshki"
+            data-product-price="5"
+            data-product-image="peanut-butter-strawberry-jam-filling.jpg"
+            data-product-unit="box of 4">
+            ADD TO CART
+          </button>
 
           <a class="button"
              href="https://wa.me/13478881927?text=Hello%20Marownie%21%20I%27d%20like%20to%20order%20Peanut%20Butter%20%26%20Strawberry%20Jam%20Oreshki%20-%20one%20box%20of%204."
@@ -557,6 +640,8 @@
     <p>Homemade Brownies, Oreshki &amp; Tiramisu</p>
     <p>&copy; 2026 Marownie. All rights reserved.</p>
   </footer>
+
+  <script src="cart.js"></script>
 
 </body>
 </html>
