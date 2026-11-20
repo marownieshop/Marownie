@@ -20,10 +20,10 @@
       --burgundy: #654332;
       --pink: #E99A7E;
       --ink: #39312C;
-      --muted: #82766D;
-      --line: #E8DED1;
-      --leaf: #788766;
-      --leaf-light: #A7B394;
+      --muted: #756F64;
+      --line: #DCE3D3;
+      --leaf: #657B55;
+      --leaf-light: #A7B894;
       --cocoa: #805B43;
     }
 
@@ -70,15 +70,16 @@
       gap: 30px;
       padding: 12px 15px 18px;
       border-bottom: 1px solid var(--line);
-      background: var(--paper);
+      background: #F0F2E9;
     }
 
     nav a {
-      color: var(--burgundy);
+      color: #526744;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: .09em;
       text-transform: uppercase;
+      transition: color .2s ease;
     }
 
     nav a:hover {
@@ -251,8 +252,8 @@
       display: inline-block;
       margin-top: 28px;
       padding: 13px 27px;
-      border: 1px solid var(--burgundy);
-      background: var(--burgundy);
+      border: 1px solid var(--leaf);
+      background: var(--leaf);
       color: white;
       font-size: 11px;
       font-weight: 600;
@@ -262,16 +263,17 @@
     }
 
     .button:hover {
-      background: transparent;
-      color: var(--burgundy);
+      background: #526744;
+      border-color: #526744;
+      color: white;
     }
 
     .treats {
       position: relative;
       overflow: hidden;
       padding: 75px 24px 85px;
-      background: var(--paper);
-      border-top: 1px solid var(--line);
+      background: #E9EEE3;
+      border-top: 1px solid #D5DECC;
     }
 
     .section-inner {
@@ -304,14 +306,14 @@
     .treat-card {
       position: relative;
       overflow: hidden;
-      border: 1px solid var(--line);
+      border: 1px solid #D7E0D0;
       background: var(--paper);
       text-align: center;
       transition: border-color .25s ease, transform .25s ease;
     }
 
     .treat-card:hover {
-      border-color: #C9B59E;
+      border-color: var(--leaf);
       transform: translateY(-3px);
     }
 
@@ -377,9 +379,9 @@
       overflow: hidden;
       padding: 65px 24px 75px;
       background:
-        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
-        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
-        #E8EBDD;
+        radial-gradient(ellipse at 0% 50%, rgba(101, 123, 85, .20), transparent 30%),
+        radial-gradient(ellipse at 100% 50%, rgba(101, 123, 85, .20), transparent 30%),
+        #DFE8D8;
       text-align: center;
     }
 
@@ -401,14 +403,14 @@
     }
 
     .order-section .eyebrow {
-      color: #647653;
+      color: #526744;
     }
 
     footer {
       position: relative;
       overflow: hidden;
       padding: 30px 20px;
-      background: var(--paper);
+      background: #F0F2E9;
       color: var(--muted);
       text-align: center;
       font-size: 12px;
@@ -442,7 +444,7 @@
     .botanical-divider::after {
       width: 48px;
       height: 1px;
-      background: #C8CDBA;
+      background: #C8D3BE;
       content: "";
     }
 
