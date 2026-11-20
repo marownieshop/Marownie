@@ -650,6 +650,13 @@
         </a>
       </div>
 
+      <div id="order-success" class="empty-cart" hidden>
+        <h2>Thank you for your order!</h2>
+        <p>Your order has been successfully submitted to Marownie.</p>
+        <p>Please wait for a confirmation message from us. We will contact you shortly to confirm your order details.</p>
+        <p>Thank you for choosing Marownie!</p>
+      </div>
+
       <p class="contact-note">
         Thank you for choosing Marownie!
       </p>
@@ -678,6 +685,7 @@
       const itemsContainer = document.getElementById("cart-items");
       const summary = document.getElementById("cart-summary");
       const emptyCart = document.getElementById("empty-cart");
+      const orderSuccess = document.getElementById("order-success");
 
       const subtotalElement = document.getElementById("cart-subtotal");
       const deliveryFeeElement = document.getElementById("delivery-fee");
@@ -799,6 +807,7 @@
         }
 
         emptyCart.hidden = true;
+        orderSuccess.hidden = true;
         summary.hidden = false;
 
         items.forEach(function (item) {
@@ -992,16 +1001,11 @@
             return;
           }
 
-          setStatus(
-            orderStatus,
-            "Thank you! Your order request " +
-              (data.orderId ? "(" + data.orderId + ") " : "") +
-              "has been received. It is pending confirmation. Please check your email.",
-            "success"
-          );
-
           cart.clearCart();
           renderCart();
+
+          emptyCart.hidden = true;
+          orderSuccess.hidden = false;
 
           checkoutForm.reset();
           deliveryFields.classList.remove("visible");
