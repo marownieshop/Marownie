@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +19,10 @@
       --burgundy: #654332;
       --pink: #E99A7E;
       --ink: #39312C;
-      --muted: #756F64;
-      --line: #DCE3D3;
-      --leaf: #657B55;
-      --leaf-light: #A7B894;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
       --cocoa: #805B43;
     }
 
@@ -70,16 +69,15 @@
       gap: 30px;
       padding: 12px 15px 18px;
       border-bottom: 1px solid var(--line);
-      background: #F0F2E9;
+      background: var(--paper);
     }
 
     nav a {
-      color: #526744;
+      color: var(--burgundy);
       font-size: 12px;
       font-weight: 600;
       letter-spacing: .09em;
       text-transform: uppercase;
-      transition: color .2s ease;
     }
 
     nav a:hover {
@@ -252,8 +250,8 @@
       display: inline-block;
       margin-top: 28px;
       padding: 13px 27px;
-      border: 1px solid var(--leaf);
-      background: var(--leaf);
+      border: 1px solid var(--burgundy);
+      background: var(--burgundy);
       color: white;
       font-size: 11px;
       font-weight: 600;
@@ -263,17 +261,16 @@
     }
 
     .button:hover {
-      background: #526744;
-      border-color: #526744;
-      color: white;
+      background: transparent;
+      color: var(--burgundy);
     }
 
     .treats {
       position: relative;
       overflow: hidden;
       padding: 75px 24px 85px;
-      background: #E9EEE3;
-      border-top: 1px solid #D5DECC;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
     }
 
     .section-inner {
@@ -306,14 +303,14 @@
     .treat-card {
       position: relative;
       overflow: hidden;
-      border: 1px solid #D7E0D0;
+      border: 1px solid var(--line);
       background: var(--paper);
       text-align: center;
       transition: border-color .25s ease, transform .25s ease;
     }
 
     .treat-card:hover {
-      border-color: var(--leaf);
+      border-color: #C9B59E;
       transform: translateY(-3px);
     }
 
@@ -379,9 +376,9 @@
       overflow: hidden;
       padding: 65px 24px 75px;
       background:
-        radial-gradient(ellipse at 0% 50%, rgba(101, 123, 85, .20), transparent 30%),
-        radial-gradient(ellipse at 100% 50%, rgba(101, 123, 85, .20), transparent 30%),
-        #DFE8D8;
+        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        #E8EBDD;
       text-align: center;
     }
 
@@ -403,14 +400,14 @@
     }
 
     .order-section .eyebrow {
-      color: #526744;
+      color: #647653;
     }
 
     footer {
       position: relative;
       overflow: hidden;
       padding: 30px 20px;
-      background: #F0F2E9;
+      background: var(--paper);
       color: var(--muted);
       text-align: center;
       font-size: 12px;
@@ -444,7 +441,7 @@
     .botanical-divider::after {
       width: 48px;
       height: 1px;
-      background: #C8D3BE;
+      background: #C8CDBA;
       content: "";
     }
 
