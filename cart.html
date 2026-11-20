@@ -513,6 +513,11 @@
           <span id="cart-subtotal">$0.00</span>
         </div>
 
+        <div class="summary-row" id="delivery-distance-row" hidden>
+          <span>Delivery distance</span>
+          <span id="delivery-distance">—</span>
+        </div>
+
         <div class="summary-row" id="delivery-fee-row" hidden>
           <span>Delivery fee</span>
           <span id="delivery-fee">$0.00</span>
@@ -701,6 +706,8 @@
       const subtotalElement = document.getElementById("cart-subtotal");
       const deliveryFeeElement = document.getElementById("delivery-fee");
       const deliveryFeeRow = document.getElementById("delivery-fee-row");
+      const deliveryDistanceElement = document.getElementById("delivery-distance");
+      const deliveryDistanceRow = document.getElementById("delivery-distance-row");
       const totalElement = document.getElementById("cart-total");
 
       const checkoutForm = document.getElementById("checkout-form");
@@ -783,17 +790,25 @@
         const subtotal = cart.getSubtotal();
         let fee = 0;
 
-        if (
+        const validQuote =
           getFulfillment() === "Delivery" &&
           deliveryQuote &&
-          quotedAddress === deliveryAddress.value.trim()
-        ) {
+          quotedAddress === deliveryAddress.value.trim();
+
+        if (validQuote) {
           fee = Number(deliveryQuote.deliveryFee) || 0;
         }
 
         subtotalElement.textContent = cart.formatPrice(subtotal);
         deliveryFeeElement.textContent = cart.formatPrice(fee);
         deliveryFeeRow.hidden = getFulfillment() !== "Delivery";
+
+        const distance = validQuote ? Number(deliveryQuote.distance) : 0;
+
+        deliveryDistanceRow.hidden = !validQuote || !distance;
+        deliveryDistanceElement.textContent =
+          distance ? distance + " miles" : "—";
+
         totalElement.textContent = cart.formatPrice(subtotal + fee);
       }
 
