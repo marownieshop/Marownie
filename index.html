@@ -344,6 +344,20 @@
       color: var(--pink);
     }
 
+    /* Bread & Sweet Buns card spans the full grid width */
+
+    .treat-grid .treat-card:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .treat-grid .treat-card:last-child .treat-content {
+      padding: 30px 22px 34px;
+    }
+
+    .treat-grid .treat-card:last-child .treat-content p {
+      min-height: auto;
+    }
+
     .story {
       position: relative;
       overflow: hidden;
@@ -494,6 +508,10 @@
       .treat-grid {
         grid-template-columns: 1fr;
         gap: 18px;
+      }
+
+      .treat-grid .treat-card:last-child {
+        grid-column: auto;
       }
 
       .story {
