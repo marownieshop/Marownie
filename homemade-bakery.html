@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Homemade Bread & Sweet Buns | Marownie</title>
+  <meta name="description" content="Discover homemade bread and freshly baked sweet buns from Marownie.">
+  <link rel="canonical" href="https://shopmarownie.com/bread.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F5F1E8;
+      --paper: #FFFCF5;
+      --burgundy: #654332;
+      --pink: #E99A7E;
+      --ink: #39312C;
+      --muted: #82766D;
+      --line: #E8DED1;
+      --leaf: #788766;
+      --leaf-light: #A7B394;
+      --cocoa: #805B43;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 28px 20px 18px;
+      text-align: center;
+      background: var(--paper);
+    }
+
+    .logo img {
+      display: block;
+      width: min(320px, 82%);
+      max-height: 170px;
+      object-fit: contain;
+      margin: 0 auto 18px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 12px 15px 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    nav a {
+      color: var(--burgundy);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    .cart-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 19px;
+      height: 19px;
+      margin-left: 4px;
+      padding: 0 5px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 0;
+    }
+
+    .cart-count[hidden] {
+      display: none;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 24px 80px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 8% 25%, rgba(141, 164, 119, .14), transparent 24%),
+        radial-gradient(ellipse at 92% 75%, rgba(101, 67, 50, .10), transparent 25%),
+        var(--cream);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .hero h1 {
+      margin: 18px auto;
+      font-size: clamp(38px, 6vw, 66px);
+    }
+
+    .hero p {
+      max-width: 570px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    main {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 24px 85px;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+    }
+
+    .section-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .botanical-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin: 22px auto;
+      color: var(--leaf);
+      font-size: 17px;
+    }
+
+    .botanical-divider::before,
+    .botanical-divider::after {
+      width: 48px;
+      height: 1px;
+      background: #C8CDBA;
+      content: "";
+    }
+
+    .section-intro {
+      max-width: 590px;
+      margin: 0 auto 42px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .bread-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .bread-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      text-align: center;
+      transition: border-color .25s ease, transform .25s ease;
+    }
+
+    .bread-card:hover {
+      border-color: #C9B59E;
+      transform: translateY(-3px);
+    }
+
+    .bread-photo {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    .bread-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #FFFFFF;
+    }
+
+    .card-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 25px 22px 30px;
+    }
+
+    .bread-card h2 {
+      margin: 0 0 10px;
+      font-size: 29px;
+    }
+
+    .description {
+      flex-grow: 1;
+      min-height: 76px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .unit {
+      margin: 14px 0 0;
+      color: var(--leaf);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    .price {
+      margin: 8px 0 4px;
+      color: var(--burgundy);
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .button {
+      display: inline-block;
+      align-self: center;
+      margin-top: 18px;
+      padding: 13px 27px;
+      border: 1px solid var(--burgundy);
+      background: var(--burgundy);
+      color: white;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-align: center;
+      transition: .2s ease;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--burgundy);
+    }
+
+    .cart-add {
+      cursor: pointer;
+    }
+
+    .whatsapp-order {
+      margin-top: 10px;
+      background: transparent;
+      color: var(--burgundy);
+    }
+
+    .whatsapp-order:hover {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    .allergen-preview {
+      max-width: 850px;
+      margin: 55px auto 0;
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .allergen-preview h2 {
+      margin: 0 0 14px;
+      font-size: 27px;
+    }
+
+    .allergen-preview p {
+      margin: 9px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .allergen-preview a {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--leaf);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .allergen-preview a:hover {
+      color: var(--pink);
+    }
+
+    .fresh-note {
+      margin: 38px auto 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .order-section {
+      position: relative;
+      overflow: hidden;
+      padding: 65px 24px 75px;
+      background:
+        radial-gradient(ellipse at 0% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        radial-gradient(ellipse at 100% 50%, rgba(120, 135, 102, .15), transparent 27%),
+        #E8EBDD;
+      text-align: center;
+    }
+
+    .order-section .eyebrow {
+      color: #647653;
+    }
+
+    .order-section h2 {
+      margin: 12px 0;
+      font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .order-section p {
+      max-width: 520px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .order-section .button {
+      margin-top: 28px;
+    }
+
+    footer {
+      padding: 30px 20px;
+      background: var(--paper);
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer .brand {
+      margin: 0 0 8px;
+      color: var(--burgundy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      letter-spacing: .08em;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 900px) {
+      .bread-photo {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        gap: 15px 22px;
+      }
+
+      .hero {
+        padding: 60px 20px 65px;
+      }
+
+      main {
+        padding: 55px 18px 60px;
+      }
+
+      .bread-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .bread-photo {
+        height: 260px;
+      }
+
+      .description {
+        min-height: auto;
+      }
+
+      .card-content {
+        padding: 25px 20px 30px;
+      }
+
+      .allergen-preview {
+        padding: 22px 18px;
+      }
+
+      .order-section {
+        padding: 55px 20px 65px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .bread-card,
+      .button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="index.html" aria-label="Marownie home">
+      <img src="marownie-logo-pink.png" alt="Marownie">
+    </a>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#treats">Our Treats</a>
+    <a href="index.html#story">Our Story</a>
+    <a href="delivery.html">Delivery &amp; Pickup</a>
+    <a href="payment.html">Payment</a>
+    <a href="index.html#order">Order</a>
+    <a href="cart.html">Cart <span class="cart-count" data-cart-count hidden>0</span></a>
+  </nav>
+
+  <section class="hero">
+    <div class="content">
+      <div class="eyebrow">Freshly Baked at Home</div>
+      <h1>Homemade Bread &amp; Sweet Buns</h1>
+      <p>
+        Freshly baked homemade bread and soft,
+        delicious sweet buns, prepared with care.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-inner">
+
+      <h2 class="section-heading">Our Selection</h2>
+
+      <div class="botanical-divider" aria-hidden="true">❧</div>
+
+      <p class="section-intro">
+        Choose your favorite freshly baked treats.
+        Each item is sold individually.
+      </p>
+
+      <div class="bread-grid">
+
+        <!-- Homemade Bread -->
+
+        <article class="bread-card">
+          <div class="bread-photo">
+            <img
+              src="homemade-bread.jpg"
+              alt="Freshly baked homemade bread"
+            >
+          </div>
+
+          <div class="card-content">
+            <h2>Homemade Bread</h2>
+
+            <p class="description">
+              Freshly baked homemade bread with a
+              golden crust and a soft, delicious center.
+            </p>
+
+            <p class="unit">1 PIECE</p>
+            <div class="price">$4</div>
+
+            <button class="button cart-add" type="button"
+              data-cart-add
+              data-product-id="homemade-bread"
+              data-product-name="Homemade Bread"
+              data-product-price="4"
+              data-product-image="homemade-bread.jpg">
+              ADD TO CART
+            </button>
+
+            <a class="button whatsapp-order"
+               href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Homemade%20Bread%20for%20%244."
+               target="_blank" rel="noopener noreferrer">
+              ORDER ON WHATSAPP
+            </a>
+          </div>
+        </article>
+
+        <!-- Sweet Buns -->
+
+        <article class="bread-card">
+          <div class="bread-photo">
+            <img
+              src="sweet-buns.jpg"
+              alt="Freshly baked homemade sweet buns"
+            >
+          </div>
+
+          <div class="card-content">
+            <h2>Sweet Buns</h2>
+
+            <p class="description">
+              Soft, fluffy homemade sweet buns,
+              freshly baked with a delicate golden finish.
+            </p>
+
+            <p class="unit">1 PIECE</p>
+            <div class="price">$3.50</div>
+
+            <button class="button cart-add" type="button"
+              data-cart-add
+              data-product-id="sweet-buns"
+              data-product-name="Sweet Buns"
+              data-product-price="3.50"
+              data-product-image="sweet-buns.jpg">
+              ADD TO CART
+            </button>
+
+            <a class="button whatsapp-order"
+               href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20order%20Sweet%20Buns%20for%20%243.50."
+               target="_blank" rel="noopener noreferrer">
+              ORDER ON WHATSAPP
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="allergen-preview">
+        <h2>Allergen Information</h2>
+
+        <p>
+          <strong>Homemade Bread:</strong>
+          Wheat (Gluten), if confirmed by recipe.
+        </p>
+
+        <p>
+          <strong>Sweet Buns:</strong>
+          Wheat (Gluten), Milk and Eggs, if confirmed by recipe.
+        </p>
+
+        <p>
+          Please inform us of any food allergies
+          before placing your order.
+        </p>
+
+        <a href="food-safety.html">
+          VIEW FOOD SAFETY &amp; ALLERGEN INFORMATION
+        </a>
+      </div>
+
+      <p class="fresh-note">
+        All bread and sweet buns are freshly prepared for your order.
+        Please message us to confirm availability and pickup details.
+      </p>
+
+    </div>
+  </main>
+
+  <section class="order-section">
+    <div class="content">
+      <div class="eyebrow">Fresh from Our Kitchen</div>
+      <h2>Ready to Order?</h2>
+
+      <div class="botanical-divider" aria-hidden="true">❧</div>
+
+      <p>
+        Contact Marownie with any questions about our
+        homemade bread and sweet buns.
+      </p>
+
+      <a class="button"
+         href="https://wa.me/13478881927?text=Hello%20Marownie!%20I%27d%20like%20to%20ask%20about%20your%20homemade%20bread%20and%20sweet%20buns."
+         target="_blank" rel="noopener noreferrer">
+        CONTACT US ON WHATSAPP
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="brand">MAROWNIE</p>
+    <p>Homemade Desserts, Bread &amp; Sweet Buns</p>
+    <p>&copy; 2026 Marownie. All rights reserved.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+
+</body>
+</html>
